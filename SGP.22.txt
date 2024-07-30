@@ -270,9 +270,9 @@ This document provides a technical description of the GSMA’s 'Remote SIM Provi
 1.2       Scope
 This specification provides a technical description of:
 
-         The eUICC Architecture;
-         The interfaces used within the Remote SIM Provisioning Architecture; and
-         The security functions used within the Remote SIM Provisioning Architecture.
+      •   The eUICC Architecture;
+      •   The interfaces used within the Remote SIM Provisioning Architecture; and
+      •   The security functions used within the Remote SIM Provisioning Architecture.
 
 1.3       Document Purpose
 This document defines a technical solution for the remote provisioning and management of
@@ -323,8 +323,8 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                                   confirm the download of a Profile.
                                   Refers to the hierarchy of User Intent and Confirmation Request,
                                   where:
-   Confirmation Level                    User Intent is the first and lowest level
-                                         Simple Confirmation is the second level
+   Confirmation Level                 •   User Intent is the first and lowest level
+                                      •   Simple Confirmation is the second level
                                   Strong Confirmation is the third and highest level
                                   A request confirming User Intent by using either Simple
    Confirmation Request
@@ -385,8 +385,8 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                                    The set of information stored on the SM-DS for a specific Event,
                                    via the Event Registration procedure. This information consists
    Event Record                    of either:
-                                      the Event-ID, EID, and SM-DP+ address or
-                                      the Event-ID, EID, and SM-DS address.
+                                     • the Event-ID, EID, and SM-DP+ address or
+                                     • the Event-ID, EID, and SM-DS address.
                                    A process notifying the SM-DS on the availability of information
    Event Registration              on either a specific SM-DP+ or a specific SM-DS for a specific
                                    eUICC.
@@ -493,11 +493,11 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                                   eUICC for the purpose of providing services.
                                   A Profile Component is an element of the Profile, when installed
                                   in the eUICC, and MAY be one of the following:
-                                         An element of the file system like an MF, EF or DF;
+                                      •   An element of the file system like an MF, EF or DF;
    Profile Component
-                                         An Application, including NAA and Security Domain;
-                                         Profile Metadata, including Profile Policy Rules;
-                                         An MNO-SD.
+                                      •   An Application, including NAA and Security Domain;
+                                      •   Profile Metadata, including Profile Policy Rules;
+                                      •   An MNO-SD.
    Profile Installation Result    A Notification that contains the result of a Profile installation.
 
 
@@ -1052,8 +1052,8 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 A Device compliant with this specification SHALL implement at least one of the following:
 
-       the LPAd, or
-       the requirements for one of the options for the LPAe (section 5.11).
+   •    the LPAd, or
+   •    the requirements for one of the options for the LPAe (section 5.11).
 
 A Device that supports a non-removable eUICC without an LPAe SHALL provide an LPAd.
 
@@ -1301,15 +1301,15 @@ The AID of the ECASD SHALL follow SGP.02 [2].
 
 The ECASD SHALL contain:
 
-                   The eUICC’s Private Key(s) (SK.EUICC.ECDSA) for creating ECDSA signatures
+      •             The eUICC’s Private Key(s) (SK.EUICC.ECDSA) for creating ECDSA signatures
 
 V2.4                                                                                                                                                          Page 23 of 275
 GSM Association                                                                 Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-       The eUICC’s Certificate(s) for eUICC authentication (CERT.EUICC.ECDSA)
+   •    The eUICC’s Certificate(s) for eUICC authentication (CERT.EUICC.ECDSA)
         containing the eUICC’s public key (PK.EUICC.ECDSA)
-       The GSMA Certificate Issuer’s (CI) Public Key(s) (PK.CI.ECDSA) for verifying off-
+   •    The GSMA Certificate Issuer’s (CI) Public Key(s) (PK.CI.ECDSA) for verifying off-
         card entities certificates (e.g. SM-DP+) and Certificate Revocation List (CRL). ECASD
         MAY contain several public keys belonging to the same GSMA CI or different GSMA
         CIs. Each PK.CI.ECDSA SHALL be stored with information coming from the
@@ -1320,11 +1320,11 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                o Subject Key Identifier: required to verify the Certification chain of the off-
                  card entity
 
-       The Certificate(s) of the EUM (CERT.EUM.ECDSA)
+   •    The Certificate(s) of the EUM (CERT.EUM.ECDSA)
 
 The ECASD SHOULD also contain:
 
-       eUICC Manufacturer’s (EUMs) keyset for key/certificate renewal:
+   •    eUICC Manufacturer’s (EUMs) keyset for key/certificate renewal:
 
                o Renew eUICC’s Private Key(s) and Certificate(s)
                o Renew EUM Certificate(s)
@@ -1338,8 +1338,8 @@ related public key), in addition to using a CRL loaded by the LPA (sections 4.6 
 
 The ECASD SHALL provide the following services to the ISD-R:
 
-       eUICC signature creation on material provided by an ISD-R
-       Verification of the off-card entities Certificates (e.g. SM-DP+), provided by an ISD-R,
+   •    eUICC signature creation on material provided by an ISD-R
+   •    Verification of the off-card entities Certificates (e.g. SM-DP+), provided by an ISD-R,
         with the CI public key (PK.CI.ECDSA)
 
 Personalisation of the ECASD SHALL be done in a certified 'GSMA SAS-UP environment'.
@@ -1384,13 +1384,13 @@ Profile.
 2.4.5    Profile
 A Profile consists of Profile Components:
 
-       One MNO-SD
-       Supplementary Security Domains (SSD) and a CASD
-       Applets
-       Applications, e.g. NFC applications
-       NAAs
-       Other elements of the File System
-       Profile Metadata, including Profile Policy Rules
+   •    One MNO-SD
+   •    Supplementary Security Domains (SSD) and a CASD
+   •    Applets
+   •    Applications, e.g. NFC applications
+   •    NAAs
+   •    Other elements of the File System
+   •    Profile Metadata, including Profile Policy Rules
 
 The MNO-SD is the on-card representative of the Operator. It contains the Operator’s Over-
 The-Air (OTA) keys and provides a secure OTA channel.
@@ -1403,12 +1403,12 @@ applies especially for the NAAs and applets contained in the Profile.
 
 When a Profile is Disabled, the eUICC SHALL ensure that:
 
-       Remote management of any Profile Component is not possible via the ES6 interface.
-       The file system within the Profile cannot be selected by the Device or any application
+   •    Remote management of any Profile Component is not possible via the ES6 interface.
+   •    The file system within the Profile cannot be selected by the Device or any application
         on the eUICC.
-       The applications (including NAAs and Security Domains) within the Profile cannot be
+   •    The applications (including NAAs and Security Domains) within the Profile cannot be
         selected, triggered or individually deleted.
-       For an eUICC compliant with M4M [58], no M4M Virtual Card inside that Profile is
+   •    For an eUICC compliant with M4M [58], no M4M Virtual Card inside that Profile is
         visible nor accessible through any interface.
 
 
@@ -1514,12 +1514,12 @@ feature of the ISD-R.
 This role provides the necessary access to the services and data required by LPAd
 functions. These services include:
 
-       Provide the address of the Root SM-DS and (if configured) the Default SM-DP+
-       Transfer Bound Profile Package from the LPAd to the ISD-P
-       Provide list of installed Profiles and their Profile Metadata
-       Retrieve EID
-       Provide Local Profile Management Operations
-       Provide pending Notifications
+   •    Provide the address of the Root SM-DS and (if configured) the Default SM-DP+
+   •    Transfer Bound Profile Package from the LPAd to the ISD-P
+   •    Provide list of installed Profiles and their Profile Metadata
+   •    Retrieve EID
+   •    Provide Local Profile Management Operations
+   •    Provide pending Notifications
 
 LPA Services are mandatory even if the LPAe is provided in the eUICC because the eUICC
 SHALL support LPAd even if it contains LPAe.
@@ -1532,18 +1532,18 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 2.4.10      Hardware Characteristics of the eUICC
 The following requirements apply:
 
-        The eUICC SHALL be based on a Tamper Resistant Element.
-        The eUICC SHALL be either a Discrete eUICC or an Integrated eUICC.A Discrete
+   •     The eUICC SHALL be based on a Tamper Resistant Element.
+   •     The eUICC SHALL be either a Discrete eUICC or an Integrated eUICC.A Discrete
          eUICC MAY either be removable or non-removable. A removable eUICC SHALL be
          packaged in a form factor specified in ETSI TS 102 221 [6].
 
 2.4.11      Platform Characteristics of the eUICC
 In compliance with SGP.21, the following requirements apply:
 
-        The eUICC SHALL support SHA-1.
-        The eUICC SHALL support TUAK [51].
-        The eUICC SHALL support Milenage [52].
-        All cryptographic functions SHALL be implemented in a tamper-resistant way and
+   •     The eUICC SHALL support SHA-1.
+   •     The eUICC SHALL support TUAK [51].
+   •     The eUICC SHALL support Milenage [52].
+   •     All cryptographic functions SHALL be implemented in a tamper-resistant way and
          SHALL resist side-channel attacks.
 
 2.4.11.1     Java Card packages
@@ -1688,11 +1688,11 @@ during transmission between Roles within the system.
 From generation to download, the Profile Package will take different formats. This
 specification uses the following terms:
 
-         Unprotected Profile Package (UPP): Raw Profile Element TLV sequence.
-         Protected Profile Package (PPP): Segmented and protected in SCP03t TLVs.
-         Bound Profile Package (BPP): Prepended with session key agreement info, key
+      •   Unprotected Profile Package (UPP): Raw Profile Element TLV sequence.
+      •   Protected Profile Package (PPP): Segmented and protected in SCP03t TLVs.
+      •   Bound Profile Package (BPP): Prepended with session key agreement info, key
           replacement package, ISD-P creation and configuration info.
-         Segmented Bound Profile Package (SBPP): BPP segmented into STORE DATA
+      •   Segmented Bound Profile Package (SBPP): BPP segmented into STORE DATA
           APDU script for loading into eUICC. This step is performed by the LPD when LPD is
           in the Device.
 
@@ -1777,8 +1777,8 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 Profile protection SHALL be performed using either:
 
-       Session keys (S-ENC, S-MAC) resulting from the key agreement with eUICC.
-       Or random keys per Profile (denoted PPK-ENC and PPK-MAC in this document and
+   •    Session keys (S-ENC, S-MAC) resulting from the key agreement with eUICC.
+   •    Or random keys per Profile (denoted PPK-ENC and PPK-MAC in this document and
         referred to as S-ENC and S-MAC respectively in SGP.02 [2]), generated by the
         SM-DP+.
 
@@ -1816,12 +1816,12 @@ See download and installation procedure (section 3.1.3).
 
 The BPP comprises a sequence of TLV commands (in this order):
 
-       TLV command for Key agreement in clear.
-       Set of SCP03t payload TLVs (tag '87') containing TLV commands for ConfigureISDP
-       Set of SCP03t payload TLVs (tag '88') containing TLV command for StoreMetadata
-       Set of optional SCP03t payload TLVs (tag '87') containing TLV command for 'Profile
+   •    TLV command for Key agreement in clear.
+   •    Set of SCP03t payload TLVs (tag '87') containing TLV commands for ConfigureISDP
+   •    Set of SCP03t payload TLVs (tag '88') containing TLV command for StoreMetadata
+   •    Set of optional SCP03t payload TLVs (tag '87') containing TLV command for 'Profile
         Protection Keys'
-       Followed by the SCP03t payload TLVs (tag '86') of the PPP
+   •    Followed by the SCP03t payload TLVs (tag '86') of the PPP
 
 V2.4                                                                               Page 32 of 275
 GSM Association                                                                   Non-confidential
@@ -1930,14 +1930,14 @@ Bound Profile Package to the eUICC using the local interface ES10b.
 
 The segmentation SHALL be done according to the structure of the Bound Profile Package:
 
-         Tag and length fields of the BoundProfilePackage TLV plus the
+   •      Tag and length fields of the BoundProfilePackage TLV plus the
           initialiseSecureChannelRequest TLV
-         Tag and length fields of the first sequenceOf87 TLV plus the first '87' TLV
-         Tag and length fields of the sequenceOf88 TLV
-         Each of the '88' TLVs
-         Tag and length fields of the sequenceOf87 TLV plus the first '87' TLV
-         Tag and length fields of the sequenceOf86 TLV
-         Each of the '86' TLVs
+   •      Tag and length fields of the first sequenceOf87 TLV plus the first '87' TLV
+   •      Tag and length fields of the sequenceOf88 TLV
+   •      Each of the '88' TLVs
+   •      Tag and length fields of the sequenceOf87 TLV plus the first '87' TLV
+   •      Tag and length fields of the sequenceOf86 TLV
+   •      Each of the '86' TLVs
 
 
 V2.4                                                                              Page 34 of 275
@@ -1953,20 +1953,20 @@ be reset.
 2.5.6    Profile Installation Result
 The Profile Installation Result contains the following data:
 
-       Notification Metadata: The Notification Metadata includes:
+   •    Notification Metadata: The Notification Metadata includes:
 
-              Sequence Number
-              Profile Management Operation
-              Recipient Address
-              ICCID (Not provided if the Notification reports an error that has happened
+           •   Sequence Number
+           •   Profile Management Operation
+           •   Recipient Address
+           •   ICCID (Not provided if the Notification reports an error that has happened
                before ICCID was known by the eUICC, otherwise it SHALL be present)
 
-       Transaction ID: The Transaction Identifier given to the eUICC during the Profile
+   •    Transaction ID: The Transaction Identifier given to the eUICC during the Profile
         "Download and Installation" procedure (section 3.1.3).
-       Final Result: provides the final Profile installation status.
-       SM-DP+ OID: The SM-DP+ OID as contained in CERT.DPpb.ECDSA used during
+   •    Final Result: provides the final Profile installation status.
+   •    SM-DP+ OID: The SM-DP+ OID as contained in CERT.DPpb.ECDSA used during
         the profile download and installation procedure (section 3.1.3).
-       eUICC signature: A signature created by the eUICC ensuring the authenticity and the
+   •    eUICC signature: A signature created by the eUICC ensuring the authenticity and the
         integrity of the Profile Installation Result.
 
 The Profile Installation Result SHALL be created by the eUICC after the execution of the last
@@ -2139,13 +2139,13 @@ This section provides an overview of the overall ecosystem security features.
 2.6.1      Certification of the Entities
 According to SGP.21 [4]:
 
-         The eUICC SHALL be certified according to the GSMA eUICC Protection Profile for
+      •   The eUICC SHALL be certified according to the GSMA eUICC Protection Profile for
           Consumer Devices
 
       NOTE:        This document does not exist at the time of writing, reference to it will be
                    added once the document will be available.
 
-         The EUM, the SM-DP+ and the SM-DS SHALL be GSMA SAS certified
+      •   The EUM, the SM-DP+ and the SM-DS SHALL be GSMA SAS certified
 
 The Device and the LPA SHALL comply with the security features defined in this
 specification and SGP.21 [4].
@@ -2157,19 +2157,19 @@ SHALL follow the hereunder rules.
 
 Mutual authentication:
 
-         The Server (the entity providing the function, e.g. SM-DP+) SHALL be authenticated
+      •   The Server (the entity providing the function, e.g. SM-DP+) SHALL be authenticated
           first by the Client (the entity requesting the function). Authentication SHALL include
           the verification of a valid Server Certificate signed by a GSMA CI (section 4.5.2).
-         The Client SHALL be authenticated by the Server in a second step. In case the Client
+      •   The Client SHALL be authenticated by the Server in a second step. In case the Client
           is the eUICC, authentication SHALL include the verification of a valid eUICC and
           EUM Certificate signed by a GSMA CI (section 4.5.2). Client authentication does not
           apply to the LPA.
 
 Data privacy:
 
-         The eUICC, as a Client, SHALL not reveal any private data to an unauthenticated
+      •   The eUICC, as a Client, SHALL not reveal any private data to an unauthenticated
           Server.
-         The eUICC, as a Client, SHALL not generate any signed material before having
+      •   The eUICC, as a Client, SHALL not generate any signed material before having
           authenticated the Server.
 
 Communication protection:
@@ -2180,15 +2180,15 @@ V2.4                                                                            
 GSM Association                                                                 Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-       Once authenticated, the remote entities SHALL negotiate a common cryptographic
+   •    Once authenticated, the remote entities SHALL negotiate a common cryptographic
         suite for further communication.
-       The communication SHALL be origin authenticated, as well as integrity and
+   •    The communication SHALL be origin authenticated, as well as integrity and
         confidentiality protected.
-       Session keys SHALL be generated using Perfect Forward Secrecy.
+   •    Session keys SHALL be generated using Perfect Forward Secrecy.
 
 Authorisation:
 
-       On the basis of authentication, the Server SHALL always check that the requesting
+   •    On the basis of authentication, the Server SHALL always check that the requesting
         Client is authorised before delivering the requested function execution.
 
 2.6.3    Public Key Infrastructure
@@ -2211,7 +2211,7 @@ This section describes the differences between SCP11a and the Protocol for Profi
 Protection. The SM-DP+ plays the role of the Off Card Entity (OCE) specified in
 GlobalPlatform Card Specification Amendment F [13].
 
-       The mutual authentication defined for SCP11a is modified: Whereas in SCP11a
+   •    The mutual authentication defined for SCP11a is modified: Whereas in SCP11a
         authentication is achieved by a shared secret calculated from static key pairs being
         fed into the generation of the session keys, in the Protocol for Profile Protection
         signatures based on ECDSA of each side are used to authenticate to the other side.
@@ -2221,12 +2221,12 @@ GlobalPlatform Card Specification Amendment F [13].
                  establishment allows the same keys also to be used to sign other content,
                  e.g. notifications. Only one certificate per entity is required in this case.
 
-       Ephemeral keys are renamed to one-time keys in this specification, as they MAY live
+   •    Ephemeral keys are renamed to one-time keys in this specification, as they MAY live
         longer and are stored in non-volatile memory. With respect to Perfect Forward
         Secrecy, they serve the same purpose.
-       The ISD-R SHALL not persistently store any SM-DP+ public key (GlobalPlatform
+   •    The ISD-R SHALL not persistently store any SM-DP+ public key (GlobalPlatform
         Card Specification Amendment F [13] sections 4.1 and 4.2).
-       Establishment of the session keys SHALL use only the shared secret generated from
+   •    Establishment of the session keys SHALL use only the shared secret generated from
         the one-time key pairs.
 
 
@@ -2236,12 +2236,12 @@ V2.4                                                                            
 GSM Association                                                                      Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-       The first TLV(s) following the data for key establishment are protected with the
+   •    The first TLV(s) following the data for key establishment are protected with the
         session keys generated in the key agreement. MACing and encryption is done as
         specified for SCP03t in SGP.02 [2] (NOTE below).
-       The data contains the ISD-P configuration data. When this is processed by the
+   •    The data contains the ISD-P configuration data. When this is processed by the
         eUICC, the ISD-P is created.
-       Optionally, the session keys can be replaced by the Profile Protection Keys. The
+   •    Optionally, the session keys can be replaced by the Profile Protection Keys. The
         Profile Protection Keys are themselves secured by the session keys, Subsequent
         data is exchanged as TLVs as specified for SCP03t in SGP.02 [2] (NOTE below),
         protected by the Profile Protection Keys.
@@ -2299,13 +2299,13 @@ elliptic curve parameters defined in 2.6.7.1 that the corresponding GSMA CI supp
 The Client and the RSP Server SHALL support the following NamedCurve values during the
 TLS handshake to identify the elliptic curves defined in this document:
 
-         secp256r1 (23) for NIST P-256 as defined in RFC 4492 [65]
+   •      secp256r1 (23) for NIST P-256 as defined in RFC 4492 [65]
 
 The Client and the RSP Server MAY support the following NamedCurve values during the
 TLS handshake to identify the elliptic curves defined in this document:
 
-         brainpoolP256r1(26) as defined in RFC 7027 [66]
-         value (0xFE00) for FRP256V1, from the range for private use as defined in RFC 4492
+   •      brainpoolP256r1(26) as defined in RFC 7027 [66]
+   •      value (0xFE00) for FRP256V1, from the range for private use as defined in RFC 4492
           [65].
 
 2.6.7      Elliptic Curves Algorithms
@@ -2314,9 +2314,9 @@ TLS handshake to identify the elliptic curves defined in this document:
 In order to facilitate interoperability, this specification is limited to the three following curves
 (similar as SGP.02 [2]):
 
-         NIST P-256, defined in Digital Signature Standard [29] (recommended by NIST)
-         brainpoolP256r1, defined in RFC 5639 [18] (recommended by BSI)
-         FRP256V1, defined in ANSSI ECC [20] (recommended by ANSSI)
+   •      NIST P-256, defined in Digital Signature Standard [29] (recommended by NIST)
+   •      brainpoolP256r1, defined in RFC 5639 [18] (recommended by BSI)
+   •      FRP256V1, defined in ANSSI ECC [20] (recommended by ANSSI)
 
 An eUICC SHALL have at least two sets of elliptic curve parameters preloaded by the EUM
 during eUICC manufacturing, subject to support by the corresponding GSMA CI.
@@ -2358,12 +2358,12 @@ process is detailed in Annex G.
 2.7       Certificate Revocation
 The following Certificates MAY be revoked at any time:
 
-         GSMA CI Certificate (CERT.CI.ECDSA)
-         EUM Certificate (CERT.EUM.ECDSA)
-         SM-DP+ Certificates (CERT.DPauth.ECDSA, CERT.DPpb.ECDSA)
-         SM-DP+ TLS Certificate (CERT.DP.TLS)
-         SM-DS Certificate (CERT.DSauth.ECDSA)
-         SM-DS TLS Certificate (CERT.DS.TLS)
+      •   GSMA CI Certificate (CERT.CI.ECDSA)
+      •   EUM Certificate (CERT.EUM.ECDSA)
+      •   SM-DP+ Certificates (CERT.DPauth.ECDSA, CERT.DPpb.ECDSA)
+      •   SM-DP+ TLS Certificate (CERT.DP.TLS)
+      •   SM-DS Certificate (CERT.DSauth.ECDSA)
+      •   SM-DS TLS Certificate (CERT.DS.TLS)
 
 Because of their potential number, EUICC Certificates (CERT.EUICC.ECDSA) are not
 revoked individually. Also, it is unlikely that an individual EUICC would be compromised. It is
@@ -2414,9 +2414,9 @@ BEGIN
 
 Two encoding/decoding attributes are defined:
 
-         AUTOMATIC TAGS means that the tags are defined automatically using the
+   •      AUTOMATIC TAGS means that the tags are defined automatically using the
           encoding rules unless a tag notation is present in a data object format definition.
-         EXTENSIBILITY IMPLIED means that types MAY have elements that are not defined
+   •      EXTENSIBILITY IMPLIED means that types MAY have elements that are not defined
           in this specification. This means that decoders SHALL be able to handle values with
           unspecified tags, either by processing them if they know their value content, or
           ignoring them silently (without reporting an error) if they do not know them. This is
@@ -2487,9 +2487,9 @@ conditions of use under which services are provided.
 
 Profile Policy Management comprises three main elements:
 
-         Profile Policy Rules (PPR)
-         Rules Authorisation Table (RAT)
-         Profile Policy Enabler (PPE)
+      •   Profile Policy Rules (PPR)
+      •   Rules Authorisation Table (RAT)
+      •   Profile Policy Enabler (PPE)
 
 More details are provided in the next sub sections.
 
@@ -2507,8 +2507,8 @@ Profile.
 
 The following Profile Policy Rules are defined in this version of the specification:
 
-         (PPR1) 'Disabling of this Profile is not allowed'
-         (PPR2) 'Deletion of this Profile is not allowed'
+      •   (PPR1) 'Disabling of this Profile is not allowed'
+      •   (PPR2) 'Deletion of this Profile is not allowed'
 
 The coding of PPRs is given in section 2.8.1.1.
 
@@ -2616,17 +2616,17 @@ and if there is no PPAR for a particular PPR, then that PPR is forbidden.
 
 With this configuration, Operator OP-A:
 
-         can use PPR1 without the End User consent
-         can use PPR2 with the End User consent
+   •      can use PPR1 without the End User consent
+   •      can use PPR2 with the End User consent
 
 With this configuration, Operator OP-B:
 
-         can use PPR1 with the End User consent
-         can use PPR2 without the End User consent
+   •      can use PPR1 with the End User consent
+   •      can use PPR2 without the End User consent
 
 With this configuration, any other Profile Owner:
 
-         can use PPR1 and PPR2 with the End User consent
+   •      can use PPR1 and PPR2 with the End User consent
 
 2.9.2.2      Notable RAT configurations
 'All PPRs allowed for all Profile Owners, End User Consent required'
@@ -2737,8 +2737,8 @@ configuration.
 2.9.3      Profile Policy Enabler
 The Profile Policy Enabler on the eUICC has two functions:
 
-         Verification that a Profile containing PPRs is authorised by the RAT.
-         Enforcement of the PPRs of a Profile.
+   •      Verification that a Profile containing PPRs is authorised by the RAT.
+   •      Enforcement of the PPRs of a Profile.
 
 2.9.3.1       PPRs Verification: Profile installation time
 At Profile installation time the Profile Policy Enabler SHALL verify each of the PPRs as
@@ -2902,9 +2902,9 @@ The End User has selected the Operator with whom to sign a contract.
 
 The End User MAY initiate the process:
 
-      From any other Device (e.g. PC)
-      Through a Customer Agent of the Operator
-      Or any other convenient means provided by the Operator
+   •   From any other Device (e.g. PC)
+   •   Through a Customer Agent of the Operator
+   •   Or any other convenient means provided by the Operator
 
 Procedure:
 
@@ -3025,23 +3025,23 @@ Official Document SGP.22 - RSP Technical Specification v2.4
       "ES2+.ConfirmOrder" (section 5.3.2) function of the SM-DP+ with the ICCID and its
       relevant input data.
 
-              If EID is available, the EID SHALL be included in the input data. If the EID was
+          •    If EID is available, the EID SHALL be included in the input data. If the EID was
               provided with previous "ES2+.DownloadOrder", the same EID SHALL be
               provided.
-              If generated in Step 4, the MatchingID SHALL be included in the input data and
+          •    If generated in Step 4, the MatchingID SHALL be included in the input data and
               then the SM-DP+ SHALL return the acknowledged value that is the same as the
               received one. Otherwise, the SM-DP+ SHALL generate a MatchingID and return
               the generated value to the Operator. The ICCID SHALL be associated to the
               generated MatchingID.
-             If it is required for the End User to enter the Confirmation Code to download the
+          •   If it is required for the End User to enter the Confirmation Code to download the
               Profile, the Confirmation Code SHALL be included in the input data of the
               "ES2+.ConfirmOrder" (section 5.3.2) function.
-             The Operator MAY send an SM-DS address, which could be the address of either
+          •   The Operator MAY send an SM-DS address, which could be the address of either
               the Alternative SM-DS or the Root SM-DS, to the SM-DP+ as defined in section
               3.6.1. If the SM-DS address is given, the SM-DP+ SHALL perform Event
               Registration to the specified SM-DS. If the Default SM-DP+ is to be used, then the
               SM-DS address SHALL not be present.
-             If all necessary operations on Operator’s back-end provisioning has been
+          •   If all necessary operations on Operator’s back-end provisioning has been
               completed by this point, releaseFlag SHALL be set to 'true' in the input data.
               Otherwise, releaseFlag SHALL be set to 'false' and additional
               "ES2+.ReleaseProfile" function SHALL be called later in Subscription activation
@@ -3097,13 +3097,13 @@ others places in this document.
 
 In this section the following notations are used:
 
-         SM-XX denotes either an SM-DP+ or an SM-DS.
-         CERT.XXauth.ECDSA denotes either CERT.DPauth.ECDSA or
+   •      SM-XX denotes either an SM-DP+ or an SM-DS.
+   •      CERT.XXauth.ECDSA denotes either CERT.DPauth.ECDSA or
           CERT.DSauth.ECDSA.
-         SK.XXauth.ECDSA denotes either SK.DPauth.ECDSA or SK.DSauth.ECDSA.
-         CERT.XX.TLS denotes either CERT.DP.TLS or CERT.DS.TLS.
-         SK.XX.TLS denotes either SK.DP.TLS or SK.DS.TLS.
-         ESXX denotes either ES9+ when communicating with an SM-DP+ or an ES11 when
+   •      SK.XXauth.ECDSA denotes either SK.DPauth.ECDSA or SK.DSauth.ECDSA.
+   •      CERT.XX.TLS denotes either CERT.DP.TLS or CERT.DS.TLS.
+   •      SK.XX.TLS denotes either SK.DP.TLS or SK.DS.TLS.
+   •      ESXX denotes either ES9+ when communicating with an SM-DP+ or an ES11 when
           communicating with an SM-DS.
 
 This procedure implies the use of CERT.XXauth.ECDSA. Following this common mutual
@@ -3282,28 +3282,28 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
    8. The SM-XX SHALL perform the following:
 
-          Generate a TransactionID which is used to uniquely identify the RSP session and
+       •   Generate a TransactionID which is used to uniquely identify the RSP session and
            to correlate the multiple ESXX request messages that belong to the same RSP
            session.
-          Generate an SM-XX Challenge (serverChallenge) which SHALL be signed later
+       •   Generate an SM-XX Challenge (serverChallenge) which SHALL be signed later
            by the eUICC for the eUICC authentication.
-          Select one CI Public Key among those provided within euiccCiPKIdListForSigning
+       •   Select one CI Public Key among those provided within euiccCiPKIdListForSigning
            that is supported by the RSP Server for signature verification and indicate it in
            euiccCiPKIdToBeUsed.
-          Generate a serverSigned1 data structure containing the TransactionID,
+       •   Generate a serverSigned1 data structure containing the TransactionID,
            euiccChallenge, serverChallenge, and SM-XX Address.
-          Compute the serverSignature1 over serverSigned1 using the SK.XXauth.ECDSA.
+       •   Compute the serverSignature1 over serverSigned1 using the SK.XXauth.ECDSA.
 
    9. The SM-XX SHALL return the TransactionID, serverSigned1, serverSignature1,
        euiccCiPKIdToBeUsed and CERT.XXauth.ECDSA to the LPAd.
    10. The LPAd SHALL:
 
-          (Optional) Perform contextual operation depending on the procedure where this
+       •   (Optional) Perform contextual operation depending on the procedure where this
            call flow is used.
-          Verify that the SM-XX Address returned by the SM-XX matches the SM-XX
+       •   Verify that the SM-XX Address returned by the SM-XX matches the SM-XX
            Address that the LPAd has provided in step (6). If not, the LPA SHALL inform the
            End User and the procedure SHALL be stopped.
-          Generate a data structure, ctxParams1, to be given to the eUICC to be included in
+       •   Generate a data structure, ctxParams1, to be given to the eUICC to be included in
            signed data.
 
    11. The LPAd SHALL call "ES10b.AuthenticateServer" function with input data including
@@ -3316,16 +3316,16 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
        The eUICC SHALL also check the following:
 
-          Verify the serverSignature1 performed over serverSigned1.
+       •   Verify the serverSignature1 performed over serverSigned1.
 
 
 V2.4                                                                         Page 58 of 275
 GSM Association                                                                  Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-            Verify that euiccChallenge contained in serverSigned1 matches the one
+        •    Verify that euiccChallenge contained in serverSigned1 matches the one
              generated by the eUICC during step (3).
-            Verify that euiccCiPKIdToBeUsed is supported and related credentials are
+        •    Verify that euiccCiPKIdToBeUsed is supported and related credentials are
              available for signing.
 
         If any verification fails, the eUICC SHALL return a relevant error status and the
@@ -3334,9 +3334,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
    13. The eUICC SHALL:
 
-            Generate the euiccSigned1 data structure containing the TransactionID,
+        •    Generate the euiccSigned1 data structure containing the TransactionID,
              serverChallenge, eUICCInfo2 and ctxParams1.
-            Compute the euiccSignature1 over euiccSigned1 using SK.EUICC.ECDSA. When
+        •    Compute the euiccSignature1 over euiccSigned1 using SK.EUICC.ECDSA. When
              generating the euiccSignature1, the eUICC SHALL use credentials related to the
              euiccCiPKIdToBeUsed parameter received from the SM-XX.
 
@@ -3347,13 +3347,13 @@ Official Document SGP.22 - RSP Technical Specification v2.4
        CERT.EUM.ECDSA.
    16. On reception of the "ESXX.AuthenticateClient" function call, the SM-XX SHALL:
 
-            Correlate it with the "ESXX.InitiateAuthentication" function processed in step (7),
+        •    Correlate it with the "ESXX.InitiateAuthentication" function processed in step (7),
              by verifying the two TransactionIDs match.
-            Verify that the CERT.EUICC.ECDSA and CERT.EUM.ECDSA are valid as
+        •    Verify that the CERT.EUICC.ECDSA and CERT.EUM.ECDSA are valid as
              described in section 4.5.2.2.
-            Verify the euiccSignature1 performed over euiccSigned1 using the
+        •    Verify the euiccSignature1 performed over euiccSigned1 using the
              PK.EUICC.ECDSA contained in the CERT.EUICC.ECDSA.
-            Verify that serverChallenge contained in euiccSigned1 matches the one
+        •    Verify that serverChallenge contained in euiccSigned1 matches the one
              generated by the SM-XX during step (7).Verify that the SVN included in the
              euiccInfo2 is the same as the SVN which was delivered in the step (6).
 
@@ -3465,7 +3465,7 @@ In addition to the start conditions required by the common mutual authentication
 defined in section 3.1.2, this procedure requires the following start conditions depending on
 options in step 1:
 
-      If this procedure uses an Activation Code (option a):
+   •   If this procedure uses an Activation Code (option a):
 
               o The End User has an Activation Code that is coded as described in the
                 section 4.1.
@@ -3473,7 +3473,7 @@ options in step 1:
                 the Device capabilities, the LPAd SHALL support entry of the Activation
                 Code by manual typing and QR code scanning.
 
-      If this procedure uses an SM-DS (option b):
+   •   If this procedure uses an SM-DS (option b):
 
 
 V2.4                                                                           Page 61 of 275
@@ -3483,7 +3483,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
               o The LPAd has retrieved an SM-DP+ Address and EventID from the SM-
                 DS.
 
-      If this procedure uses a Default SM-DP+ (option c):
+   •   If this procedure uses a Default SM-DP+ (option c):
 
               o The LPAd has retrieved the Default SM-DP+ Address from the eUICC by
                 calling the "ES10a.GetEuiccConfiguredAddresses" function.
@@ -3523,10 +3523,10 @@ Procedure:
        build the ctxParams1 data object to provide the MatchingID, Device Info to the eUICC
        for signature. The value of the MatchingID SHALL be set as follows:
 
-          If an Activation Code is used, the MatchingID value SHALL be set to Activation
+       •   If an Activation Code is used, the MatchingID value SHALL be set to Activation
            Code Token.
-          If an SM-DS is used, the MatchingID value SHALL be set to EventID.
-          If a Default SM-DP+ is used, the MatchingID SHALL be missing.
+       •   If an SM-DS is used, the MatchingID value SHALL be set to EventID.
+       •   If a Default SM-DP+ is used, the MatchingID SHALL be missing.
 
    3. After having successfully authenticated the eUICC at the end of the step (2) above, the
       SM-DP+ SHALL:
@@ -3536,11 +3536,11 @@ V2.4                                                                            
 GSM Association                                                                  Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-          Verify that there is a related pending Profile download order for provided the
+       •   Verify that there is a related pending Profile download order for provided the
            MatchingID.
-          If this Profile download order is already linked to an EID, verify that it matches the
+       •   If this Profile download order is already linked to an EID, verify that it matches the
            EID of the authenticated eUICC.
-          Verify that the Profile corresponding to the pending Profile download order is in
+       •   Verify that the Profile corresponding to the pending Profile download order is in
            'Released' state, or, in case of a retry due to a previous installation failure, in
            'Downloaded' state (section 3.1.6).
 
@@ -3566,21 +3566,21 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
    5. If the eligibility check fails, the SM-DP+ SHALL:
 
-          Set the Profile corresponding with the pending Profile download order in 'Error'
+       •   Set the Profile corresponding with the pending Profile download order in 'Error'
            state (section 3.1.6).
 
-          Return an error status to the LPAd and the procedure SHALL be stopped.
+       •   Return an error status to the LPAd and the procedure SHALL be stopped.
 
        Otherwise, the SM-DP+ SHALL:
 
-          Determine whether the Profile is already bound to the EID from a previous
+       •   Determine whether the Profile is already bound to the EID from a previous
            unsuccessful download attempt. If so, the SMDP+ MAY include the
            otPK.eUICC.ECKA obtained in the previous session in the smdpSigned2 data
            structure.
-          Determine if a Confirmation Code is required for this pending order.
-          Generate a smdpSigned2 data structure containing the TransactionID and the
+       •   Determine if a Confirmation Code is required for this pending order.
+       •   Generate a smdpSigned2 data structure containing the TransactionID and the
            Confirmation Code Required Flag.
-          Compute the smdpSignature2 over smdpSigned2 and euiccSignature1 using the
+       •   Compute the smdpSignature2 over smdpSigned2 and euiccSignature1 using the
            SK.DPpb.ECDSA.
 
    6. The SM-DP+ returns the TransactionID, ProfileMetadata,                      smdpSigned2,
@@ -3672,8 +3672,8 @@ with the Sub-procedure "Profile Download and installation – Download confirmat
 This procedure can occur due to an End User rejection or timeout of a Profile download at
 the following steps of the protocol:
 
-         after the response to "ES9+.Authenticate Client" (section 3.1.3), and
-         after the response to "ES9+.GetBoundProfilePackage" (section 3.1.3.2).
+   •      after the response to "ES9+.Authenticate Client" (section 3.1.3), and
+   •      after the response to "ES9+.GetBoundProfilePackage" (section 3.1.3.2).
 
 The LPAd MAY provide additional places where the End User would be offered such
 possibility.
@@ -3765,9 +3765,9 @@ Procedure:
       'undefinedReason'.
    2. On reception of this function call, the eUICC SHALL:
 
-          Generate the euiccCancelSessionSigned data object containing the
+       •   Generate the euiccCancelSessionSigned data object containing the
            TransactionID and the reason provided by the LPAd.
-          Compute the euiccCancelSessionSignature over euiccCancelSessionSigned
+       •   Compute the euiccCancelSessionSignature over euiccCancelSessionSigned
            using the SK.EUICC.ECDSA corresponding to the euiccCiPKIdToBeUsed as
            received during the Common mutual authentication procedure.
 
@@ -3777,16 +3777,16 @@ Procedure:
       TransactionID, the euiccCancelSessionSigned and the euiccCancelSessionSignature.
    5. On reception of the "ES9+.CancelSession" function, the SM-DP+ SHALL:
 
-          Retrieve the on-going RSP session identified by the TransactionID. If the
+       •   Retrieve the on-going RSP session identified by the TransactionID. If the
            TransactionID is unknown, the SM-DP+ SHALL return a function execution status
            'Failed' with relevant status code. The LPAd MAY retry this step with a different
            TransactionID if the provided value was incorrect.
-          Verify the euiccCancelSessionSignature performed over
+       •   Verify the euiccCancelSessionSignature performed over
            euiccCancelSessionSigned using the PK.EUICC.ECDSA associated with the
            ongoing RSP session. If the signature is invalid, the SM-DP+ SHALL return a
            function execution status ‘Failed’ with relevant status code and the procedure
            SHALL be stopped by the LPAd.
-          Verify that the received smdpOid corresponds to the SM-DP+ (i.e. is the same
+       •   Verify that the received smdpOid corresponds to the SM-DP+ (i.e. is the same
            value as the one contained in the CERT.DPauth.ECDSA used during the
            Common Mutual Authentication Procedure). If the value doesn't match, the SM-
            DP+ SHALL return a function execution status 'Failed' with relevant status code
@@ -3931,8 +3931,8 @@ Procedure:
       installation procedure (section 3.1.3).
    2. On reception of the "ES10b.PrepareDownload" function, the eUICC SHALL:
 
-          Verify that CERT.DPpb.ECDSA is valid according to section 4.5.2.2.
-          Verify that CERT.DPauth.ECDSA and CERT.DPpb.ECDSA belong to the same
+       •   Verify that CERT.DPpb.ECDSA is valid according to section 4.5.2.2.
+       •   Verify that CERT.DPauth.ECDSA and CERT.DPpb.ECDSA belong to the same
            entity (i.e. same OID in, same subjectAltName).
 
 
@@ -3940,11 +3940,11 @@ V2.4                                                                          Pa
 GSM Association                                                                Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-          Verify smdpSignature2 performed over smdpSigned2 and euiccSignature1 using
+       •   Verify smdpSignature2 performed over smdpSigned2 and euiccSignature1 using
            the PK.DPpb.ECDSA contained in CERT.DPpb.ECDSA.
-          Verify that the TransactionID contained in smdpSigned2 matches the
+       •   Verify that the TransactionID contained in smdpSigned2 matches the
            TransactionID of the on-going RSP session.
-          Verify that the Hashed Confirmation Code is provided by the LPAd if the
+       •   Verify that the Hashed Confirmation Code is provided by the LPAd if the
            Confirmation Code Required Flag is set in smdpSigned2.
 
        If any of the verifications fail, the eUICC SHALL return a relevant error status and the
@@ -3952,15 +3952,15 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
    3. Otherwise the eUICC SHALL:
 
-          If bppEuiccOtpk is provided in smdpSigned2 and it corresponds to a stored one-
+       •   If bppEuiccOtpk is provided in smdpSigned2 and it corresponds to a stored one-
            time key pair (otPK.EUICC.ECKA, otSK.EUICC.ECKA) for this SM-DP+, the
            eUICC SHALL use this key pair for the RSP session. Otherwise it SHALL
            generate a new one-time key pair (otPK.EUICC.ECKA, otSK.EUICC.ECKA) using
            the curve indicated by the Key Parameter Reference Value of
            CERT.DPpb.ECDSA.
-          Generate the euiccSigned2 data structure containing the TransactionID,
+       •   Generate the euiccSigned2 data structure containing the TransactionID,
            otPK.EUICC.ECKA and optionally the Hashed Confirmation Code.
-          Compute the euiccSignature2 over euiccSigned2 and smdpSignature2 using
+       •   Compute the euiccSignature2 over euiccSigned2 and smdpSignature2 using
            SK.EUICC.ECDSA. When generating the euiccSignature2, the eUICC SHALL use
            the same private key as in the AuthenticateServer response.
 
@@ -3974,15 +3974,15 @@ Official Document SGP.22 - RSP Technical Specification v2.4
       the SM-DP+ SHALL continue at step 9.
    7. If a Confirmation Code verification is required, the SM-DP+ SHALL:
 
-          Retrieve the hashed Confirmation Code stored for this order by
+       •   Retrieve the hashed Confirmation Code stored for this order by
            "ES2.ConfirmOrder" and calculate the expected hash value as
 
             expected hash value =
             SHA256(stored hashed Confirmation Code | TransactionID)
 
-          Verify that the received Hashed Confirmation Code matches the expected hash
+       •   Verify that the received Hashed Confirmation Code matches the expected hash
            value.
-          In case the Confirmation Code verification has failed, the SM-DP+ SHALL
+       •   In case the Confirmation Code verification has failed, the SM-DP+ SHALL
            increment the count of Confirmation Code attempts for the Profile. If the maximum
            number of retries has been exceeded, the SM-DP+ SHALL set the Profile
            corresponding to the Profile download order in 'Error' state (section 3.1.6) and
@@ -4005,19 +4005,19 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
    9. Otherwise, the SM-DP+ SHALL perform the following:
 
-          If a re-usable BPP exists and the eUICC returned the corresponding
+       •   If a re-usable BPP exists and the eUICC returned the corresponding
            otPK.EUICC.ECKA, only the signature for InitialiseSecureChannel needs to be
            recalculated and the next steps can be skipped.
-          If the re-usable BPP exists and the eUICC returned a different
+       •   If the re-usable BPP exists and the eUICC returned a different
            otPK.EUICC.ECKA, the SM-DP+ SHALL either return an error to the LPAd and
            terminate the procedure, or re-bind the PPP as described in section 5.6.2.
-          If the Profile is not linked to the EID of the target eUICC, the SM-DP+ SHALL link
+       •   If the Profile is not linked to the EID of the target eUICC, the SM-DP+ SHALL link
            the Profile to the EID at this step.
-          Generate a one-time ECKA key pair (otPK.DP.ECKA, otSK.DP.ECKA) using the
+       •   Generate a one-time ECKA key pair (otPK.DP.ECKA, otSK.DP.ECKA) using the
            curve indicated by the Key Parameter Reference Value of CERT.DPpb.ECDSA.
-          Generate Session Keys using the CRT, otPK.eUCC.ECKA, and otSK.DP.ECKA
+       •   Generate Session Keys using the CRT, otPK.eUCC.ECKA, and otSK.DP.ECKA
            according to Annex G.
-          Prepare the Bound Profile Package according to the description given in section
+       •   Prepare the Bound Profile Package according to the description given in section
            2.5.4, including optionally the Profile Protection Keys (PPK).
 
    10. (Optional step) Depending on the agreed behaviour with the Operator (out of scope of
@@ -4035,15 +4035,15 @@ Official Document SGP.22 - RSP Technical Specification v2.4
    12. On reception of the SM-DP+ response, the LPAd MAY perform additional processing
        using the Profile Metadata contained within the Bound Profile Package:
 
-          If the LPAd previously used the Profile Metadata returned by
+       •   If the LPAd previously used the Profile Metadata returned by
            "ES9+.AuthenticateClient" (i.e., in step (7 and 8) of the procedure described in
            section 3.1.3), then
 
-              The LPAd SHALL verify that the Profile Policy Rules have not changed. If this
+           •   The LPAd SHALL verify that the Profile Policy Rules have not changed. If this
                verification fails, the LPAd SHALL execute the Sub-procedure "Profile
                Download and installation – Download Rejection" (section 3.1.3.1) with reason
                code 'PPR not allowed'.
-              The LPAd SHOULD verify that all other Profile Metadata elements it used in
+           •   The LPAd SHOULD verify that all other Profile Metadata elements it used in
                that earlier step (such as the Profile Name, Icon, etc.) have not changed. If the
 
 V2.4                                                                             Page 72 of 275
@@ -4055,10 +4055,10 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                  download by executing the Sub-procedure "Profile Download and installation –
                  Download Rejection" (section 3.1.3.1) with reason code 'Metadata mismatch'.
 
-             If the LPA has not previously captured the End User consent related to Profile
+          •   If the LPA has not previously captured the End User consent related to Profile
               Metadata and any Profile Policy Rules, as defined in section 3.1.3 step (8), it
               SHALL do so at this point.
-             The LPAd MAY display any relevant part of the Profile Metadata to help the End
+          •   The LPAd MAY display any relevant part of the Profile Metadata to help the End
               User identify the Profile to be installed during this transaction. Based on this
               information, the LPAd MAY offer the End User to postpone or reject the Profile
               installation. If the End User does not respond to the LPAd prompt within an
@@ -4215,10 +4215,10 @@ Official Document SGP.22 - RSP Technical Specification v2.4
       Profile Installation Result which was given by the eUICC in the step 6.
    8. On reception of the "ES9+.HandleNotification" function, the SM-DP+ SHALL:
 
-          Acknowledge the reception of the notification to the LPAd.
-          Retrieve the pending download order identified by the TransactionID. If
+       •   Acknowledge the reception of the notification to the LPAd.
+       •   Retrieve the pending download order identified by the TransactionID. If
            TransactionID is unknown, the SM-DP+ SHALL terminate its processing.
-          (Conditional) Terminate the pending download order and set the corresponding
+       •   (Conditional) Terminate the pending download order and set the corresponding
            Profile in state 'Installed' or 'Error' (section 3.1.6) as indicated by the Profile
            Installation Result.
 
@@ -4287,9 +4287,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 status reported by the eUICC. Examples of such failures during the download process
 include:
 
-         In the case of a removable eUICC card, the End User could remove the card.
-         The End User could switch off the power or remove the battery.
-         A software fault could cause a crash of the LPA, host Device, and/or baseband
+   •      In the case of a removable eUICC card, the End User could remove the card.
+   •      The End User could switch off the power or remove the battery.
+   •      A software fault could cause a crash of the LPA, host Device, and/or baseband
           processor.
 
 The LPA SHOULD provide an appropriate error indication to the End User when possible
@@ -4554,15 +4554,15 @@ Start Conditions:
 
 When the Profile to be enabled is an Operational Profile:
 
-      User Intent is acquired as defined in SGP.21 [4].
+   •   User Intent is acquired as defined in SGP.21 [4].
 
 When the Profile to be enabled is a Test Profile:
 
-      The Device is in Device Test Mode.
+   •   The Device is in Device Test Mode.
 
 When the Profile to be enabled is a Provisioning Profile:
 
-      The currently-enabled Operational Profile, if any, is unsuitable to provide the
+   •   The currently-enabled Operational Profile, if any, is unsuitable to provide the
        connectivity required for an operation such as Add Profile.
 
 
@@ -4758,7 +4758,7 @@ Start Conditions:
 
 When the Profile to be disabled is an Operational Profile:
 
-      User Intent is acquired as defined in SGP.21 [4].
+   •   User Intent is acquired as defined in SGP.21 [4].
 
 When the Profile to be disabled is a Test Profile:
 
@@ -4767,11 +4767,11 @@ V2.4                                                           Page 87 of 275
 GSM Association                                                                  Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-      The Device is in Device Test Mode.
+   •   The Device is in Device Test Mode.
 
 When the Profile to be disabled is a Provisioning Profile:
 
-      The operation requiring connectivity from the Provisioning Profile, such as a Profile
+   •   The operation requiring connectivity from the Provisioning Profile, such as a Profile
        download, has completed.
 
 Procedure:
@@ -4898,12 +4898,12 @@ Start Conditions:
 
 When the Profile to be deleted is an Operational Profile:
 
-         User Intent is acquired as defined in SGP.21 [4].
+      •   User Intent is acquired as defined in SGP.21 [4].
 
 When the Profile to be deleted is a Test Profile:
 
-         The Device is in Device Test Mode.
-         The Test Profile to be deleted is not a pre-loaded Test Profile, or the eUICC
+      •   The Device is in Device Test Mode.
+      •   The Test Profile to be deleted is not a pre-loaded Test Profile, or the eUICC
           implementation permits deletion of the preloaded Test Profiles.
 
 Procedure:
@@ -4965,7 +4965,7 @@ LPA -> EndUser: [3] Display List
 
 Start Conditions:
 
-       None.
+   •    None.
 
 Procedure:
 
@@ -5055,8 +5055,8 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 Start Conditions:
 
-       The download of a new Profile is allowed on the eUICC.
-       User Intent is acquired as defined in SGP.21 [4].
+   •    The download of a new Profile is allowed on the eUICC.
+   •    User Intent is acquired as defined in SGP.21 [4].
 
 Procedure:
 
@@ -5114,11 +5114,11 @@ Start Conditions:
 
 When the Profile to be renamed is an Operational Profile:
 
-         User Intent is acquiried as defined in SGP.21 [4].
+      •   User Intent is acquiried as defined in SGP.21 [4].
 
 When the Profile to be renamed is a Test Profile:
 
-         The Device is in Device Test Mode.
+      •   The Device is in Device Test Mode.
 
 Procedure:
 
@@ -5208,7 +5208,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 Start Conditions:
 
-       User Intent is acquired as defined in SGP.21 [4].
+   •    User Intent is acquired as defined in SGP.21 [4].
 
 Procedure:
 
@@ -5280,8 +5280,8 @@ LPAServices --> Baseband : [4] [REFRESH (mode)]
 
 Start Conditions:
 
-      The Device is in Test Mode
-      User Intent is acquiried as defined in SGP.21 [4].
+   •   The Device is in Test Mode
+   •   User Intent is acquiried as defined in SGP.21 [4].
 
 Procedure:
 
@@ -5353,7 +5353,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 Start Conditions:
 
-         User Intent is acquired as defined in SGP.21 [4].
+      •   User Intent is acquired as defined in SGP.21 [4].
 
 Procedure:
 
@@ -5450,8 +5450,8 @@ If there is no Enabled Profile on the eUICC, the eUICC SHALL ensure a default fi
 available to the Device. This file system SHALL contain at least the MF and MAY contain the
 MF-level EFs shown below.
 
-       EFENV-CLASSES
-       EFUMPC
+   •    EFENV-CLASSES
+   •    EFUMPC
 
 It SHALL not be possible to modify either file via ES6 of a Profile.
 
@@ -5489,11 +5489,11 @@ The specific point at which power-on Profile discovery occurs and the means by w
 LPA is launched to perform Profile discovery are Device-specific and out of the scope of this
 specification. It SHALL be performed if all of the following conditions are satisfied:
 
-       Power-on Profile discovery is appropriate for the class and usage of the Device. (For
+   •    Power-on Profile discovery is appropriate for the class and usage of the Device. (For
         example, this could be inappropriate for an open-market cellular-enabled notebook
         computer).
-       No Operational Profile is installed on the eUICC.
-       The value of the configuration parameter is 'Enabled'.
+   •    No Operational Profile is installed on the eUICC.
+   •    The value of the configuration parameter is 'Enabled'.
 
 
 
@@ -5529,12 +5529,12 @@ separately.
 
 A Notification is made up of the following fields:
 
-         Sequence Number (generated by the eUICC)
-         Profile Management Operation (i.e. the event whose occurrence SHALL be notified)
-         Recipient Address
-         ICCID
-         Additional data in case of a Profile Installation Result, see section 2.5.6
-         eUICC signature
+      •   Sequence Number (generated by the eUICC)
+      •   Profile Management Operation (i.e. the event whose occurrence SHALL be notified)
+      •   Recipient Address
+      •   ICCID
+      •   Additional data in case of a Profile Installation Result, see section 2.5.6
+      •   eUICC signature
 
 Sequence Number is used to protect the recipient against replay attacks. Each time a new
 Notification is generated by the eUICC, the Sequence Number SHALL be incremented.
@@ -5548,8 +5548,8 @@ of the Notification, has been performed. ICCID SHALL be set if known by the eUIC
 Each Profile Metadata MAY contain Notification Configuration Information for Other
 Notifications, made up of the following:
 
-         Profile Management Operation
-         Recipient Address
+      •   Profile Management Operation
+      •   Recipient Address
 
 
 
@@ -5910,16 +5910,16 @@ Procedure:
           MatchingID and Device Info to the eUICC for signature. The value of the MatchingID
           SHALL be set as follows:
 
-              For case a), the MatchingID SHALL be missing.
-              For case b), the MatchingID value SHALL be set to the EventID found in the
+          •    For case a), the MatchingID SHALL be missing.
+          •    For case b), the MatchingID value SHALL be set to the EventID found in the
                Event Record that LPAd is processing.
 
    2. After having successfully authenticated the eUICC at the end of the step (1), the SM-DS
       SHALL check if there are pending Event Records matching the following criteria:
 
-              If MatchingID is missing, the EID in an Event Record matches the EID in the
+          •    If MatchingID is missing, the EID in an Event Record matches the EID in the
                CERT.EUICC.ECDSA obtained during step (1) (Case a)).
-              If MatchingID has a non-empty value: the EventID2 and the EID in an Event
+          •    If MatchingID has a non-empty value: the EventID2 and the EID in an Event
                Record match the EventID in the MatchingID and the EID in the
                CERT.EUICC.ECDSA obtained during step(1) (case b)).
 
@@ -6116,15 +6116,15 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 Examples of the Activation Code are as follows:
 
-       1$SMDP.GSMA.COM$04386-AGYFT-A74Y8-3F815
+   •    1$SMDP.GSMA.COM$04386-AGYFT-A74Y8-3F815
         (if SM-DP+ OID and Confirmation Code Required Flag are not present)
-       1$SMDP.GSMA.COM$04386-AGYFT-A74Y8-3F815$$1
+   •    1$SMDP.GSMA.COM$04386-AGYFT-A74Y8-3F815$$1
         (if SM-DP+ OID is not present and Confirmation Code Required Flag is present)
-       1$SMDP.GSMA.COM$04386-AGYFT-A74Y8-3F815$1.3.6.1.4.1.31746$1
+   •    1$SMDP.GSMA.COM$04386-AGYFT-A74Y8-3F815$1.3.6.1.4.1.31746$1
         (if SM-DP+ OID and Confirmation Code Required flag are present)
-       1$SMDP.GSMA.COM$04386-AGYFT-A74Y8-3F815$1.3.6.1.4.1.31746
+   •    1$SMDP.GSMA.COM$04386-AGYFT-A74Y8-3F815$1.3.6.1.4.1.31746
         (If SM-DP+ OID is present and Confirmation Code Required Flag is not present)
-       1$SMDP.GSMA.COM$$1.3.6.1.4.1.31746
+   •    1$SMDP.GSMA.COM$$1.3.6.1.4.1.31746
         (If SM-DP+ OID is present, Activation token is left blank and Confirmation Code
         Required Flag is not present)
 
@@ -6146,9 +6146,9 @@ The format and content of the MatchingID is subject to the following constraints
 The MatchingID, when not a zero-length value, SHALL be a unique identifier in the context
 of the Operator and the SM-DP+ to:
 
-       Match a download order initiated by the Operator with a Profile Download request
+   •    Match a download order initiated by the Operator with a Profile Download request
         coming from an LPD.
-       As a protection for the SM-DP+: the SM-DP+ SHALL only process requests
+   •    As a protection for the SM-DP+: the SM-DP+ SHALL only process requests
         containing a MatchingID known to the SM-DP+ (and therefore inherently valid).
 
 It SHALL consist only of upper case alphanumeric characters (0-9, A-Z) and the "-" in any
@@ -6177,16 +6177,16 @@ or ignore this information at their discretion.
 
 Device Information includes:
 
-         Device type allocation code: TAC
-         Device capabilities: The Device SHALL set all the capabilities it supports
+      •   Device type allocation code: TAC
+      •   Device capabilities: The Device SHALL set all the capabilities it supports
 
-             Radio access technologies, including release.
-             Contactless: the SWP and HCI interfaces as well as the associated APIs
-             Optional RSP functions supported:
+          •   Radio access technologies, including release.
+          •   Contactless: the SWP and HCI interfaces as well as the associated APIs
+          •   Optional RSP functions supported:
 
-                 Update CRL on the eUICC
+              •   Update CRL on the eUICC
 
-         IMEI (optional)
+      •   IMEI (optional)
 
 Device Information
 
@@ -6230,16 +6230,16 @@ V2.4                                                                            
 GSM Association                                                                Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-       gsmSupportedRelease – if GSM/GERAN is supported, this SHALL be the highest
+   •    gsmSupportedRelease – if GSM/GERAN is supported, this SHALL be the highest
         3GPP release N fully supported by the device, encoded as the octet string {N, 0, 0}. If
         GSM/GERAN is not supported this SHALL not be present.
-       utranSupportedRelease – if UMTS/UTRAN is supported, this SHALL be the highest
+   •    utranSupportedRelease – if UMTS/UTRAN is supported, this SHALL be the highest
         3GPP release N fully supported by the device, encoded as the octet string {N, 0, 0}. If
         UMTS/UTRAN is not supported this SHALL not be present.
-       cdma2000onexSupportedRelease – if cdma2000 1X is supported, this SHALL be
+   •    cdma2000onexSupportedRelease – if cdma2000 1X is supported, this SHALL be
         encoded as the octet string {1, 0, 0}. If cdma2000 1X is not supported this SHALL not
         be present.
-       cdma2000hrpdSupportedRelease – if cdma2000 HRPD is supported, this SHALL
+   •    cdma2000hrpdSupportedRelease – if cdma2000 HRPD is supported, this SHALL
         be encoded as the octet string {R, 0, 0}. If cdma2000 HRPD is not supported this
         SHALL not be present. The value R SHALL represent the EVDO revision as follows:
 
@@ -6247,17 +6247,17 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                o Rev A SHALL be encoded as 2
                o Rev B SHALL be encoded as 3
 
-       cdma2000ehrpdSupportedRelease – if cdma2000 eHRPD, is supported this SHALL
+   •    cdma2000ehrpdSupportedRelease – if cdma2000 eHRPD, is supported this SHALL
         be the highest 3GPP release N fully supported by the device, encoded as the octet
         string {N, 0, 0}. If cdma2000 eHRPD is not supported this SHALL not be present.
-       eutranEpcSupportedRelease – if LTE/E-UTRAN using a 4G core network (Evolved
+   •    eutranEpcSupportedRelease – if LTE/E-UTRAN using a 4G core network (Evolved
         Package Core) is supported, this SHALL be the highest 3GPP release N fully
         supported by the device, encoded as the octet string {N, 0, 0}. If LTE/E-UTRAN is not
         supported this SHALL not be present.
-       contactlessSupportedRelease – if NFC is supported, this SHALL be the highest
+   •    contactlessSupportedRelease – if NFC is supported, this SHALL be the highest
         (version, revision) number of TS.26 [40], encoded as the octet string {version,
         revision, 0}. If NFC is not supported this SHALL not be present.
-       rspCrlSupportedVersion – if load eUICC CRL as defined in section 5.7.12 is
+   •    rspCrlSupportedVersion – if load eUICC CRL as defined in section 5.7.12 is
         supported, this SHALL be the highest SGP.22 release number supported by the
         device. If this function is not supported, this field SHALL not be present.
 
@@ -6269,11 +6269,11 @@ NOTE:         If LPA sends the following fields to an eUICC that does not indica
              deviceInfoExtensibilitySupport, the eUICC may reject them (see also
              section 2.8).
 
-       nrEpcSupportedRelease – if NR (5G New Radio) using a 4G core network (Evolved
+   •    nrEpcSupportedRelease – if NR (5G New Radio) using a 4G core network (Evolved
         Packet Core) is supported, this SHALL be the highest 3GPP release N fully
         supported by the device, encoded as the octet string {N, 0, 0}. If NR using a 4G core
         network is not supported this SHALL NOT be present.
-       nr5gcSupportedRelease – if NR using a 5G core network is supported, this SHALL
+   •    nr5gcSupportedRelease – if NR using a 5G core network is supported, this SHALL
         be the highest 3GPP release N fully supported by the device, encoded as the octet
         string {N, 0, 0}. If NR using a 5G core network is not supported this SHALL NOT be
         present.
@@ -6284,7 +6284,7 @@ V2.4                                                                           P
 GSM Association                                                                     Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-         eutran5gcSupportedRelease – if LTE/E-UTRAN using a 5G core network is
+      •   eutran5gcSupportedRelease – if LTE/E-UTRAN using a 5G core network is
           supported, this SHALL be the highest 3GPP release N fully supported by the device,
           encoded as the octet string {N, 0, 0}. If LTE/E-UTRAN using a 5G core network is not
           supported this SHALL NOT be present.
@@ -6297,37 +6297,37 @@ information either in preparation of the Profile download, or at any time in ord
 eUICC firmware versions, available non-volatile memory and eUICC capabilities for the
 Device. eUICC information SHALL be generated by the eUICC and is intended to be signed:
 
-         eUICC Profile Package Version: Indicates the highest 2.x version number of the
+      •   eUICC Profile Package Version: Indicates the highest 2.x version number of the
           eUICC Profile Package: Interoperable Format Technical Specification [5] supported
           by the eUICC.
-         Additional eUICC Profile Package Versions: Optionally indicates additional higher
+      •   Additional eUICC Profile Package Versions: Optionally indicates additional higher
           version number(s) of the eUICC Profile Package: Interoperable Format Technical
           Specification [5] supported by the eUICC.SVN: Indicates the highest Specification
           Version Number of this specification supported by the eUICC. The SVN SHALL have
           the same three digit number as the highest supported specification version. Example
           of value: '2.0.0'.
-         Firmware version: indicates the version information of the eUICC’s platform and the
+      •   Firmware version: indicates the version information of the eUICC’s platform and the
           OS, defined as for the EID in SGP.02 [2]. This value is issuer specific.
-         Available amount of non-volatile memory: Indicates the current total available
+      •   Available amount of non-volatile memory: Indicates the current total available
           memory for Profile download and installation. The value is expressed in bytes.
-         UICC capabilities: Contains the UICC capabilities supported by the eUICC.
-         Java card version: optional, indicates the latest version of ETSI TS 102 241 [53], if
+      •   UICC capabilities: Contains the UICC capabilities supported by the eUICC.
+      •   Java card version: optional, indicates the latest version of ETSI TS 102 241 [53], if
           supported by the eUICC.
-         GlobalPlatform version: optional, indicates the latest version of GlobalPlatform Card
+      •   GlobalPlatform version: optional, indicates the latest version of GlobalPlatform Card
           Specification [8] supported by the eUICC, if different from the one referenced in this
           specification.
-         RSP capabilities: Contains the optional RSP capabilities supported by the eUICC.
-         List of supported GSMA CI Key Identifiers for RSP Server signature verification.
-         List of GSMA CI Key Identifiers for which eUICC has a signed certificate that can be
+      •   RSP capabilities: Contains the optional RSP capabilities supported by the eUICC.
+      •   List of supported GSMA CI Key Identifiers for RSP Server signature verification.
+      •   List of GSMA CI Key Identifiers for which eUICC has a signed certificate that can be
           used for signature verification by the RSP Server.
-         Category: optional, indicates the eUICC category as described below.
+      •   Category: optional, indicates the eUICC category as described below.
 
                 Category
                 Basic eUICCs SHALL be compliant with at least the following features:
-                   Memory size available when no Profiles are installed (EEPROM) :
+                  • Memory size available when no Profiles are installed (EEPROM) :
                     64kB
-                   ISO interface PPS 96
-                   BIP over HTTPS features
+                  • ISO interface PPS 96
+                  • BIP over HTTPS features
 
 
 
@@ -6337,29 +6337,29 @@ V2.4                                                                            
 Official Document SGP.22 - RSP Technical Specification v2.4
 
              Medium eUICCs SHALL be compliant with at least the following features:
-                 Memory size available when no Profiles are installed (EEPROM) :
+                • Memory size available when no Profiles are installed (EEPROM) :
                   384kB
-                 ISO interface PPS 97
-                 BIP over HTTPS features
-                 Processor >= 25MHz
-                 Crypto processor >= 100MHz
-                 Memory Protection Unit
+                • ISO interface PPS 97
+                • BIP over HTTPS features
+                • Processor >= 25MHz
+                • Crypto processor >= 100MHz
+                • Memory Protection Unit
 
              Contactless eUICCs SHALL be compliant with at least the following
              features:
-                 Memory size available when no Profiles are installed (EEPROM) :
+                • Memory size available when no Profiles are installed (EEPROM) :
                   1024kB
-                 ISO interface PPS 97
-                 BIP over HTTPS features
-                 Processor >= 25MHz
-                 Crypto processor >= 100MHz
-                 Memory Protection Unit
-                 In combination with an appropriate enabled Operational NFC
+                • ISO interface PPS 97
+                • BIP over HTTPS features
+                • Processor >= 25MHz
+                • Crypto processor >= 100MHz
+                • Memory Protection Unit
+                • In combination with an appropriate enabled Operational NFC
                   Profile, a contactless eUICC SHALL support all requirements
                   specified in the SGP.03 GSMA NFC UICC Requirements
                   Specification [55]
-       TRE properties.
-       TRE product reference.
+   •    TRE properties.
+   •    TRE product reference.
 
 
 
@@ -6379,7 +6379,7 @@ of this specification and to all versions of SGP.02 [2].
 
 The following rules will maximise the interoperability between the different versions:
 
-       An EUM generating EIDs according to SGP.29 [89] SHOULD get an EUM certificate
+   •    An EUM generating EIDs according to SGP.29 [89] SHOULD get an EUM certificate
         where the first 8 digits of the EIDs are fixed and listed as IIN in NameConstraints
         extension of the certificate.
 
@@ -6390,7 +6390,7 @@ V2.4                                                                            
 GSM Association                                                                  Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-         An EUM with an EIN longer than 8 digits SHOULD only generate EIDs if it is
+      •   An EUM with an EIN longer than 8 digits SHOULD only generate EIDs if it is
           acceptable that the EIN is not uniquely identifiable in the NameConstraints extension
           of the certificate.
 
@@ -6413,18 +6413,18 @@ which are out of scope of this specification.
 
 Profile Metadata includes:
 
-         ICCID of the Profile
-         Profile Name (corresponds to "Short description" in SGP.21 [4]) as a plain text
+      •   ICCID of the Profile
+      •   Profile Name (corresponds to "Short description" in SGP.21 [4]) as a plain text
           information: content free information defined by the Operator/Service Provider
-         Operator/Service Provider name, as a plain text information: content free information
+      •   Operator/Service Provider name, as a plain text information: content free information
           defined by the Service Provider (e.g. 'Orange', 'AT&T'…)
-         End User’s Profile Nickname
-         Icon
-         Profile Class: indicates the sort of profile among the defined values: 'Test',
+      •   End User’s Profile Nickname
+      •   Icon
+      •   Profile Class: indicates the sort of profile among the defined values: 'Test',
           'Operational' and 'Provisioning' (section 4.4.1)
-         Notification Configuration Information, defined in section 3.5 "Notifications"
-         Profile owner, including MCC, MNC, GID1 and GID2 if the Profile is not PIN protected
-         Profile Policy Rules (PPRs). See section 2.9.1 and 4.4.2
+      •   Notification Configuration Information, defined in section 3.5 "Notifications"
+      •   Profile owner, including MCC, MNC, GID1 and GID2 if the Profile is not PIN protected
+      •   Profile Policy Rules (PPRs). See section 2.9.1 and 4.4.2
 
 Profile Metadata is merely to be displayed to the End User to provide information about the
 Profile to be installed. But it is out of scope of this implementation what the LPA does exactly
@@ -6510,16 +6510,16 @@ specification supports X.509 certificate format as defined in Section 4.5.2.1.
 
 The following certificates SHALL be signed and issued by a GSMA CI:
 
-       GSMA CI Certificate (CERT.CI.ECDSA)
-       EUM Certificates (CERT.EUM.ECDSA)
-       SM-DP+ Certificate (CERT.DPauth.ECDSA and CERT.DPpb.ECDSA)
-       SM-DP+ TLS Certificate (CERT.DP.TLS)
-       SM-DS Certificate (CERT.DSauth.ECDSA)
-       SM-DS TLS Certificate (CERT.DS.TLS)
+   •    GSMA CI Certificate (CERT.CI.ECDSA)
+   •    EUM Certificates (CERT.EUM.ECDSA)
+   •    SM-DP+ Certificate (CERT.DPauth.ECDSA and CERT.DPpb.ECDSA)
+   •    SM-DP+ TLS Certificate (CERT.DP.TLS)
+   •    SM-DS Certificate (CERT.DSauth.ECDSA)
+   •    SM-DS TLS Certificate (CERT.DS.TLS)
 
 The following certificate SHALL be signed and issued by the EUM:
 
-       eUICC Certificate (CERT.EUICC.ECDSA)
+   •    eUICC Certificate (CERT.EUICC.ECDSA)
 
 Even though each eUICC SHALL support at least two sets of elliptic curve parameters
 (section 2.6.7.1), which can be chosen from by an RSP server for its signatures and ECKA,
@@ -6595,9 +6595,9 @@ This section describes the X.509 certificate profile. Those Certificates SHALL f
 
 In particular:
 
-         'Issuer' and 'Subject' fields SHALL be limited to standard attributes defined in ITU-T
+   •      'Issuer' and 'Subject' fields SHALL be limited to standard attributes defined in ITU-T
           X.520 [24] and RFC 4519 [28].
-         Certificates SHALL contain all extensions defined in their respective profile, except if
+   •      Certificates SHALL contain all extensions defined in their respective profile, except if
           stated otherwise.
 
 Entities SHALL perform Certificate verification according to section 4.5.2.2.
@@ -7020,17 +7020,17 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 All the field values of the CERT.DPauth.ECDSA and CERT.DPpb.ECDSA SHALL be
 identical except for the following fields:
 
-      serialNumber
-      extension (extnValue=id-ce-certificatePolicies)
-      subjectPublicKeyInfo
+   •   serialNumber
+   •   extension (extnValue=id-ce-certificatePolicies)
+   •   subjectPublicKeyInfo
 
 
 V2.4                                                                                Page 130 of 275
 GSM Association                                                                     Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-        signatureValue
-        extension (extnID = id-ce-subjectKeyIdentifier)
+   •     signatureValue
+   •     extension (extnID = id-ce-subjectKeyIdentifier)
 
 4.5.2.1.0.5       SM-DP+ TLS
  Field                 Value Description
@@ -7302,27 +7302,27 @@ X9-62(10045) keyType(2) ecPublicKey(1)" as defined in RFC 5480.
 
 'AlgorithmIdentifier.parameters' field SHALL be set to:
 
-      for BrainpoolP256r1: "iso(1) identified-organization(3) teletrust(36) algorithm(3)
+   •   for BrainpoolP256r1: "iso(1) identified-organization(3) teletrust(36) algorithm(3)
        signatureAlgorithm(3) ecSign(2) ecStdCurvesAndGeneration(8) ellipticCurve(1)
        versionOne(1) brainpoolP256r1(7)" as defined in RFC 5639 [18]
-      for NIST P-256: "iso(1) member-body(2) us(840) ansi-X9-62(10045) curves(3)
+   •   for NIST P-256: "iso(1) member-body(2) us(840) ansi-X9-62(10045) curves(3)
        prime(1) prime256v1(7)" as defined in RFC 5480 [27]
-      For FRP256V1: "iso(1) member-body(2) fr(250) type-org(1) 223 101 256 1" as
+   •   For FRP256V1: "iso(1) member-body(2) fr(250) type-org(1) 223 101 256 1" as
        defined in ANSSI ECC [20]
 
 For sections 'signature' and 'signatureAlgorithm' the following settings SHALL apply:
 
-      'AlgorithmIdentifier.algorithm' field SHALL be set to: "iso(1) member-body(2) us(840)
+   •   'AlgorithmIdentifier.algorithm' field SHALL be set to: "iso(1) member-body(2) us(840)
        ansi-X9-62(10045) signatures(4) ecdsa-with-SHA2(3) ecdsa-with-SHA256(2)" as
        defined in RFC 5758 [25] and RFC 5759 [26]
-      'AlgorithmIdentifier.parameters' field SHALL be omitted as defined in RFC 5758 [25]
+   •   'AlgorithmIdentifier.parameters' field SHALL be omitted as defined in RFC 5758 [25]
        section 3.2.
 
               Extension CRL Distribution Points
 This specification defines a single DistributionPoint for retrieving the two forms of the CRL:
 
-      The standard CRL form as defined in RFC 5280 [17]
-      A segmented CRL form as defined in section 4.6.1 to fit the limited capabilities of the
+   •   The standard CRL form as defined in RFC 5280 [17]
+   •   A segmented CRL form as defined in section 4.6.1 to fit the limited capabilities of the
        eUICC. This form SHALL be available when the standard form encoded size exceed
        the size defined in section 4.6.1. In that form, the CRL is segmented into several
        segments, each segment signed independently.
@@ -7372,7 +7372,7 @@ The SM-DP+ and SM-DS SHOULD verify the consistency of the IINs and EID as restri
 in the EUM and eUICC Certificates (see sections 4.5.2.1.0.2 and 4.5.2.1.0.3), with the
 following considerations on SGP.29 [89].
 
-         EIDs issued according to SGP.29 [89] do not have an 8-digit IIN as defined in
+   •      EIDs issued according to SGP.29 [89] do not have an 8-digit IIN as defined in
           SGP.02 [2]. Instead, they have a variable-length EUM Identification Number (EIN).
           Therefore:
           o If the EIN is 8 digits long, then the Name Constraint exactly matches the EIN.
@@ -7391,7 +7391,7 @@ operation for which it was used, SHALL be rejected.
 
 Every certificate SHALL:
 
-         Have a valid signature.
+   •      Have a valid signature.
 
 
 
@@ -7399,7 +7399,7 @@ V2.4                                                                            
 GSM Association                                                                 Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-      Be signed by a GSMA CI, or a trusted chain up to a GSMA CI, except TLS certificates
+   •   Be signed by a GSMA CI, or a trusted chain up to a GSMA CI, except TLS certificates
        that MAY instead chain to a Public CA (see NOTE). Certificate path validation SHALL
        follow the process defined in RFC 5280 [17], using the Subject Key Identifier and
        Authority Key Identifier fields. As a consequence Certificates SHALL have the
@@ -7410,12 +7410,12 @@ Official Document SGP.22 - RSP Technical Specification v2.4
        LPA verifies TLS certificates of SM-XX that is compliant to the future release of the
        specification.
 
-      Not have been revoked, and no certificate in the trust chain has been revoked (It
+   •   Not have been revoked, and no certificate in the trust chain has been revoked (It
        should be noted that the eUICC might not support certificate revocation or might not
        have been provided with the latest CRL to perform this verification).
-      Not have expired (It should be noted that the eUICC and the Device might not have
+   •   Not have expired (It should be noted that the eUICC and the Device might not have
        reliable access to the current time to perform this verification).
-      Have all the 'critical' extension defined for its profile.
+   •   Have all the 'critical' extension defined for its profile.
 
 When the LPA verifies SM-XX TLS certificates, it is optional to verify the restrictions given in
 the rest of this section. For any other cases, in addition to the above verifications, and
@@ -7423,15 +7423,15 @@ specifically to those certificates, verifiers of certificates SHALL verify the f
 
 CERT.EUICC.ECDSA:
 
-      The extension 'Key usage' SHALL be set with the value 'digitalSignature'.
-      The extension 'Certificate Policies' SHALL be set with the OID 'id-rspRole-euicc' to
+   •   The extension 'Key usage' SHALL be set with the value 'digitalSignature'.
+   •   The extension 'Certificate Policies' SHALL be set with the OID 'id-rspRole-euicc' to
        indicate an eUICC Certificate.
-      Verify that the 'subject' field complies to the 'Name constraints' extension contained in
+   •   Verify that the 'subject' field complies to the 'Name constraints' extension contained in
        the CERT.EUM.ECDSA:
 
-          'organization' attribute value SHALL be one of the possible organization names
+       •   'organization' attribute value SHALL be one of the possible organization names
            contained in the 'Name constraints'
-          'serialNumber' attribute value (containing EID) SHALL start with an IIN (1st to 8th
+       •   'serialNumber' attribute value (containing EID) SHALL start with an IIN (1st to 8th
            digits) corresponding to the respective organization name contained in the 'Name
            constraints'
 
@@ -7439,16 +7439,16 @@ CERT.EUICC.ECDSA:
 
 CERT.EUM.ECDSA:
 
-      The extension 'Key usage' SHALL be set with the value 'keyCertSign'.
-      The extension 'Certificate Policies' SHALL be set with the OID 'id-rspRole-eum' to
+   •   The extension 'Key usage' SHALL be set with the value 'keyCertSign'.
+   •   The extension 'Certificate Policies' SHALL be set with the OID 'id-rspRole-eum' to
        indicate an EUM Certificate.
-      The extension 'Basic Constraints' SHALL be set to cA=true. The path length
+   •   The extension 'Basic Constraints' SHALL be set to cA=true. The path length
        restriction SHALL be set to 0.
 
 CERT.DPauth.ECDSA / CERT.DPpb.ECDSA:
 
-      The extension 'Key usage' SHALL be set with the value 'digitalSignature'.
-      The extension 'Certificate Policies' SHALL be set with one of the following OID:
+   •   The extension 'Key usage' SHALL be set with the value 'digitalSignature'.
+   •   The extension 'Certificate Policies' SHALL be set with one of the following OID:
 
 V2.4                                                                            Page 138 of 275
 GSM Association                                                                   Non-confidential
@@ -7458,28 +7458,28 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                    with the eUICC.
                  o 'id-rspRole-dp-pb' to indicate an SM-DP+ Certificate for profile binding.
 
-         The extension 'subjectAltName' SHALL be set with the SM-DP+ OID.
+      •   The extension 'subjectAltName' SHALL be set with the SM-DP+ OID.
 
 CERT.DP.TLS:
 
-         The extension 'Key usage' SHALL be set to 'digitalSignature (0)'.
-         The extension 'extended key usage' SHALL be set to 'id-kp-serverAuth' and
+      •   The extension 'Key usage' SHALL be set to 'digitalSignature (0)'.
+      •   The extension 'extended key usage' SHALL be set to 'id-kp-serverAuth' and
           'id-kp-clientAuth', and no other extended key usage.
-         The extension 'Certificate Policies', if present, SHALL be set with the OID 'id-rspRole-
+      •   The extension 'Certificate Policies', if present, SHALL be set with the OID 'id-rspRole-
           dp-tls' to indicate an SM-DP+ Certificate for TLS.
 
 CERT.DSauth.ECDSA:
 
-         The extension 'Key usage' SHALL be set with the value 'digitalSignature'.
-         The extension 'Certificate Policies' SHALL be set with the OID 'id-rspRole-ds-auth' to
+      •   The extension 'Key usage' SHALL be set with the value 'digitalSignature'.
+      •   The extension 'Certificate Policies' SHALL be set with the OID 'id-rspRole-ds-auth' to
           indicate an SM-DS Certificate for authentication with the eUICC.
 
 CERT.DS.TLS:
 
-         The extension 'key usage' SHALL be set to 'digitalSignature (0)'.
-         The extension 'extended key usage' SHALL be set to 'id-kp-serverAuth' and
+      •   The extension 'key usage' SHALL be set to 'digitalSignature (0)'.
+      •   The extension 'extended key usage' SHALL be set to 'id-kp-serverAuth' and
           'id-kp-clientAuth', and no other extended key usage.
-         The extension 'Certificate Policies', if present, SHALL be set with the OID 'id-rspRole-
+      •   The extension 'Certificate Policies', if present, SHALL be set with the OID 'id-rspRole-
           ds-tls' to indicate an SM-DS Certificate for TLS.
 
 4.6       Certificate Revocation List
@@ -7661,10 +7661,10 @@ PartialCrlNumber ::= INTEGER
 4.6.3    eUICC Considerations
 The eUICC faces two general issues regarding time management and CRL.
 
-       The eUICC does not have any time reference internally and can only rely on time
+   •    The eUICC does not have any time reference internally and can only rely on time
         provided from an off-card entity (with the question on reliability of this information).
         This limitation prevents the eUCC to verify that a certificate has expired.
-       The eUICC is in general very constrained with regard to its non-volatile memory size.
+   •    The eUICC is in general very constrained with regard to its non-volatile memory size.
         But the list of revoked certificate is expected to be growing continually. This may be a
 
 
@@ -7720,7 +7720,7 @@ Provides the description of the interfaces and functions within the Remote SIM P
 and Management system involving the eUICC, including the following:
 
 eUICC Interfaces
-    ES6: The interface used by the Operator to manage the content of their Profile.
+   • ES6: The interface used by the Operator to manage the content of their Profile.
 
 
 
@@ -7728,31 +7728,31 @@ V2.4                                                                           P
 GSM Association                                                                  Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-      ES8+: Provides a secure end-to-end channel between the SM-DP+ and the eUICC
+   •   ES8+: Provides a secure end-to-end channel between the SM-DP+ and the eUICC
        for the administration of the ISD-P and the associated Profile during download and
        installation.
-      ES9+: Used to provide a secure transport between the SM-DP+ and the LPAe
+   •   ES9+: Used to provide a secure transport between the SM-DP+ and the LPAe
        (LPDe) for the delivery of the Profile Package.
-      ES10a: Used by the LPAd to get the configured addresses from the eUICC for Root
+   •   ES10a: Used by the LPAd to get the configured addresses from the eUICC for Root
        SM-DS, and optionally the default SM-DP+.
-      ES10b: Used by the LPAd to transfer a Profile Package to the eUICC.
-      ES10c: Used by the LPAd for local End User management of Profiles installed on the
+   •   ES10b: Used by the LPAd to transfer a Profile Package to the eUICC.
+   •   ES10c: Used by the LPAd for local End User management of Profiles installed on the
        eUICC (e.g. Enable, Disable, Delete).
-      ES11: Interface between the LPAe and an SM-DS (Alternative SM-DS or Root SM-
+   •   ES11: Interface between the LPAe and an SM-DS (Alternative SM-DS or Root SM-
        DS) for the Event retrieval.
 
 Server to Server Interfaces
-    ES2+: Interface between the Operator and the SM-DP+ used by the Operator to
+   • ES2+: Interface between the Operator and the SM-DP+ used by the Operator to
       order Profile Package preparation.
-    ES12: Interface between the SM-DP+ and an SM-DS (Alternative SM-DS or Root
+   • ES12: Interface between the SM-DP+ and an SM-DS (Alternative SM-DS or Root
       SM-DS) for the Event management.
-    ES15: Interface between an Alternative SM-DS and the Root SM-DS for the Event
+   • ES15: Interface between an Alternative SM-DS and the Root SM-DS for the Event
       management.
 
 Device to Server Interfaces
-   ES9+: Used to provide a secure transport between the SM-DP+ and the LPAd
+  • ES9+: Used to provide a secure transport between the SM-DP+ and the LPAd
       (LPDd) for the delivery of the Profile Package.
-   ES11: Interface between the LPAd and an SM-DS (Alternative SM-DS or Root SM-
+  • ES11: Interface between the LPAd and an SM-DS (Alternative SM-DS or Root SM-
       DS) for the Event retrieval.
 
 ESop (interface between the End User and the Operator), ESeum (Interface between the
@@ -7914,7 +7914,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 5.2.2      Request-Response Function
 As defined in SGP.02 [2] subject to the following constraint:
 
-         The Validity Period defined in SGP.02 [2] is not used in this specification.
+   •      The Validity Period defined in SGP.02 [2] is not used in this specification.
 
 5.2.3      Notification Handler Function
 As defined in SGP.02 [2].
@@ -8125,11 +8125,11 @@ the EID SHALL be provided later in "ES2+.ConfirmOrder".
 
 Upon reception of this function call, the SM-DP+ SHALL:
 
-         Reserve an ICCID in its inventory. If the ICCID was provided as input data, the
+      •   Reserve an ICCID in its inventory. If the ICCID was provided as input data, the
           reservation SHALL use this value. Otherwise the reservation SHALL be done
           corresponding to the requested Profile Type with a value available in the SM-DP+'s
           inventory.
-         Optionally, if not already done, the SM-DP+ performs the 'Profile generation' and
+      •   Optionally, if not already done, the SM-DP+ performs the 'Profile generation' and
           'Profile protection' steps, as described in section 2.5.3, for the Profile identified by its
           ICCID.
 
@@ -8138,7 +8138,7 @@ V2.4                                                                            
 GSM Association                                                                          Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-         If the EID is known, the ICCID is linked to this EID and the Profile state SHALL be set
+      •   If the EID is known, the ICCID is linked to this EID and the Profile state SHALL be set
           to "Linked". Otherwise, the Profile state SHALL be set to "Allocated".
 
 The SM-DP+ MAY perform additional operations, which are out of scope of this
@@ -8146,9 +8146,9 @@ specification.
 
 This function SHALL return one of the following:
 
-         A 'Function execution status' with 'Executed-Success' indicating that the ICCID has
+      •   A 'Function execution status' with 'Executed-Success' indicating that the ICCID has
           been reserved.
-         A 'Function execution status' indicating 'Failed' with a status code as defined in table
+      •   A 'Function execution status' indicating 'Failed' with a status code as defined in table
           24 or a specific status code as defined in the following table.
 
 Additional Input Data:
@@ -8250,10 +8250,10 @@ indicating 'Failed' with a status code '8.1.1 EID - 3.10 Invalid Association'.
 
 On reception of this function call, the SM-DP+ SHALL:
 
-       Confirm the allocation of an ICCID in its inventory.
-       Generate a MatchingID (section 4.1.1) if it is not provided by the Operator.
-       Store the MatchingID.
-       Store the EID if available.
+   •    Confirm the allocation of an ICCID in its inventory.
+   •    Generate a MatchingID (section 4.1.1) if it is not provided by the Operator.
+   •    Store the MatchingID.
+   •    Store the EID if available.
 
 
 
@@ -8262,15 +8262,15 @@ V2.4                                                                            
 GSM Association                                                                          Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-         If the Confirmation Code is provided by the Operator, calculate the hash of the
+      •   If the Confirmation Code is provided by the Operator, calculate the hash of the
           Confirmation Code and store the hash value together with the MatchingID, where the
           hash value is SHA256(Confirmation Code).
-         If SM-DS address is provided:
+      •   If SM-DS address is provided:
 
-             Verify that the MatchingID is not a zero length value.
-             Store the SM-DS address with the Profile to be used later for Event Registration
+          •   Verify that the MatchingID is not a zero length value.
+          •   Store the SM-DS address with the Profile to be used later for Event Registration
               and Event Deletion.
-             If the releaseFlag is set to true, perform Event Registration to the SM-DS address
+          •   If the releaseFlag is set to true, perform Event Registration to the SM-DS address
               stored with the Profile as defined in section 3.6.1, where the MatchingID SHALL
               be used as the EventID. Otherwise the Event Registration at this point in time is
               optional. If it is not done in this step, it will be done during the ReleaseProfile
@@ -8280,9 +8280,9 @@ The SM-DP+ MAY perform additional operations.
 
 This function SHALL return one of the following:
 
-         A 'Function execution status' with 'Executed-Success' indicating that the ICCID has
+      •   A 'Function execution status' with 'Executed-Success' indicating that the ICCID has
           been reserved.
-         A 'Function execution status' indicating 'Failed' with a status code as defined in
+      •   A 'Function execution status' indicating 'Failed' with a status code as defined in
           section 5.2.6 or a specific status code as defined in the following table.
 
 Additional Input Data:
@@ -8388,11 +8388,11 @@ V2.4                                                                            
 GSM Association                                                                        Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-         Confirm that the Profile identified by the provided ICCID is allocated and not yet
+      •   Confirm that the Profile identified by the provided ICCID is allocated and not yet
           downloaded.
-         If there is a MatchingID provided in the cancelOrder function, then check that the
+      •   If there is a MatchingID provided in the cancelOrder function, then check that the
           provided MatchingID is the one associated with the ICCID.
-         If there is an EID already associated with the ICCID, then check that the provided EID
+      •   If there is an EID already associated with the ICCID, then check that the provided EID
           is the one associated with the ICCID.
 
 If any of these verifications fail, the SM-DP+ SHALL return a 'Function execution status'
@@ -8400,19 +8400,19 @@ indicating 'Failed' with the relevant status code.
 
 Otherwise the SM-DP+ SHALL:
 
-         Cancel the pending order if possible, and return the ICCID to inventory or mark it as
+      •   Cancel the pending order if possible, and return the ICCID to inventory or mark it as
           not available for future use, based on the provided final Profile status indicator.
-         If the order was previously linked to an event registration, the SM-DP+ SHALL
+      •   If the order was previously linked to an event registration, the SM-DP+ SHALL
           subsequently execute the event deletion procedure.
 
 The SM-DP+ MAY perform additional operations.
 
 This function SHALL return one of the following:
 
-         A 'Function execution status' with 'Executed-Success' indicating that the ICCID has
+      •   A 'Function execution status' with 'Executed-Success' indicating that the ICCID has
           been released from the MatchingID and the associated profile will not be
           downloaded.
-         A 'Function execution status' indicating 'Failed' with a status code as defined in
+      •   A 'Function execution status' indicating 'Failed' with a status code as defined in
           section 5.2.6 or a specific status code as defined in the table here after.
 
 
@@ -8496,18 +8496,18 @@ its back-end (e.g. provisioning of HLR).
 
 On reception of this function call, the SM-DP+ SHALL:
 
-       Verify that the Profile identified by the provided ICCID has been processed with
+   •    Verify that the Profile identified by the provided ICCID has been processed with
         "ES2+.DownloadOrder" and "ES2+.ConfirmOrder", but not released yet. If this
         verification fails, the SM-DP+ SHALL return error status "8.2.1 Profile ICCID - 3.5
         Invalid transition"
-       Set the Profile state as 'Released' to allow the download.
+   •    Set the Profile state as 'Released' to allow the download.
 
 
 V2.4                                                                                      Page 156 of 275
 GSM Association                                                                         Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-       If SM-DS address was stored with the Profile and if the Event Registration was not
+   •    If SM-DS address was stored with the Profile and if the Event Registration was not
         already done, perform Event Registration to the SM-DS as defined in section 3.6.1,
         where the MatchingID SHALL be used as the EventID.
 
@@ -8516,9 +8516,9 @@ specification.
 
 This function SHALL return one of the following:
 
-       A 'Function execution status' with 'Executed-Success' indicating that the Profile
+   •    A 'Function execution status' with 'Executed-Success' indicating that the Profile
         identified by the provided ICCID has been released and is ready to download.
-       A 'Function execution status' indicating 'Failed' with a status code as defined in
+   •    A 'Function execution status' indicating 'Failed' with a status code as defined in
         section 5.2.6 or a specific status code as defined in the table here after.
 
 
@@ -8705,20 +8705,20 @@ Description:
 
 This function allows to update the following Profile Metadata of the targeted Profile:
 
-        Service Provider name
-        Profile Name
-        Icon type and Icon
-        Profile Policy Rule
-        Service Specific Data stored in eUICC
+   •     Service Provider name
+   •     Profile Name
+   •     Icon type and Icon
+   •     Profile Policy Rule
+   •     Service Specific Data stored in eUICC
 
 As this function is provided by the ISD-P, the STORE DATA command message defined
 hereunder has to be preceded by an INSTALL [for personalisation] as defined in SGP.02 [2]
 section 4.1.2.1:
 
-        The reserved AID value for Profile’s ISD-P (Annex D) SHALL be used to indicate that
+   •     The reserved AID value for Profile’s ISD-P (Annex D) SHALL be used to indicate that
          the Security Domain targeted by the INSTALL [for personalisation] command is the
          ISD-P of the Profile containing the MNO-SD.
-        According to GlobalPlatform Card Specification [8], INSTALL [for personalisation]
+   •     According to GlobalPlatform Card Specification [8], INSTALL [for personalisation]
          command can only be used on applications associated with a Security Domain. As an
          exception to this rule, the eUICC SHALL allow the MNO-SD to receive this command
          sequence with data destined to the ISD-P.
@@ -8828,9 +8828,9 @@ Processing State Returned in the Response Message
 
 See GlobalPlatform Card Specification [8] section 11.11.3.2.
 
-           The following additional status bytes are defined:
+      •     The following additional status bytes are defined:
 
-                  '6A 81': pprUpdateControl setting not supported
+            •      '6A 81': pprUpdateControl setting not supported
 
 5.5        ES8+ (SM-DP+ -- eUICC)
 The ES8+ is an interface defined between the Profile Package Binding function of the SM-
@@ -8859,31 +8859,31 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 The secure channel is established by:
 
-       Mutual authentication of the eUICC and the SM-DP+ using SK.DPauth.ECDSA /
+   •    Mutual authentication of the eUICC and the SM-DP+ using SK.DPauth.ECDSA /
         CERT.DPauth.ECDSA and SK.EUICC.ECDSA/CERT.EUICC.ECDSA.
-       Session keys agreement based on exchanged one-time public keys of both parties
+   •    Session keys agreement based on exchanged one-time public keys of both parties
         during mutual authentication (Annex G).
 
 The SM-DP+ authenticates the eUICC by:
 
-       Verifying the CERT.EUICC.ECDSA with PK.EUM.ECDSA extracted from
+   •    Verifying the CERT.EUICC.ECDSA with PK.EUM.ECDSA extracted from
         CERT.EUM.ECDSA, itself verified with PK.CI.ECDSA extracted from
         CERT.CI.ECDSA.
-       Verifying the signature of the eUICC computed over an SM-DP+ challenge with
+   •    Verifying the signature of the eUICC computed over an SM-DP+ challenge with
         PK.EUICC.ECDSA extracted from the verified CERT.EUICC.ECDSA.
 
 The eUICC authenticates the SM-DP+ by:
 
-       Verifying the CERT.DPauth.ECDSA with PK.CI.ECDSA.
-       Verifying the signature of the SM-DP+ with the PK.DPauth.ECDSA extracted from the
+   •    Verifying the CERT.DPauth.ECDSA with PK.CI.ECDSA.
+   •    Verifying the signature of the SM-DP+ with the PK.DPauth.ECDSA extracted from the
         verified CERT.DPauth.ECDSA.
 
 The data exchanged after channel establishment are secured using SCP03t as defined in
 SGP.02 [2]. The eUICC SHALL support the SCP03t with:
 
-       AES in CBC mode with key length of 128 bits, referred as AES-128 (key length as
+   •    AES in CBC mode with key length of 128 bits, referred as AES-128 (key length as
         defined in SGP.02 [2]).
-       Use of C-MAC and C-DECRYPTION.
+   •    Use of C-MAC and C-DECRYPTION.
 
 As a result the SM-DP+ and eUICC are mutually authenticated, all data sent from the Profile
 Package Binding function of the SM-DP+ to the eUICC are MACed and encrypted, except
@@ -8905,15 +8905,15 @@ function carries the identifier of the remote operation type to be performed by 
 agreement with Perfect Forward Secrecy (PFS), allowing a secure end-to-end
 communication between the SM-DP+ and the eUICC:
 
-       Transaction ID
-       Description of the keys to generate
-       One-time public key for key agreement generated by SM-DP+ (otPK.DP.ECKA)
+   •    Transaction ID
+   •    Description of the keys to generate
+   •    One-time public key for key agreement generated by SM-DP+ (otPK.DP.ECKA)
 
 V2.4                                                                       Page 163 of 275
 GSM Association                                                               Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-      Signature upon material (including the previously generated otPK.EUICC.ECKA, also
+   •   Signature upon material (including the previously generated otPK.EUICC.ECKA, also
        acting as an eUICC challenge) to ensure its integrity and authenticity.
 
 The Transaction ID SHALL be unique within the scope and lifetime of each SM-DP+.
@@ -8928,21 +8928,21 @@ session is already ongoing.
 
 On reception of this command the eUICC SHALL:
 
-      Verify the SM-DP+ signature using the PK.DPbp.ECDSA; if the signature is invalid
+   •   Verify the SM-DP+ signature using the PK.DPbp.ECDSA; if the signature is invalid
        the command SHALL be rejected, an error SHALL be returned, Profile installation
        SHALL be aborted, and any contextual data associated to its Profile installation (like
        the SM-DP+ certificate) SHALL be discarded.
-      Verify that the requested Remote operation type is one of the defined types.
-      Verify that the received transaction ID matches the transaction ID of the on-going
+   •   Verify that the requested Remote operation type is one of the defined types.
+   •   Verify that the received transaction ID matches the transaction ID of the on-going
        RSP session (section 5.7.5 "ES10b.PrepareDownload" function).
-      Verify that Control Reference Template describing the keys to generate matches the
+   •   Verify that Control Reference Template describing the keys to generate matches the
        values defined here under (Command message part).
 
 If any of these verifications fail, the eUICC SHALL return an error.
 
 If these verifications are successful, the eUICC SHALL:
 
-      Generate the session keys (S-ENC and S-MAC) and the initial MAC chaining value
+   •   Generate the session keys (S-ENC and S-MAC) and the initial MAC chaining value
        from received otPK.DP.ECKA and previously generated otSK.EUICC.ECKA.
 
 Command Data
@@ -8989,11 +8989,11 @@ The eUICC SHALL verify the values provided for key type and key length.
 SM-DP+ signature (smdpSign) is computed as described in section 2.6.7.2, using the
 SM-DP+ private key SK.DPbp.ECDSA across the following concatenated data objects:
 
-       remoteOpId
-       transactionId
-       controlRefTemplate
-       smdpOtpk
-       euiccOtpk, as provided earlier in the prepareDownloadResponse data object received
+   •    remoteOpId
+   •    transactionId
+   •    controlRefTemplate
+   •    smdpOtpk
+   •    euiccOtpk, as provided earlier in the prepareDownloadResponse data object received
         in the "ES9+.GetBoundProfilePackage" function.
 
 As the signature includes the otPK.EUICC.ECKA, the eUICC can authenticate the SM-DP+.
@@ -9022,9 +9022,9 @@ proprietary data.
 
 On reception of this command the eUICC SHALL:
 
-       Create the ISD-P for the Profile and assign an AID value from the range reserved for
+   •    Create the ISD-P for the Profile and assign an AID value from the range reserved for
         ISD-Ps in SGP.02 [2].
-       If the length of the SM-DP+ proprietary data exceeds the maximum size, terminate
+   •    If the length of the SM-DP+ proprietary data exceeds the maximum size, terminate
         with error 'incorrectInputValues'.
 
 
@@ -9032,7 +9032,7 @@ V2.4                                                                         Pag
 GSM Association                                                                 Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-       Store the SM-DP+ proprietary data in the ISD-P.
+   •    Store the SM-DP+ proprietary data in the ISD-P.
 
 Command data
 
@@ -9061,9 +9061,9 @@ This function is used by the SM-DP+ to provide Profile Metadata of the Profile t
 
 On reception of this command the eUICC SHALL verify the following:
 
-       The Profile Class is supported.
-       The ICCID is different than that of all other installed profiles.
-       If PPRs are provided in the Profile Metadata: the Profile Owner data object is present
+   •    The Profile Class is supported.
+   •    The ICCID is different than that of all other installed profiles.
+   •    If PPRs are provided in the Profile Metadata: the Profile Owner data object is present
         and the PPRs are allowed for the Profile Owner. This verification SHALL be done as
         described section 2.9.3.1.
 
@@ -9174,9 +9174,9 @@ replacement of only one of the session keys.
 
 On reception of this function the eUICC SHALL:
 
-       Verify that the new keys are of same length as the old keys. If not the eUICC SHALL
+   •    Verify that the new keys are of same length as the old keys. If not the eUICC SHALL
         return an error, and the loading of the BPP SHALL be aborted.
-       Replace the current session keys with the new set of keys.
+   •    Replace the current session keys with the new set of keys.
 
 Once the function is successfully executed, the eUICC SHALL use this new set of keys for
 decryption and MAC verification of subsequent SCP03t blocks of data. The key type of the
@@ -9219,18 +9219,18 @@ V2.4                                                                        Page
 GSM Association                                                                  Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-         The ICCID provided in the Profile Metadata is identical to the value of EFICCID.
+      •   The ICCID provided in the Profile Metadata is identical to the value of EFICCID.
 
       If profileOwner is provided in the Profile Metadata:
 
-         The mccMnc value provided in the Profile Metadata SHALL match the MCC and
+      •   The mccMnc value provided in the Profile Metadata SHALL match the MCC and
           MNC values in EFIMSI.
 
-         If gid1 or gid2 is provided in the Profile Metadata: The corresponding EFGID1 or
+      •   If gid1 or gid2 is provided in the Profile Metadata: The corresponding EFGID1 or
           EFGID2 SHALL be present and contain the same value as provided in the data object
           and the related service in EFUST SHALL indicate "available".
 
-         If gid1 or gid2 is not provided in the Profile Metadata: The corresponding service in
+      •   If gid1 or gid2 is not provided in the Profile Metadata: The corresponding service in
           EFUST for EFGID1 or EFGID2 SHALL indicate "not available".
 
 Any failure SHALL be indicated by an installFailedDueToDataMismatch error.
@@ -9248,8 +9248,8 @@ Result and then as many Notifications as configured in its metadata
 5.6       ES9+ (LPA -- SM-DP+)
 ES9+ is the interface between:
 
-         The LPA entity (more specifically the LPD endpoint), and
-         the SM-DP+ (more specifically the Profile Package Delivery endpoint, which is in
+      •   The LPA entity (more specifically the LPD endpoint), and
+      •   the SM-DP+ (more specifically the Profile Package Delivery endpoint, which is in
           charge to deliver the input data from the LPA to the Profile Package Binding function,
           and deliver the output data from the Profile Package Binding function to the LPA).
 
@@ -9299,12 +9299,12 @@ from the eUICC to be provided to the SM-DP+.
 
 On reception of this function call, the SM-DP+ SHALL:
 
-       Verify that it supports the Specification Version Number indicated by the eUICC.
-       Check if the received address matches its own SM-DP+ address, where the
+   •    Verify that it supports the Specification Version Number indicated by the eUICC.
+   •    Check if the received address matches its own SM-DP+ address, where the
         comparison SHALL be case-insensitive.
-       Check if it can use one of the GSMA CI Public Keys against which eUICC signatures
+   •    Check if it can use one of the GSMA CI Public Keys against which eUICC signatures
         can be verified, and select the CI as defined in section 2.6.7.1.
-       Verify that it can provide a CERT.DPauth.ECDSA signed by one of the GSMA CI
+   •    Verify that it can provide a CERT.DPauth.ECDSA signed by one of the GSMA CI
         Public Keys supported by the eUICC and select a CERT.DPauth.ECDSA preferably
         according to the priority provided by the eUICC for the CI Public Keys.
 
@@ -9313,13 +9313,13 @@ indicating 'Failed' with the relevant status code.
 
 Otherwise the SM-DP+ SHALL:
 
-       Generate a TransactionID which is used to uniquely identify the ongoing RSP
+   •    Generate a TransactionID which is used to uniquely identify the ongoing RSP
         session.
-       Generate a serverChallenge for eUICC authentication attached with the ongoing RSP
+   •    Generate a serverChallenge for eUICC authentication attached with the ongoing RSP
         session.
-       Generate a serverSigned1 data object as expected by the eUICC and described in
+   •    Generate a serverSigned1 data object as expected by the eUICC and described in
         section 5.7.13 "ES10b.AuthenticateServer".
-       Generate a signature (serverSignature1) as described in section 5.7.13
+   •    Generate a signature (serverSignature1) as described in section 5.7.13
         "ES10b.AuthenticateServer" using the SK related to the selected
         CERT.DPauth.ECDSA.
 
@@ -9328,14 +9328,14 @@ specification.
 
 This function SHALL return one of the following:
 
-       A 'Function execution status' with 'Executed-Success' indicating that the RSP session
+   •    A 'Function execution status' with 'Executed-Success' indicating that the RSP session
         has been successfully initiated.
 
 V2.4                                                                          Page 170 of 275
 GSM Association                                                                           Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-       A 'Function execution status' indicating 'Failed' with a status code as defined in
+   •    A 'Function execution status' indicating 'Failed' with a status code as defined in
         section 5.2.6 or a specific status code as defined in the following table.
 
 Additional Input Data:
@@ -9422,12 +9422,12 @@ function through a TransactionID delivered by the SM-DP+.
 
 On reception of this function call, the SM-DP+ SHALL:
 
-       Verify that the received transactionId is known and relates to an ongoing RSP
+   •    Verify that the received transactionId is known and relates to an ongoing RSP
         session.
-       Verify the eUICC signature (euiccSignature2) using the PK.EUICC.ECDSA attached
+   •    Verify the eUICC signature (euiccSignature2) using the PK.EUICC.ECDSA attached
         to the ongoing RSP session as described in (section 5.7.5
         "ES10b.PrepareDownload").
-       Verify if this order requires a Confirmation Code verification; if yes, the SM-DP+
+   •    Verify if this order requires a Confirmation Code verification; if yes, the SM-DP+
         SHALL verify that the received Hashed Confirmation Code matches the value known
         by the SM-DP+.
 
@@ -9457,23 +9457,23 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 To bind the PPP, the SM-DP+ SHALL:
 
-      Attach the otPK.EUICC.ECKA to the ongoing RSP session.
-      Generate one time ECKA key pair (otPK.DP.ECKA, otSK.DP.ECKA) for key
+   •   Attach the otPK.EUICC.ECKA to the ongoing RSP session.
+   •   Generate one time ECKA key pair (otPK.DP.ECKA, otSK.DP.ECKA) for key
        agreement.
-      Generate the session keys (S-ENC and S-MAC) and the initial MAC chaining value
+   •   Generate the session keys (S-ENC and S-MAC) and the initial MAC chaining value
        from received otPK.EUICC.ECKA and previously generated otSK.DP.ECKA.
-      Generate the Profile Metadata of the Profile.
-      Generate the Bound Profile Package as described in (section 2.5.4).
-      Erase otSK.DP.ECKA immediately once BPP is generated.
+   •   Generate the Profile Metadata of the Profile.
+   •   Generate the Bound Profile Package as described in (section 2.5.4).
+   •   Erase otSK.DP.ECKA immediately once BPP is generated.
 
 The SM-DP+ MAY perform additional operations, which are out of scope of this
 specification.
 
 This function SHALL return one of the following:
 
-      A 'Function execution status' with 'Executed-Success' indicating that the
+   •   A 'Function execution status' with 'Executed-Success' indicating that the
        BoundProfilePackage has been successfully built and is part of the output data.
-      A 'Function execution status' indicating 'Failed' with a status code as defined in
+   •   A 'Function execution status' indicating 'Failed' with a status code as defined in
        section 5.2.6 or a specific status code as defined in the following table.
 
 Additional Input Data:
@@ -9555,13 +9555,13 @@ function through a Transaction ID delivered by the SM-DP+.
 
 On reception of this function call, the SM-DP+ SHALL:
 
-        Verify the validity of the CERT.EUM.ECDSA, using the related public key
+   •     Verify the validity of the CERT.EUM.ECDSA, using the related public key
          PK.CI.ECDSA.
-        Verify the validity of the CERT.EUICC.ECDSA, using the public key PK.EUM.ECDSA.
-        Verify the eUICC signature (euiccSignature1) using the PK.EUICC.ECDSA as
+   •     Verify the validity of the CERT.EUICC.ECDSA, using the public key PK.EUM.ECDSA.
+   •     Verify the eUICC signature (euiccSignature1) using the PK.EUICC.ECDSA as
          described in section 5.7.13 "ES10b.AuthenticateServer".
-        Verify that the transactionId is known and relates to an ongoing RSP session.
-        Verify that the serverChallenge attached to the ongoing RSP session matches the
+   •     Verify that the transactionId is known and relates to an ongoing RSP session.
+   •     Verify that the serverChallenge attached to the ongoing RSP session matches the
          serverChallenge returned by the eUICC.
 
 If any of these verifications fail, the SM-DP+ SHALL return a 'Function execution status'
@@ -9582,47 +9582,47 @@ where this function is involved and the received ctxParams1.
 If ctxParams1 contains a ctxParamsForCommonAuthentication data object, the SM-
 DP+ SHALL:
 
-      Verify there is a pending Profile download order for the incoming eUICC. For that, the
+   •   Verify there is a pending Profile download order for the incoming eUICC. For that, the
        SM-DP+ SHALL:
 
-          If there is a pending Profile download order associated with this EID:
+       •   If there is a pending Profile download order associated with this EID:
 
-              If ctxParamsForCommonAuthentication contains a MatchingId, verify
+           •   If ctxParamsForCommonAuthentication contains a MatchingId, verify
                that it matches the MatchingID for this pending Profile download order.
-              If the MatchingID is missing in ctxParamsForCommonAuthentication,
+           •   If the MatchingID is missing in ctxParamsForCommonAuthentication,
                any pending Profile download order associated to this EID MAY be selected.
 
-          If there is no pending Profile download order associated with this EID:
+       •   If there is no pending Profile download order associated with this EID:
 
-              If ctxParamsForCommonAuthentication contains a MatchingId, verify:
+           •   If ctxParamsForCommonAuthentication contains a MatchingId, verify:
 
                o there is a pending Profile download order associated with this MatchingID,
                  and
                o the pending Profile download order is not associated with an EID.
 
-              If the MatchingID is missing in ctxParamsForCommonAuthentication,
+           •   If the MatchingID is missing in ctxParamsForCommonAuthentication,
                this SHALL be considered as verification failure.
 
-      Identify the Profile corresponding to the pending Profile download order.
-      Verify that the identified Profile has been released (Profile state is Released, see
+   •   Identify the Profile corresponding to the pending Profile download order.
+   •   Verify that the identified Profile has been released (Profile state is Released, see
        section 3.1.6).
-      Perform an eligibility check:
+   •   Perform an eligibility check:
 
-          If the Profile Owner has disallowed Profile download to Field-Test eUICCs: If the
+       •   If the Profile Owner has disallowed Profile download to Field-Test eUICCs: If the
            target eUICC indicates V255.255.255 in ppVersion, the SM-DP+ SHALL return
            a status code "Profile Type – Stopped on warning"
-          The SM-DP+ MAY perform additional Eligibility checks as described in Annex F.
+       •   The SM-DP+ MAY perform additional Eligibility checks as described in Annex F.
 
 If any of these verifications fail, the SM-DP+ SHALL return a 'Function execution status'
 indicating 'Failed' with the relevant status code.
 
 Otherwise the SM-DP+ SHALL:
 
-      Generate the Profile Metadata of the Profile.
-      Attach the PK.EUICC.ECDSA to the ongoing RSP session.
-      Verify if this order requires a Confirmation Code verification. If yes, the SM-DP+
+   •   Generate the Profile Metadata of the Profile.
+   •   Attach the PK.EUICC.ECDSA to the ongoing RSP session.
+   •   Verify if this order requires a Confirmation Code verification. If yes, the SM-DP+
        SHALL set the ccRequiredFlag data field of the smdpSigned2 data object to true.
-      Generate an smdpSigned2 data object and compute the signature smdpSignature2
+   •   Generate an smdpSigned2 data object and compute the signature smdpSignature2
        as defined in "ES10b.PrepareDownloadRequest".
 
 The SM-DP+ MAY perform additional operations, which are out of scope of this
@@ -9634,9 +9634,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 This function SHALL return one of the following:
 
-       A 'Function execution status' with 'Executed-Success' indicating that the eUICC has
+   •    A 'Function execution status' with 'Executed-Success' indicating that the eUICC has
         been successfully authenticated.
-       A 'Function execution status' indicating 'Failed' with a status code as defined in
+   •    A 'Function execution status' indicating 'Failed' with a status code as defined in
         section 5.2.6 or a specific status code as defined in the following table.
 
 Additional Input Data:
@@ -9783,12 +9783,12 @@ function through a transactionId delivered by the SM-DP+.
 
 On reception of this function call, the SM-DP+ SHALL:
 
-       Verify that the received transactionId is known and relates to an ongoing RSP
+   •    Verify that the received transactionId is known and relates to an ongoing RSP
         session.
-       Verify the eUICC signature (euiccCancelSessionSignature) using the
+   •    Verify the eUICC signature (euiccCancelSessionSignature) using the
         PK.EUICC.ECDSA attached to the ongoing RSP session as described in (section
         5.7.14 "ES10b.CancelSession").
-       Verify that the received smdpOid corresponds to the SM-DP+ (i.e. is the same value
+   •    Verify that the received smdpOid corresponds to the SM-DP+ (i.e. is the same value
         as the one contained in the CERT.DPauth.ECDSA used during the Common Mutual
         Authentication Procedure).
 
@@ -9827,9 +9827,9 @@ specification.
 
 This function SHALL return one of the following:
 
-         A 'Function execution status' with 'Executed-Success' indicating that the RSP session
+      •   A 'Function execution status' with 'Executed-Success' indicating that the RSP session
           has been cancelled.
-         A 'Function execution status' indicating 'Failed' with a status code as defined in
+      •   A 'Function execution status' indicating 'Failed' with a status code as defined in
           section 5.2.6 or a specific status code as defined in the following table.
 
 Additional Input Data:
@@ -10154,17 +10154,17 @@ an SM-DP+.
 
 On reception of this command, the eUICC SHALL:
 
-       Verify that the received transactionId contained in the smdpSigned2 matches the one
+   •    Verify that the received transactionId contained in the smdpSigned2 matches the one
         of the ongoing RSP session.
-       Verify that the SM-DP+ has been previously authenticated and a
+   •    Verify that the SM-DP+ has been previously authenticated and a
         CERT.DPauth.ECDSA is attached to the ongoing RSP session.
-       Verify the validity of the CERT.DPpb.ECDSA (using the ECASD service) as defined
+   •    Verify the validity of the CERT.DPpb.ECDSA (using the ECASD service) as defined
         in section 4.5.2.2.
-       Verify the signature (smdpSignature2) of the SM-DP+ done upon smdpSigned2 data
+   •    Verify the signature (smdpSignature2) of the SM-DP+ done upon smdpSigned2 data
         structure as described hereunder.
-       Verify that CERT.DPauth.ECDSA and CERT.DPpb.ECDSA belong to the same entity
+   •    Verify that CERT.DPauth.ECDSA and CERT.DPpb.ECDSA belong to the same entity
         (i.e. same OID in subjectAltName).
-       Verify that CERT.DPauth.ECDSA and CERT.DPpb.ECDSA trust chain lead to the
+   •    Verify that CERT.DPauth.ECDSA and CERT.DPpb.ECDSA trust chain lead to the
         same GSMA CI certificate.
 
 If any of these verifications fail, the eUICC SHALL return an error.
@@ -10176,16 +10176,16 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 If these verifications are successful, the eUICC SHALL:
 
-      Extract the public key of the CERT.DPpb.ECDSA and attach it to the RSP session
+   •   Extract the public key of the CERT.DPpb.ECDSA and attach it to the RSP session
        context.
-      If bppEuiccOtpk is provided in smdpSigned2 and it corresponds to a stored one-time
+   •   If bppEuiccOtpk is provided in smdpSigned2 and it corresponds to a stored one-time
        key pair otPK.EUICC.ECKA/ otSK.EUICC.ECKA for this SM-DP+: use this key pair
        for the RSP session. Otherwise: generate a new one-time key pair
        otSK.EUICC.ECKA and otPK.EUICC.ECKA using the curve indicated by the Key
        Parameter Reference Value of CERT.DPpb.ECDSA, and attach otSK.EUICC.ECKA
        to the RSP session context.
-      Generate euiccSigned2 data object as defined hereunder.
-      Generate the euiccSignature2, as defined hereunder, with the SK.EUICC.ECDSA
+   •   Generate euiccSigned2 data object as defined hereunder.
+   •   Generate the euiccSignature2, as defined hereunder, with the SK.EUICC.ECDSA
        related to the CERT.EUICC.ECDSA as requested by SM-DP+.
 
 Command Data
@@ -10276,9 +10276,9 @@ Response Data
 
 The data presence in the response message depends on the block status:
 
-       For an intermediate block of data of a BPP TLV, the response message SHALL not
+   •    For an intermediate block of data of a BPP TLV, the response message SHALL not
         contain data field.
-       For the last block of data of a BPP TLV, a response message containing a Profile
+   •    For the last block of data of a BPP TLV, a response message containing a Profile
         Installation Result SHALL be present or absent as specified in section 2.5.6.
 
 5.7.7    Function (ES10b): GetEUICCChallenge
@@ -10301,13 +10301,13 @@ session SHALL be completed before requesting the opening of a new one.
 
 On reception of this function, the eUICC SHALL:
 
-       Determine if a previous session was not completed. If so, then:
+   •    Determine if a previous session was not completed. If so, then:
 
-            The eUICC MAY store the unused otPK.eUICC.ECKA and otSK.eUICC.ECKA,
+        •    The eUICC MAY store the unused otPK.eUICC.ECKA and otSK.eUICC.ECKA,
              together with the SM-DP+ OID, for future retry.
-            The eUICC SHALL discard the previous session context.
+        •    The eUICC SHALL discard the previous session context.
 
-       Create a new session context and generate a new random challenge attached to this
+   •    Create a new session context and generate a new random challenge attached to this
         RSP session.
 
 Command Data
@@ -10428,8 +10428,8 @@ V2.4                                                                 Page 188 of
 GSM Association                                                                 Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-          the major version number and
-          the associated highest minor version number
+       •   the major version number and
+       •   the associated highest minor version number
 
 of the version 2.x eUICC Profile Package specification [5] supported by the eUICC; this
 version SHALL be 2.1 or higher.
@@ -10508,9 +10508,9 @@ The treProperties field describes properties of the TRE that the eUICC is based 
 SHALL be present for an Integrated eUICC and MAY be present for a Discrete eUICC. This
 field SHALL contain one of the following settings:
 
-       isDiscrete
-       isIntegrated
-       isIntegrated, usesRemoteMemory
+   •    isDiscrete
+   •    isIntegrated
+   •    isIntegrated, usesRemoteMemory
 The treProductReference SHALL be present for an Integrated eUICC. This value SHALL
 be coded as defined in GlobalPlatform DLOA specification [57] section 7.1.1 and contain a
 unique reference of the Integrated TRE product that the eUICC is based upon. This field
@@ -10696,20 +10696,20 @@ and the eUICC, as indicated by their corresponding capabilities.
 
 On reception of this command the eUICC SHALL:
 
-        Verify the CRL signature using the PK.CI.ECDSA identified by the extension field
+   •     Verify the CRL signature using the PK.CI.ECDSA identified by the extension field
          'Authority Key Identifier'; if the key is unknown or if signature is invalid, the command
          execution SHALL be stopped with error code verificationKeyNotFound or
          invalidSignature.
-        Verify CRL format is valid as defined in section 4.5. If not, the command execution
+   •     Verify CRL format is valid as defined in section 4.5. If not, the command execution
          SHALL be stopped with error code invalidCRLFormat.
-        Compare the 'CRL Number' field value contained in the provided CRL with that of the
+   •     Compare the 'CRL Number' field value contained in the provided CRL with that of the
          last successfully processed CRL on the eUICC:
 
-             If the 'CRL Number' field value is lower: stop the command execution and return a
+         •    If the 'CRL Number' field value is lower: stop the command execution and return a
               response with error code fresherCrlAlreadyLoaded.
-             If the 'CRL Number' field value is equal:
+         •    If the 'CRL Number' field value is equal:
 
-                 If the CRL is a complete CRL (i.e. the Extension for Total Partial CRL Number
+              •   If the CRL is a complete CRL (i.e. the Extension for Total Partial CRL Number
                   and the Extension for Partial CRL Number are missing): stop the command
                   execution and return a response loadCRLResponseOk, with an empty
                   missing part indication.
@@ -10721,11 +10721,11 @@ V2.4                                                                            
 GSM Association                                                                 Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-              If the CRL is a segmented CRL and this segment has already been loaded,
+           •   If the CRL is a segmented CRL and this segment has already been loaded,
                stop the command execution and return a response loadCRLResponseOk
                with missing parts indication.
 
-      If the provided CRL is a Delta CRL (as defined in RFC 5280 [17]): verify that the CRL
+   •   If the provided CRL is a Delta CRL (as defined in RFC 5280 [17]): verify that the CRL
        identified by the 'Base CRL Number' field has already been processed. If not, the
        command execution SHALL be stopped with error code baseCrlMissing.
 
@@ -10814,18 +10814,18 @@ This function performs the authentication of the RSP Server by the eUICC.
 
 On reception of this command, the eUICC SHALL:
 
-        Verify that a RSP session context exists (i.e. "ES10b.GetUICCChallenge" function
+   •     Verify that a RSP session context exists (i.e. "ES10b.GetUICCChallenge" function
          has been previously called).
-        Verify the validity of the RSP Server Certificate for authentication (using the ECASD
+   •     Verify the validity of the RSP Server Certificate for authentication (using the ECASD
          service), as described in section 4.5.2.2 using the PK.CI.ECDSA identified by the
          Authority Key Identifier contained in the RSP Server Certificate.
-        Verify that the RSP Server Certificate is either CERT.DPauth.ECDSA or
+   •     Verify that the RSP Server Certificate is either CERT.DPauth.ECDSA or
          CERT.DSauth.ECDSA, as described in section 4.5.2.2.
-        Verify the signature (serverSignature1) of the RSP Server done upon serverSigned1
+   •     Verify the signature (serverSignature1) of the RSP Server done upon serverSigned1
          as described hereunder.
-        Verify that the euiccChallenge attached to the ongoing RSP session matches the
+   •     Verify that the euiccChallenge attached to the ongoing RSP session matches the
          euiccChallenge returned by the RSP Server inside the serverSigned1.
-        Verify that euiccCiPKIdToBeUsed is supported and related credentials are available
+   •     Verify that euiccCiPKIdToBeUsed is supported and related credentials are available
          for signing.
 
 If any of these verifications fail, the eUICC SHALL return an
@@ -10839,10 +10839,10 @@ V2.4                                                                           P
 GSM Association                                                            Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-      Attach the received transactionId in the RSP session context.
-      Attach the received RSP Server Certificate in the RSP session context.
-      Generate euiccSigned1 data object as defined hereunder.
-      Generate the euiccSignature1 as defined hereunder, with the SK.EUICC.ECDSA
+   •   Attach the received transactionId in the RSP session context.
+   •   Attach the received RSP Server Certificate in the RSP session context.
+   •   Generate euiccSigned1 data object as defined hereunder.
+   •   Generate the euiccSignature1 as defined hereunder, with the SK.EUICC.ECDSA
        related to the CERT.EUICC.ECDSA as requested by RSP Server.
 
 Command Data
@@ -10938,19 +10938,19 @@ RSP Server.
 
 On reception of this command the eUICC SHALL:
 
-        Verify that the Transaction ID provided as input data is known and matches the one
+    •    Verify that the Transaction ID provided as input data is known and matches the one
          retained in the context of the ongoing RSP session. If not the eUICC SHALL return an
          error code invalidTransactionId.
 
 If these verifications are successful, the eUICC SHALL:
 
-        Generate an euiccCancelSessionSigned data object as defined hereunder.
-        Generate the euiccCancelSessionSignature, as defined hereunder, with the
+    •    Generate an euiccCancelSessionSigned data object as defined hereunder.
+    •    Generate the euiccCancelSessionSignature, as defined hereunder, with the
          SK.EUICC.ECDSA.
-        If the CancelSessionReason is 'postponed' or 'timeout', the eUICC MAY store the
+    •    If the CancelSessionReason is 'postponed' or 'timeout', the eUICC MAY store the
          unused otPK.eUICC.ECKA and otSK.eUICC.ECKA, together with the SM-DP+
          identity, for future retry.
-        Discard the on-going RSP session context.
+    •    Discard the on-going RSP session context.
 
 The eUICC MAY perform additional internal operations, which are out of scope of this
 specification.
@@ -11053,20 +11053,20 @@ be omitted in the response for that Profile.
 
 The eUICC SHALL support the following tags in the tag list:
 
-      ICCID, tag '5A' (*)
-      ISD-P AID, tag '4F' (*)
-      Profile state, tag '9F70' (*)
-      Profile Nickname, tag '90' (*)
-      Service provider name, tag '91' (*)
-      Profile name, tag '92' (*)
-      Icon type, tag '93' (*)
-      Icon, tag '94' (*)
-      Profile Class, tag '95' (*)
-      Notification Configuration Info, tag 'B6'
-      Profile Owner, tag 'B7'
-      SM-DP+ proprietary data, tag 'B8'
-      Profile Policy Rules, tag '99'
-      Service Specific Data stored in eUICC, tag 'BF22'
+   •   ICCID, tag '5A' (*)
+   •   ISD-P AID, tag '4F' (*)
+   •   Profile state, tag '9F70' (*)
+   •   Profile Nickname, tag '90' (*)
+   •   Service provider name, tag '91' (*)
+   •   Profile name, tag '92' (*)
+   •   Icon type, tag '93' (*)
+   •   Icon, tag '94' (*)
+   •   Profile Class, tag '95' (*)
+   •   Notification Configuration Info, tag 'B6'
+   •   Profile Owner, tag 'B7'
+   •   SM-DP+ proprietary data, tag 'B8'
+   •   Profile Policy Rules, tag '99'
+   •   Service Specific Data stored in eUICC, tag 'BF22'
 
 If no tag list is present, the eUICC SHALL return the default ProfileInfo: the ProfileInfo data
 objects marked with (*) for each Profile matching the selection criterion.
@@ -11076,9 +11076,9 @@ each Profile matching the selection criterion.
 
 Example of use:
 
-      Retrieve the ProfileInfo for all installed Profiles. The command data field SHALL be
+   •   Retrieve the ProfileInfo for all installed Profiles. The command data field SHALL be
        coded as 'BF2D 00'.
-      Retrieve all information of a particular Profile/ISD-P having the following AID: A0 00
+   •   Retrieve all information of a particular Profile/ISD-P having the following AID: A0 00
        00 05 59 10 10 FF FF FF FF 89 00 00 10 00. The command data field SHALL be
 
 
@@ -11089,7 +11089,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
          coded as 'BF2D 24 A0 12 4F 10 A0 00 00 05 59 10 10 FF FF FF FF 89 00 00 10 00
          5C 0E 5A 4F 9F70 90 91 92 93 94 95 B6 B7 B8 99'.
-        Retrieve ICCID and Profile state for all installed Profiles. The command data field
+   •     Retrieve ICCID and Profile state for all installed Profiles. The command data field
          SHALL be coded as 'BF 2D 05 5C 03 5A 9F70'.
 
 Response Data
@@ -11160,39 +11160,39 @@ states prior to command execution.
 
 Upon reception of the EnableProfile function, if the refreshFlag is not set, the eUICC SHALL:
 
-      Check whether there is a proactive session ongoing (which the Device did not
+   •   Check whether there is a proactive session ongoing (which the Device did not
        terminate). If so:
 
-          the eUICC MAY terminate the EnableProfile command with error 'catBusy'.
+       •   the eUICC MAY terminate the EnableProfile command with error 'catBusy'.
 
-              If the eUICC does not terminate the EnableProfile command with error
+           •   If the eUICC does not terminate the EnableProfile command with error
                'catBusy', the eUICC SHALL internally terminate the proactive session and
                ignore any incoming TERMINAL RESPONSE from that proactive session.
 
-      Close all logical channels which still have an application of the currently enabled
+   •   Close all logical channels which still have an application of the currently enabled
        Profile selected (which the Device did not close), without generating an error.
 
 Regardless of the value of refreshFlag, the eUICC SHALL:
 
-      Verify that the target Profile is in the Disabled state.
-      If the target Profile is not a Test Profile: check if the Profile Policy Rules of the
+   •   Verify that the target Profile is in the Disabled state.
+   •   If the target Profile is not a Test Profile: check if the Profile Policy Rules of the
        currently Enabled Profile allow its disabling.
-      If the currently Enabled Profile is a Test Profile: verify
+   •   If the currently Enabled Profile is a Test Profile: verify
 
-              that the target Profile is (another) Test Profile, or
-              if an Operational Profile was in Enabled state before the (first) Test Profile was
+           •   that the target Profile is (another) Test Profile, or
+           •   if an Operational Profile was in Enabled state before the (first) Test Profile was
                enabled, that the target Profile is this Operational Profile.
 
-      If any of these verifications fail, terminate the command with an error.
+   •   If any of these verifications fail, terminate the command with an error.
 
 
 
 If the refreshFlag is not set:
 
-      the eUICC SHALL reset the PIN status
-      the eUICC SHALL disable the currently Enabled Profile (if any), Enable the target
+   •   the eUICC SHALL reset the PIN status
+   •   the eUICC SHALL disable the currently Enabled Profile (if any), Enable the target
        Profile and implicitly select the MF on the basic logical channel.
-      The eUICC SHALL return OK to the LPAd
+   •   The eUICC SHALL return OK to the LPAd
 
     NOTE:        for subsequent actions by the Device see section 3.2.1.
 
@@ -11200,16 +11200,16 @@ If the refreshFlag is not set:
 
 If the refreshFlag is set:
 
-      If there is a proactive session ongoing;
+   •   If there is a proactive session ongoing;
 
-          the eUICC MAY terminate the EnableProfile command with error 'catBusy'.
+       •   the eUICC MAY terminate the EnableProfile command with error 'catBusy'.
 
 
 V2.4                                                                               Page 201 of 275
 GSM Association                                                              Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-          If the eUICC does not terminate the EnableProfile command with error 'catBusy',
+       •   If the eUICC does not terminate the EnableProfile command with error 'catBusy',
            the eUICC SHALL internally terminate the proactive session and send the
            REFRESH command as the next proactive command. If a TERMINAL
            RESPONSE is still outstanding, the REFRESH command SHALL only be sent
@@ -11220,17 +11220,17 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                 proactive command session, and MAY send the enable command again
                 without any further End User interaction.
 
-      Otherwise
-           The eUICC SHALL mark the currently enabled Profile (if any) as "to be
+   •   Otherwise
+          • The eUICC SHALL mark the currently enabled Profile (if any) as "to be
              disabled", mark the target Profile as "to be enabled" and return OK to the
              LPAd
-           the eUICC SHALL send the REFRESH command in "eUICC Profile State
+          • the eUICC SHALL send the REFRESH command in "eUICC Profile State
              Change" mode (if supported by the Device) or "UICC Reset" mode to the
              Device according to ETSI TS 102 223 [31].
-           Upon reception of the Terminal Response with result "command performed
+          • Upon reception of the Terminal Response with result "command performed
              successfully" or upon reset of the eUICC, the eUICC SHALL disable the
              currently Enabled Profile (if any) and Enable the target Profile.
-           Upon reception of the Terminal Response with result "temporary problem with
+          • Upon reception of the Terminal Response with result "temporary problem with
              executing command" or "permanent problem with executing command", the
              eUICC SHALL NOT disable the currently Enabled Profile (if any) nor Enable
              the target Profile. Subsequent actions are implementation specific.
@@ -11243,11 +11243,11 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 The eUICC MAY start a new proactive UICC session only after a new TERMINAL PROFILE
 command is executed.
 
-      If a previously Enabled Profile was successfully disabled, the eUICC SHALL generate
+   •   If a previously Enabled Profile was successfully disabled, the eUICC SHALL generate
        as many Notifications as configured in its metadata
        (notificationConfigurationInfo) in the format of
        OtherSignedNotification.
-      If the target Profile is successfully enabled, the eUICC SHALL generate as many
+   •   If the target Profile is successfully enabled, the eUICC SHALL generate as many
        Notifications as configured in its metadata (notificationConfigurationInfo) in
        the format of OtherSignedNotification.
 
@@ -11290,12 +11290,12 @@ following alternative command for the function:
 
 The command data is sent to the eUICC in a Case 3 STORE DATA command:
 
-        The STORE DATA APDU SHALL be coded as defined in section 5.7.2, with the
+    •    The STORE DATA APDU SHALL be coded as defined in section 5.7.2, with the
          exception of P1 which SHALL be set to '90'.
-        The command data SHALL be coded as defined above, the response data SHALL
+    •    The command data SHALL be coded as defined above, the response data SHALL
          not be present.
 
-        The following additional status bytes are defined:
+    •    The following additional status bytes are defined:
          '6A 82': Profile not found
          '69 85': Profile not in disabled state or command not allowed by Profile Policy Rules
          or re-enabling wrong Profile
@@ -11318,43 +11318,43 @@ This function is used to disable a Profile on the eUICC.
 Upon reception of the DisableProfile function, if the refreshFlag is not set, the eUICC
 SHALL:
 
-        Check whether there is a proactive session ongoing (which the Device did not
+    •    Check whether there is a proactive session ongoing (which the Device did not
          terminate). If so,
 
 V2.4                                                                           Page 203 of 275
 GSM Association                                                                   Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-          the eUICC MAY terminate the DisableProfile function with error 'catBusy'.
-          If the eUICC does not terminate the DisableProfile command with error 'catBusy',
+       •   the eUICC MAY terminate the DisableProfile function with error 'catBusy'.
+       •   If the eUICC does not terminate the DisableProfile command with error 'catBusy',
            the eUICC SHALL internally terminate the proactive session and ignore any
            incoming TERMINAL RESPONSE from that proactive session.
 
-      Close all logical channels which still have an application of the currently enabled
+   •   Close all logical channels which still have an application of the currently enabled
        Profile selected (which the Device did not close), without generating an error.
 
 Regardless of the value of refreshFlag, the eUICC SHALL:
 
-      Verify that the target Profile is in the Enabled state.
-      If the currently Enabled Profile is not a Test Profile: check if the Profile Policy Rules of
+   •   Verify that the target Profile is in the Enabled state.
+   •   If the currently Enabled Profile is not a Test Profile: check if the Profile Policy Rules of
        the target Profile allows its disabling.
-      If any of these verifications fail, terminate the command with an error.
-      If the refreshFlag is not set:
-        the eUICC SHALL reset the PIN status.
-        the eUICC SHALL disable the currently Enabled Profile.
-        If the target Profile is a Test Profile and an Operational Profile was in Enabled
+   •   If any of these verifications fail, terminate the command with an error.
+   •   If the refreshFlag is not set:
+       • the eUICC SHALL reset the PIN status.
+       • the eUICC SHALL disable the currently Enabled Profile.
+       • If the target Profile is a Test Profile and an Operational Profile was in Enabled
             state before the (first) Test Profile was enabled: enable this Operational Profile. If
             this Operational Profile was deleted while the Test Profile was enabled, no error
             SHALL be generated and the function execution SHALL continue.
-        The eUICC SHALL implicitly select the MF on the basic logical channel.
-        The eUICC SHALL return OK to the LPAd.
+       • The eUICC SHALL implicitly select the MF on the basic logical channel.
+       • The eUICC SHALL return OK to the LPAd.
 
    NOTE:         for subsequent actions by the Device see section 3.2.2.
 
-      If the refreshFlag is set:
-        If there is a proactive session ongoing, the eUICC MAY terminate the
+   •   If the refreshFlag is set:
+       • If there is a proactive session ongoing, the eUICC MAY terminate the
             DisableProfile function with error 'catBusy'
-        If the eUICC does not terminate the DisableProfile command with error
+       • If the eUICC does not terminate the DisableProfile command with error
             'catBusy', the eUICC SHALL internally terminate the proactive session and send
             the REFRESH command as the next proactive command. If a TERMINAL
             RESPONSE is still outstanding, the REFRESH command SHALL only be sent
@@ -11365,14 +11365,14 @@ Regardless of the value of refreshFlag, the eUICC SHALL:
                  proactive command session, and MAY send the Disable command again
                  without any further End User interaction.
 
-          Otherwise:
+       •   Otherwise:
 
-              The eUICC SHALL mark the currently enabled Profile as "to be disabled" and
+           •   The eUICC SHALL mark the currently enabled Profile as "to be disabled" and
                return OK to the LPAd.
-              The eUICC SHALL send the REFRESH command in "eUICC Profile State
+           •   The eUICC SHALL send the REFRESH command in "eUICC Profile State
                Change" mode (if supported by the Device) or "UICC Reset" mode to the Device
                according to ETSI TS 102 223 [31].
-              Upon reception of the Terminal Response with result "command performed
+           •   Upon reception of the Terminal Response with result "command performed
                successfully" or upon reset of the eUICC, the eUICC SHALL disable the
                currently Enabled Profile. If the target Profile is a Test Profile and an Operational
 
@@ -11384,7 +11384,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                eUICC SHALL enable this Operational Profile. If this Operational Profile was
                deleted while the Test Profile was enabled, no error SHALL be generated and
                the function execution SHALL continue.
-              Upon reception of the Terminal Response with result "temporary problem with
+           •   Upon reception of the Terminal Response with result "temporary problem with
                executing command" or "permanent problem with executing command", the
                eUICC SHALL NOT disable the currently Enabled Profile. Subsequent actions
                are implementation specific.
@@ -11393,7 +11393,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                 eUICC, the Device SHOULD take the appropriate actions regarding this
                 interface when Profile state is changed.
 
-      If the target Profile is successfully disabled, the eUICC SHALL generate as many
+   •   If the target Profile is successfully disabled, the eUICC SHALL generate as many
        Notifications as configured in its metadata (notificationConfigurationInfo) in
        the format of OtherSignedNotification.
 
@@ -11430,9 +11430,9 @@ following alternative command for the function:
 
 The command data is sent to the eUICC in a Case 3 STORE DATA command:
 
-      The STORE DATA APDU SHALL be coded as defined in section 5.7.2, with the
+   •   The STORE DATA APDU SHALL be coded as defined in section 5.7.2, with the
        exception of P1 which SHALL be set to '90'.
-      The command data SHALL be coded as defined above, the response data SHALL
+   •   The command data SHALL be coded as defined above, the response data SHALL
        not be present.
 
 
@@ -11441,7 +11441,7 @@ V2.4                                                                         Pag
 GSM Association                                                                 Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-        The following additional status bytes are defined:
+   •     The following additional status bytes are defined:
          '6A 82': Profile not found.
          '69 85': Profile not in enabled state or command not allowed by Profile Policy Rules.
          '93 00': CAT is busy. Command cannot be executed at present, further normal
@@ -11493,7 +11493,7 @@ following alternative command for the function:
 
 The command data is sent to the eUICC in a Case 3 STORE DATA command:
 
-        The STORE DATA APDU SHALL be coded as defined in section 5.7.2, with the
+   •     The STORE DATA APDU SHALL be coded as defined in section 5.7.2, with the
          exception of P1 which SHALL be set to '90'.
 
 
@@ -11501,9 +11501,9 @@ V2.4                                                                            
 GSM Association                                                                     Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-        The command data SHALL be coded as defined above, the response data SHALL
+   •     The command data SHALL be coded as defined above, the response data SHALL
          not be present.
-        The following additional status bytes are defined:
+   •     The following additional status bytes are defined:
          '6A 82': Profile not found.
          '69 85': Profile not in disabled state or command not allowed by Profile Policy Rules.
 
@@ -11517,8 +11517,8 @@ Description:
 This function deletes selected subsets of the Profiles stored on an eUICC regardless of their
 enabled status or any Profile Policy Rules. Two subsets are defined:
 
-        Operational Profiles.
-        Test Profiles that were not pre-installed (i.e., Test Profiles that were "field loaded").
+   •     Operational Profiles.
+   •     Test Profiles that were not pre-installed (i.e., Test Profiles that were "field loaded").
 
    NOTE:          The identification of pre-installed Test Profiles is out of the scope of this
                   specification.
@@ -11561,14 +11561,14 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                   proactive command session, and MAY send the eUICC Memory Reset
                   command again without any further End User interaction.
 
-        If the eUICC does not terminate the eUICCMemoryReset command, the function
+   •     If the eUICC does not terminate the eUICCMemoryReset command, the function
          SHALL:
-          Delete all the selected ISD-Ps with their Profiles regardless of their enabled status
+         • Delete all the selected ISD-Ps with their Profiles regardless of their enabled status
               or Profile Policy Rules and all related Profiles Metadata stored in the ISD-R. If
               there was an Enabled Profile, the ISD-R SHALL send a REFRESH proactive
               command to the Device.
-          Reset the Default SM-DP+ address to its initial value.
-          For each deleted Profile, the eUICC SHALL generate as many Notifications as
+         • Reset the Default SM-DP+ address to its initial value.
+         • For each deleted Profile, the eUICC SHALL generate as many Notifications as
               configured in its Profile Metadata (notificationConfigurationInfo) in the
               format of OtherSignedNotification.
 
@@ -11646,8 +11646,8 @@ on-card.
 
 Upon reception of the SetNickname function, the eUICC SHALL:
 
-        Verify that the target Profile is present on the eUICC
-        Update the target Profile nickname with the provided data
+   •     Verify that the target Profile is present on the eUICC
+   •     Update the target Profile nickname with the provided data
 
 In case a Profile Nickname already exists for the indicated Profile, the Profile Nickname
 SHALL be updated with the new value. In case the new value is an empty string, the Profile
@@ -11728,8 +11728,8 @@ The consentRequired bit set to 1 indicates that the End User consent is required
 5.8       ES11 (LPA -- SM-DS)
 ES11 is the interface between:
 
-         The LPA entity (more specifically the LDS endpoint).
-         The SM-DS.
+      •   The LPA entity (more specifically the LDS endpoint).
+      •   The SM-DS.
 
 
 
@@ -11774,8 +11774,8 @@ Description:
 This function is identical to "ES9+.InitiateAuthentication" where the SM-DS plays the role of
 SM-DP+ and where:
 
-       The SM-DP+ SHALL be replaced by the SM-DS.
-       CERT.DPauth.ECDSA SHALL be replaced by CERT.DSauth.ECDSA.
+   •    The SM-DP+ SHALL be replaced by the SM-DS.
+   •    CERT.DPauth.ECDSA SHALL be replaced by CERT.DSauth.ECDSA.
 
    NOTE:        The input data object 'smdpAddress' contains an SM-DS address in this
                 case.
@@ -11826,12 +11826,12 @@ function through a Transaction ID delivered by the SM-DS.
 
 On reception of this function call, the SM-DS SHALL:
 
-       Verify the validity of the CERT.EUM.ECDSA, using the public key PK.CI.ECDSA.
-       Verify the validity of the CERT.EUICC.ECDSA, using the public key PK.EUM.ECDSA.
-       Verify the eUICC signature (euiccSignature1) using the PK.EUICC.ECDSA as
+   •    Verify the validity of the CERT.EUM.ECDSA, using the public key PK.CI.ECDSA.
+   •    Verify the validity of the CERT.EUICC.ECDSA, using the public key PK.EUM.ECDSA.
+   •    Verify the eUICC signature (euiccSignature1) using the PK.EUICC.ECDSA as
         described in section 5.7.13 "ES10b.AuthenticateServer".
-       Verify that the transactionId is known and relates to an ongoing RSP session.
-       Verify that the serverChallenge attached to the ongoing RSP session matches the
+   •    Verify that the transactionId is known and relates to an ongoing RSP session.
+   •    Verify that the serverChallenge attached to the ongoing RSP session matches the
         serverChallenge returned by the eUICC.
 
 If any of these verifications fail, the SM-DS SHALL return a 'Function execution status'
@@ -11840,10 +11840,10 @@ indicating 'Failed' with the relevant status code.
 Otherwise the SM-DS SHALL retrieve and return the Event ID and RSP Server address
 pair(s) for the requesting eUICC depending on the content of the received ctxParams1:
 
-       If ctxParamsForCommonAuthentication contains no matchingId data object or
+   •    If ctxParamsForCommonAuthentication contains no matchingId data object or
         an empty value for matchingId, the SM-DS SHALL retrieve and return a list of Event
         ID and RSP Server address pairs corresponding to the EID. This list MAY be empty.
-       If ctxParamsForCommonAuthentication contains a matchingId data object with
+   •    If ctxParamsForCommonAuthentication contains a matchingId data object with
         an eventId value, the SM-DS SHALL retrieve and return the pair of the Event ID
         (corresponding to EventID1 described in section 3.6.1.2) and RSP Server address
         corresponding to the EID and eventId value. If no Event Record identified by the EID
@@ -11854,7 +11854,7 @@ The SM-DS MAY perform additional operations, which are out of scope of this spec
 
 This function SHALL return one of the following:
 
-       A 'Function execution status' with 'Executed-Success' indicating that Event Retrieval
+   •    A 'Function execution status' with 'Executed-Success' indicating that Event Retrieval
         has been successfully executed.
 
 
@@ -11862,7 +11862,7 @@ V2.4                                                                           P
 GSM Association                                                                            Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-        A 'Function execution status' indicating 'Failed' with a status code as defined in
+   •     A 'Function execution status' indicating 'Failed' with a status code as defined in
          section 5.2.6 or a specific status code as defined in the following table.
 
 Additional Input Data:
@@ -11975,14 +11975,14 @@ data.
 
 On reception of this function call, the SM-DS SHALL:
 
-         Verify that the EventID is not already used by the function caller
+      •   Verify that the EventID is not already used by the function caller
 
 If any of these verifications fail, the SM-DS SHALL return a 'Function execution status'
 indicating 'Failed' with the relevant status code.
 
 Otherwise the SM-DS SHALL:
 
-         Store the received Event Record, consisting of the EID, the RSP Server address and
+      •   Store the received Event Record, consisting of the EID, the RSP Server address and
           the EventID, all provided as function input data, together with the function caller
           identity (either an SM-DP+ or an SM-DS OID) received in the TLS Certificate.
 
@@ -11991,7 +11991,7 @@ V2.4                                                                            
 GSM Association                                                                        Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-         If required (forwardingIndicator input data set to 'true'), and if the function
+      •   If required (forwardingIndicator input data set to 'true'), and if the function
           provider is an Alternative SM-DS, cascade the Event registration to the Root-SM-DS
           by calling the "ES15.RegisterEvent" with the relevant input data:
 
@@ -12008,9 +12008,9 @@ this specification.
 
 This function SHALL return one of the following:
 
-         A 'Function execution status' with 'Executed-Success' indicating that the Event has
+      •   A 'Function execution status' with 'Executed-Success' indicating that the Event has
           been registered (and cascaded if required).
-         A 'Function execution status' indicating 'Failed' with a status code as defined in
+      •   A 'Function execution status' indicating 'Failed' with a status code as defined in
           section 5.2.6 or a specific status code as defined in the following table.
 
 Additional Input Data:
@@ -12069,7 +12069,7 @@ DS).
 
 On reception of this function call, the SM-DS SHALL:
 
-       Retrieve the Event Record corresponding to the provided Event ID and the function
+   •    Retrieve the Event Record corresponding to the provided Event ID and the function
         caller identity (SM-DP+ or SM-DS OID) received in the TLS Certificate.
 
 If any of these verifications fail, the SM-DS SHALL return a 'Function execution status'
@@ -12077,22 +12077,22 @@ indicating 'Failed' with the relevant status code.
 
 Otherwise the SM-DS SHALL:
 
-       Determine if the Event Record registration has been cascaded to the Root SM-DS.
-       If the Event Record registration was not cascaded, then the SM-DS SHALL delete the
+   •    Determine if the Event Record registration has been cascaded to the Root SM-DS.
+   •    If the Event Record registration was not cascaded, then the SM-DS SHALL delete the
         retrieved Event Record.
-       If the Event Record registration was cascaded, then
+   •    If the Event Record registration was cascaded, then
 
-             the SM-DS SHALL cascade the deletion of the Event Record to the Root SM-DS
+        •     the SM-DS SHALL cascade the deletion of the Event Record to the Root SM-DS
              by calling the "ES15.DeleteEvent" with the Event ID value generated by the SM-
              DS during Event Record registration.
-            If deletion cascading fails:
+        •    If deletion cascading fails:
 
                 o because the Event record was not found, the SM-DS SHALL ignore this
                   error case and continue.
                 o for any reason, the SM-DS SHALL return a function execution status
                   'Failed' with the relevant status code.
 
-       If deletion cascading has succeeded, the SM-DS SHALL delete the retrieved Event
+   •    If deletion cascading has succeeded, the SM-DS SHALL delete the retrieved Event
         Record.
 
 The SM-DS MAY perform additional verifications and operations, which are out of scope of
@@ -12100,9 +12100,9 @@ this specification.
 
 This function SHALL return one of the following:
 
-       A 'Function execution status' with 'Executed-Success' indicating that the Event has
+   •    A 'Function execution status' with 'Executed-Success' indicating that the Event has
         been deleted (and cascaded if required).
-       A 'Function execution status' indicating 'Failed' with a status code as defined in
+   •    A 'Function execution status' indicating 'Failed' with a status code as defined in
         section 5.2.6 or a specific status code as defined in the following table.
 
 V2.4                                                                            Page 216 of 275
@@ -12251,10 +12251,10 @@ The corresponding function execution response SHALL be returned as defined in SG
 
 This specification uses the following MEPs:
 
-         Synchronous Request-Response: the request payload SHALL be sent in the HTTP
+      •   Synchronous Request-Response: the request payload SHALL be sent in the HTTP
           POST request, and the function execution response SHALL be returned in the HTTP
           POST response.
-         Notification: the notification payload SHALL be sent in the HTTP POST request and
+      •   Notification: the notification payload SHALL be sent in the HTTP POST request and
           the HTTP POST response body SHALL be empty.
 
 
@@ -12320,12 +12320,12 @@ Other status codes '2xx' SHALL not be used by the RSP Server.
 The process of setting up secure channel is out of scope of this document. This process
 includes the exchange of the following information:
 
-         Function requester and Function provider OIDs and identity SHALL be registered to
+      •   Function requester and Function provider OIDs and identity SHALL be registered to
           GSMA Policy Authority and respective values have been communicated to each
           party.
-         Function requester and Function provider URL SHALL have been communicated to
+      •   Function requester and Function provider URL SHALL have been communicated to
           each party.
-         Function requester and Function provider parties’ trust SHALL have been established
+      •   Function requester and Function provider parties’ trust SHALL have been established
           on an X-509 certificate chain basis.
 
 
@@ -12348,7 +12348,7 @@ section 7. Other characters SHALL NOT be escaped.
 The Function requester and the Function Provider SHALL exchange the JSON objects in
 HTTP messages as follows.
 
-         HTTP Request SHALL have the following format.
+      •   HTTP Request SHALL have the following format.
 
 HTTP POST <HTTP Path> HTTP/1.1
 Host: <Server Address>
@@ -12363,7 +12363,7 @@ Content-Length: <Length of the JSON requestMessage>
 The <HTTP Path> is used to indicate which function execution is requested by the HTTP
 client. The list of defined <HTTP Path> are described in section 6.5.2.
 
-         HTTP Response SHALL have the following format.
+      •   HTTP Response SHALL have the following format.
 
 HTTP/1.1 <HTTP Status Code>
 X-Admin-Protocol: gsma/rsp/v<x.y.z>
@@ -12376,16 +12376,16 @@ Content-Length: <Length of the JSON responseMessage>
 6.5.1.1      Definition of <JSON requestMessage>
 <JSON requestMessage> is the combination of:
 
-         <JSON requestHeader>
-         <JSON body> which depends on the function called
+      •   <JSON requestHeader>
+      •   <JSON body> which depends on the function called
 
 HTTP messages for ES9+ and ES11 SHALL not contain the <JSON requestHeader>.
 
 6.5.1.2      Definition of <JSON responseMessage>
 <JSON responseMessage> is the combination of:
 
-         <JSON responseHeader>
-         <JSON body> which depends on the function called
+      •   <JSON responseHeader>
+      •   <JSON body> which depends on the function called
 
 
 
@@ -13114,7 +13114,7 @@ This function has no <JSON body> part of the <JSON responseMessage>.
 The Function requester and the Function Provider SHALL exchange the DER encoded
 ASN.1 objects in HTTP messages as follows.
 
-             HTTP Request SHALL have the following format.
+      •       HTTP Request SHALL have the following format.
 HTTP POST gsma/rsp2/asn1 HTTP/1.1
 Host: <Server Address>
 User-Agent: <User Agent>
@@ -13385,7 +13385,7 @@ V2.4                                                                        Page
 Official Document SGP.22 - RSP Technical Specification v2.4
 
 Annex B        Data Definitions (Normative)
-      Coding of the IMEI
+   •   Coding of the IMEI
 
 The value of the IMEI SHALL be coded as defined in section 4.2.
 
@@ -13406,24 +13406,24 @@ C.1     Functional Device Requirements
  No.
  DEV1              For connectivity the Device SHALL support at least one of the network access
                    technologies defined by 3GPP or 3GPP2:
-                        UDP over IP as defined in RFC 768 [34] (subject to the right support of
+                       • UDP over IP as defined in RFC 768 [34] (subject to the right support of
                            access network technology)
-                        TCP over IP as defined in RFC 793 [19].
+                       • TCP over IP as defined in RFC 793 [19].
  DEV2              For Network connection control the Device SHALL support:
-                        RPLMN details (LAC/TAC, NMR).
-                        QoS (failures, duration, power, location).
-                        New network selection after SIM/USIM update.
+                       • RPLMN details (LAC/TAC, NMR).
+                       • QoS (failures, duration, power, location).
+                       • New network selection after SIM/USIM update.
  DEV3              The Device SHALL contain a unique IMEI (International Mobile Equipment
                    Identity) value compliant with the format defined in 3GPP TS 23.003 [35] and/or
                    a unique MEID as defined in 3GPP2 S.R0048-A [36].
  DEV4              The Device SHALL support, as a minimum, the following set of proactive
                    commands:
-                       PROVIDE LOCAL INFORMATION (location information, IMEI, NMR,
+                      • PROVIDE LOCAL INFORMATION (location information, IMEI, NMR,
                           date and time, access technology, at least).
-                       POLL INTERVAL, POLLING OFF, TIMER MANAGEMENT [at least one
+                      • POLL INTERVAL, POLLING OFF, TIMER MANAGEMENT [at least one
                           timer], ENVELOPE (TIMER EXPIRATION).
-                       SET UP EVENT LIST and ENVELOPE (EVENT DOWNLOAD).
-                       REFRESH Command (At least mode 4 - "UICC reset")
+                      • SET UP EVENT LIST and ENVELOPE (EVENT DOWNLOAD).
+                      • REFRESH Command (At least mode 4 - "UICC reset")
  DEV5              The Device SHALL comply with the IMEI security requirements defined in the
                    GSMA-EICTA document "Security Principles Related to Handset Theft" [22].
  DEV6              A Device SHALL be able to handle an eUICC without any installed Profiles.
@@ -13487,20 +13487,20 @@ OEM(s), or it SHALL be established as follows:
       Companion Device address and the security information to the Primary Device using
       one of following non-exhaustive example means:
 
-              The Companion Device transfers the HTTPS URL to the Primary Device, e.g.
+           •   The Companion Device transfers the HTTPS URL to the Primary Device, e.g.
                using NFC.
-              The Companion Device displays the HTTPS URL which could be input by the
+           •   The Companion Device displays the HTTPS URL which could be input by the
                End User to the Primary Device.
-              The Companion Device transforms the HTTPS URL into a QR code or bar
+           •   The Companion Device transforms the HTTPS URL into a QR code or bar
                code so that the Primary Device can scan the code to obtain the HTTPS URL.
-              The Companion Device transfers the HTTPS URL through a wired connection,
+           •   The Companion Device transfers the HTTPS URL through a wired connection,
                such as a USB link to the Primary Device.
 
    4. Using the Companion Device address and the security information obtained from the
       HTTPS URL, a software component (e.g. LPAd) on the Primary Device establishes a
       HTTPS session with the LPAd on the Companion Device:
 
-              Firstly, the software component uses the LPA_access_token in step 2 as the
+           •   Firstly, the software component uses the LPA_access_token in step 2 as the
                PSK to initiate the PSK-TLS connection as defined in RFC 4279 [47] with the
 
 V2.4                                                                                  Page 241 of 275
@@ -13510,7 +13510,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
                LPAd on the Companion Device. During the TLS handshake, the software
                component in the Primary Device performs mutual authentication with the
                LPAd on the Companion Device and negotiates the session key.
-              After the TLS connection is established, the software component on the
+           •   After the TLS connection is established, the software component on the
                Primary Device sends an HTTP request over the TLS session to the
                Companion Device to retrieve the UI presentation of the LUId. Upon receiving
                the HTTP request, the LPAd on the Companion Device sends the HTTP
@@ -13522,9 +13522,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
       The LUI on the Companion Device MAY restrict the actions that can be performed from
       the Primary Device. For example:
 
-              It MAY not offer the eUICC Memory Reset.
-              It MAY only expose the 'enable' and 'disable' operations.
-              It MAY expose a Profile for enabling only if no Profile is already enabled on the
+           •   It MAY not offer the eUICC Memory Reset.
+           •   It MAY only expose the 'enable' and 'disable' operations.
+           •   It MAY expose a Profile for enabling only if no Profile is already enabled on the
                Companion Device.
 
 C.3    General LPA Requirements
@@ -13544,15 +13544,15 @@ the Device capabilities permit.
 The LPA SHALL support the following Local Profile Management Operations via the LPA’s
 Local User Interface (LUI) function:
 
-      Initiate a Profile download RSP session with SM-DP+ as defined in section 3.1.2.
-      Query for pending Profile Download Event Record as defined in section 3.6.2.
-      Enabling a Disabled Profile as defined in section 3.2.1.
-      Disabling an Enabled Profile as defined in section 3.2.2.
-      Delete a Profile as defined in section 3.2.3.
-      Query the Profile Metadata and states of Profiles installed on the eUICC as defined in
+   •   Initiate a Profile download RSP session with SM-DP+ as defined in section 3.1.2.
+   •   Query for pending Profile Download Event Record as defined in section 3.6.2.
+   •   Enabling a Disabled Profile as defined in section 3.2.1.
+   •   Disabling an Enabled Profile as defined in section 3.2.2.
+   •   Delete a Profile as defined in section 3.2.3.
+   •   Query the Profile Metadata and states of Profiles installed on the eUICC as defined in
        section 3.2.4.
-      Perform eUICC Memory Reset, as defined in section 3.3.2.
-      Perform eUICC Test Memory Reset, as defined in section 3.3.3, if the Device
+   •   Perform eUICC Memory Reset, as defined in section 3.3.2.
+   •   Perform eUICC Test Memory Reset, as defined in section 3.3.3, if the Device
        supports Device Test Mode as described hereunder.
 
 The LPA SHOULD support the following Local Profile Management Operations via the LPA’s
@@ -13562,11 +13562,11 @@ V2.4                                                                           P
 GSM Association                                                                  Non-confidential
 Official Document SGP.22 - RSP Technical Specification v2.4
 
-      Set/Edit Profile Nicknames associated with installed Profiles as defined in section
+   •   Set/Edit Profile Nicknames associated with installed Profiles as defined in section
        3.2.6. If the LPA does not support Set/Edit Nickname, alternative Device-specific
        methods to distinguish Profiles on the LUI SHOULD be provided by the LPA.
 
-      Set/Edit Default SM-DP+ Address as defined in section 3.3.4. If the LPA does not
+   •   Set/Edit Default SM-DP+ Address as defined in section 3.3.4. If the LPA does not
        support Set/Edit Default SM-DP+ Address according to this procedure, an alternative
        Device-specific method to edit the Default SM-DP+ address SHALL be provided to
        the End User.
@@ -13591,24 +13591,24 @@ ensuring the privacy and integrity of the data it handles are out of scope of th
 As appropriate for the class of Device, the proper security level associated with LPAd
 functions SHOULD be ensured based on industry-proven implementations of:
 
-      A secure boot OS.
-      An implementation-dependent software/hardware secure execution environment for
+   •   A secure boot OS.
+   •   An implementation-dependent software/hardware secure execution environment for
        capturing, storing and verifying the passcode or biometric input.
-      Verification of proper OEM signature of LPAd related software components.
-      Application-level secure pairing and un-pairing methods between Primary and
+   •   Verification of proper OEM signature of LPAd related software components.
+   •   Application-level secure pairing and un-pairing methods between Primary and
        Companion Devices. This MAY be independent of pairing technologies and
        associated link layer security (e.g. Bluetooth or Wi-Fi).
 
 The Device-specific security implementation SHALL:
 
-      Verify the integrity of the LPAd and authorise it to be used.
-      Provide access to the trusted LUId user interface only for the authorised LPAd.
-      Provide access to the ISD-R of the eUICC only for the authorised LPAd. This
+   •   Verify the integrity of the LPAd and authorise it to be used.
+   •   Provide access to the trusted LUId user interface only for the authorised LPAd.
+   •   Provide access to the ISD-R of the eUICC only for the authorised LPAd. This
        restriction to the LPAd SHALL be enforced regardless of any rule stored in the Profile
        according to GlobalPlatform SEAC [56] which may allow it.
-      Restrict access to the LPAd to only those applications and services that are provided
+   •   Restrict access to the LPAd to only those applications and services that are provided
        by the OEM to enable the services and functions of the LPAd.
-      Protect the LPAd and the data it handles from unauthorised access and modification.
+   •   Protect the LPAd and the data it handles from unauthorised access and modification.
        Such data includes, but is not limited to, the EID, Activation Code, Confirmation
 
 
@@ -13643,9 +13643,9 @@ Where technically feasible, the Device SHALL implement a mechanism allowing the 
 User to protect the access to the Device and its Profile Management Operations with
 personal data. Implementation is Device specific. If such a mechanism is implemented:
 
-        The Device SHOULD enforce the mechanism by default, and
-        The End User SHOULD be able to enable/disable the mechanism, and
-        The End User SHALL be able to configure the personal data.
+   •     The Device SHOULD enforce the mechanism by default, and
+   •     The End User SHOULD be able to enable/disable the mechanism, and
+   •     The End User SHALL be able to configure the personal data.
 
 The Device SHALL provide mechanisms to obtain StrongConfirmation and Simple
 Confirmation in a Device specific implementation.
@@ -13654,8 +13654,8 @@ The mechanism for User Intent verification is out of scope for this release.
 
 As examples, the recommended Strong Confirmation could include:
 
-        Repeating Simple Confirmations, or
-        Biometric (e.g. fingerprint) verification, or
+   •     Repeating Simple Confirmations, or
+   •     Biometric (e.g. fingerprint) verification, or
 
 Device passcode verificationDevice Test Mode
 
@@ -13757,10 +13757,10 @@ OIDs
 The following identifiers for remote provisioning are created under a dedicated OID tree
 under ISO branch:
 
-        ASN.1 notation: {ISO(1) identified-organization(3) dod(6) internet(1) private(4)
+   •     ASN.1 notation: {ISO(1) identified-organization(3) dod(6) internet(1) private(4)
          enterprise(1)}
-        dot notation: 1.3.6.1.4.1
-        IOD-IRI notation: /ISO/Identified-Organization/6/1/4/1
+   •     dot notation: 1.3.6.1.4.1
+   •     IOD-IRI notation: /ISO/Identified-Organization/6/1/4/1
 
 The private enterprise numbers may be found under the Internet Assigned Numbers
 Authority: http://www.iana.org/assignments/enterprise-numbers/enterprise-numbers
@@ -13841,7 +13841,7 @@ Type is compatible with the targeted Device.
 
 Two types of checking are possible:
 
-      Static eligibility check (SEC): a check based on the static capabilities of the Device
+   •   Static eligibility check (SEC): a check based on the static capabilities of the Device
        and / or the eUICC. These capabilities could be retrieved based on the knowledge of
        the EID and the TAC. These eUICC capabilities MAY be acquired by various means:
        information contained in the EID itself, additional tables locally handled by the
@@ -13850,7 +13850,7 @@ Two types of checking are possible:
        under the responsibility of the Operator; it MAY be done by the SM-DP+ on behalf of
        the Operator. The means to establish the compatibility of the Profile Type with a
        Device type and eUICC type is out of scope of this specification.
-      Dynamic eligibility check (DEC): a check based on the eUICC Info and / or the Device
+   •   Dynamic eligibility check (DEC): a check based on the eUICC Info and / or the Device
        capabilities signed by the eUICC during Profile Download and Installation procedure.
        This Dynamic eligibility check is under the responsibility of the SM-DP+ on behalf of
        the Operator.
@@ -13898,14 +13898,14 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 The following recommendations apply to the SM-DP+ for the eligibility check of 5G supporting
 Device. See also section 4.2, section 5.7.8, and annex H.
-      The SM-DP+ SHOULD check if the eUICC supports GET IDENTITY, i.e.,
+   •   The SM-DP+ SHOULD check if the eUICC supports GET IDENTITY, i.e.,
        getIdentity bit is set in uiccCapability. If it is not supported, the SM-DP+
        SHOULD NOT configure service n°125 in EFUST, and SHOULD NOT provide DFSAIP in
        the Profile Package.
-      The SM-DP+ SHOULD check if the eUICC supports SAIP v2.3.1 (or higher). If it is not
+   •   The SM-DP+ SHOULD check if the eUICC supports SAIP v2.3.1 (or higher). If it is not
        supported and the Profile is intended to contain DF5GS, the SM-DP+ SHOULD provide
        the DF5GS by using Generic File Management PE.
-      The SM-DP+ MAY provide a Profile with additional 5G features even if the Device does
+   •   The SM-DP+ MAY provide a Profile with additional 5G features even if the Device does
        not support 5G core access (neither eutran5gcSupportedRelease nor
        nr5gcSupportedRelease is present in deviceCapability).
 
@@ -13915,21 +13915,21 @@ Annex G        Key Derivation Process (Normative)
 The key derivation process described in this section SHALL be executed by both the off-card
 entity (SM-DP+) and the eUICC in a symmetric way.
 
-      Use otPK.eUICC.ECKA and otPK.DP.ECKA (with their respective one time private
+   •   Use otPK.eUICC.ECKA and otPK.DP.ECKA (with their respective one time private
        keys) to generate the shared secret ShS as described in GlobalPlatform Card
        Specification Amendment F [13] section 3.1.1 (but limited to ephemeral keys) which
        constitutes the input for the Key Derivation process.
-      Concatenate the following values as SharedInfo as input for the Key Derivation
+   •   Concatenate the following values as SharedInfo as input for the Key Derivation
        process (this data is the one given as input data in the function
        "ES8+.InitialiseSecureChannel"):
 
-          Key type (1 byte)
-          Key length (1 byte)
-          HostID-LV and EID-LV. HostID-LV comprises the length and the value field of the
+       •   Key type (1 byte)
+       •   Key length (1 byte)
+       •   HostID-LV and EID-LV. HostID-LV comprises the length and the value field of the
            HostID given in the input data; EID-LV comprises the length and value field of the
            EID.
 
-      Initial MAC Chaining value, S-ENC and S-MAC are taken from KeyData derived from
+   •   Initial MAC Chaining value, S-ENC and S-MAC are taken from KeyData derived from
        the ShS as defined in BSI TR-03111 [41] for the "X9.63 Key Derivation Function"
        (SHA-256 SHALL be used for the key derivation to calculate KeyData of sufficient
        length). This key derivation includes additional information, the 'SharedInfo' of the key
@@ -14965,7 +14965,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 Annex I        JSON Request Response Examples (Informative)
 An example for the "ES9+.InitiateAuthentication" function is shown below:
 
-       HTTP Request (from LPA to SM-DP+):
+    •   HTTP Request (from LPA to SM-DP+):
 
 HTTP POST /gsma/rsp2/es9plus/initiateAuthentication HTTP/1.1
 Host: smdp.gsma.com
@@ -14982,7 +14982,7 @@ Content-Length: XXX
 }
 
 
-       HTTP Response (from LPA to SM-DP+ to)
+    •   HTTP Response (from LPA to SM-DP+ to)
 
 HTTP/1.1 200 OK
 X-Admin-Protocol: gsma/rsp/v2.3
@@ -15004,7 +15004,7 @@ Content-Length: XXX
 
 An example for the "ES2+.DownloadOrder" function is shown as follows.
 
-       HTTP Request (from Operator to SM-DP+):
+    •   HTTP Request (from Operator to SM-DP+):
 
 HTTP POST /gsma/rsp2/es2plus/downloadOrder HTTP/1.1
 Host: smdp.gsma.com
@@ -15029,7 +15029,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 }
 
 
-       HTTP Response for a successful execution:
+    •   HTTP Response for a successful execution:
 
 HTTP/1.1 200 OK
 X-Admin-Protocol: gsma/rsp/v2.3
@@ -15046,7 +15046,7 @@ Content-Length: XXX
 }
 
 
-       HTTP Response for a failed execution:
+    •   HTTP Response for a failed execution:
 
 HTTP/1.1 200 OK
 X-Admin-Protocol: gsma/rsp/v2.3
@@ -15069,7 +15069,7 @@ Content-Length: XXX
 
 An example for the "ES2+.HandleDownloadProgressInfo" function is shown as follows:
 
-       HTTP Request:
+    •   HTTP Request:
 
 HTTP POST /gsma/rsp2/es2plus/handleDownloadProgressInfo HTTP/1.1
 Host: smdp.gsma.com
@@ -15099,7 +15099,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 }
 
 
-       HTTP Response for a successful execution:
+    •   HTTP Response for a successful execution:
 
 HTTP/1.1 204 No Content
 X-Admin-Protocol: gsma/rsp/v2.3
