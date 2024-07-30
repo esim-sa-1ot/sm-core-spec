@@ -1,14 +1,14 @@
 GSM Association Non-confidential
-Official Document SGP.22 – RSP Technical Specification v2.4
+Official Document SGP.22 – RSP Technical Specification v2.5
 
 
 
 
  RSP Technical Specification
- Version 2.4
- 28 October 2021
+ Version 2.5
+ 26 May 2023
 
-This Industry Specification is a Non-Binding Permanent Document of the GSMA
+
 
 Security Classification: Non-confidential
 Access to and distribution of this document is restricted to the persons permitted by the security classification. This document is subject to
@@ -18,12 +18,12 @@ the prior written approval of the Association.
 
 
 Copyright Notice
-Copyright © 2021 GSM Association
+Copyright © 2023 GSM Association
 
 Disclaimer
-The GSM Association (“Association”) makes no representation, warranty or undertaking (express or implied) with respect to and does not accept
-any responsibility for, and hereby disclaims liability for the accuracy or completeness or timeliness of the information contained in this document.
-The information contained in this document may be subject to change without prior notice.
+The GSMA makes no representation, warranty or undertaking (express or implied) with respect to and does not accept any responsibility for, and
+hereby disclaims liability for the accuracy or completeness or timeliness of the information contained in this document. The information contained
+in this document may be subject to change without prior notice.
 
 Compliance Notice
 The information contain herein is in full compliance with the GSM Association’s antitrust compliance policy.
@@ -34,9 +34,9 @@ GSMA in accordance with the provisions set out in GSMA AA.35 - Procedures for In
 
 
 
-V2.4 Page 1 of 275
+V2.5 Page 1 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Table of Contents
 1 Introduction 7
@@ -83,9 +83,9 @@ Table of Contents
  2.7 Certificate Revocation 42
  2.8 ASN.1 42
 
-V2.4 Page 2 of 275
+V2.5 Page 2 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  2.8.1 Common ASN.1 data types 43
  2.8.2 ASN.1 data type UTF8String 44
@@ -98,9 +98,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  3.1.1 Profile Download Initiation 50
  3.1.2 Common Mutual Authentication Procedure 54
  3.1.3 Profile Download and Installation 59
- 3.1.4 Limitation for Profile Installation 77
- 3.1.5 Error Handling Within the Profile Download Procedure 77
- 3.1.6 Profile Lifecycle at SM-DP+ 78
+ 3.1.4 Limitation for Profile Installation 76
+ 3.1.5 Error Handling Within the Profile Download Procedure 76
+ 3.1.6 Profile Lifecycle at SM-DP+ 77
  3.2 Local Profile Management 81
  3.2.1 Enable Profile 82
  3.2.2 Disable Profile 85
@@ -128,16 +128,16 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  4.1.1 Matching ID 114
  4.2 Device Information 115
  4.3 eUICC Information 117
- 4.3.1 eUICC identifier (EID) 118
+ 4.3.1 eUICC identifier (EID) 119
  4.4 Profile Metadata 119
- 4.4.1 Profile Class 119
+ 4.4.1 Profile Class 120
 
 
-V2.4 Page 3 of 275
+V2.5 Page 3 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
- 4.4.2 Profile Policy Rules 119
+ 4.4.2 Profile Policy Rules 120
  4.5 Keys and Certificates 120
  4.5.1 Cryptographic Keys 120
  4.5.2 Certificates 121
@@ -183,59 +183,59 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  5.7.5 Function (ES10b): PrepareDownload 184
  5.7.6 Function (ES10b): LoadBoundProfilePackage 186
 
-V2.4 Page 4 of 275
+V2.5 Page 4 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  5.7.7 Function (ES10b): GetEUICCChallenge 186
  5.7.8 Function (ES10b): GetEUICCInfo 187
- 5.7.9 Function: (ES10b): ListNotification 190
+ 5.7.9 Function: (ES10b): ListNotification 191
  5.7.10 Function (ES10b): RetrieveNotificationsList 191
- 5.7.11 Function (ES10b): RemoveNotificationFromList 192
+ 5.7.11 Function (ES10b): RemoveNotificationFromList 193
  5.7.12 Function (ES10b): LoadCRL 193
  5.7.13 Function (ES10b): AuthenticateServer 195
  5.7.14 Function (ES10b): CancelSession 197
- 5.7.15 Function (ES10c): GetProfilesInfo 198
- 5.7.16 Function (ES10c): EnableProfile 200
- 5.7.17 Function (ES10c): DisableProfile 203
+ 5.7.15 Function (ES10c): GetProfilesInfo 199
+ 5.7.16 Function (ES10c): EnableProfile 201
+ 5.7.17 Function (ES10c): DisableProfile 204
  5.7.18 Function (ES10c): DeleteProfile 206
  5.7.19 Function (ES10c): eUICCMemoryReset 207
- 5.7.20 Function (ES10c): GetEID 208
+ 5.7.20 Function (ES10c): GetEID 209
  5.7.21 Function (ES10c): SetNickname 209
  5.7.22 Function (ES10b): GetRAT 210
- 5.8 ES11 (LPA -- SM-DS) 210
+ 5.8 ES11 (LPA -- SM-DS) 211
  5.8.1 Function: InitiateAuthentication 211
  5.8.2 Function: AuthenticateClient 212
  5.9 ES12 (SM-DS -- SM-DP+) 214
  5.9.1 Function: RegisterEvent 214
  5.9.2 Function: DeleteEvent 216
  5.10 ES15 (SM-DS -- SM-DS) 217
- 5.10.1 Function: RegisterEvent 217
+ 5.10.1 Function: RegisterEvent 218
  5.10.2 Function: DeleteEvent 218
  5.11 LUI in the eUICC (LUIe) 218
  5.11.1 LUIe using CAT 218
- 5.11.2 LUIe using SCWS 218
-6 Interface binding over HTTP 218
+ 5.11.2 LUIe using SCWS 219
+6 Interface binding over HTTP 219
  6.1 TLS Security 219
  6.1.1 Identification/Authentication/Authorisation 219
  6.1.2 Integrity 219
  6.1.3 Confidentiality 219
  6.2 HTTP request and response 219
  6.3 HTTP response status codes 220
- 6.4 Secure Channel Set-Up on ES2+ 220
+ 6.4 Secure Channel Set-Up on ES2+ 221
  6.5 Function Binding in JSON 221
  6.5.1 JSON message definition 221
  6.5.2 List of functions 223
- 6.6 Function Binding in ASN.1 233
- 6.6.1 ASN.1 message definition 233
+ 6.6 Function Binding in ASN.1 234
+ 6.6.1 ASN.1 message definition 234
  6.6.2 List of functions 234
 Annex A Use of GlobalPlatform Privileges (Normative) 238
 Annex B Data Definitions (Normative) 239
 
 
-V2.4 Page 5 of 275
+V2.5 Page 5 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex C Device Requirements (Normative) 240
  C.1 Functional Device Requirements 240
@@ -246,20 +246,20 @@ Annex D Coding of the AIDs for 'Remote SIM Provisioning' (Normative) 247
 Annex E List of Identifiers (Informative) 248
 Annex F Profile Eligibility Check (Informative) 250
 Annex G Key Derivation Process (Normative) 251
-Annex H ASN.1 Definitions (Normative) 252
-Annex I JSON Request Response Examples (Informative) 266
-Annex J Tag allocation (Normative) 269
-Annex K OID allocation (Informative) 271
-Annex L DLOA document (Normative) 272
-Annex M Document Management (Informative) 274
- M.1 Document History 274
+Annex H ASN.1 Definitions (Normative) 253
+Annex I JSON Request Response Examples (Informative) 267
+Annex J Tag allocation (Normative) 270
+Annex K OID allocation (Informative) 272
+Annex L DLOA document (Normative) 273
+Annex M Document Management (Informative) 275
+ M.1 Document History 275
 
 
 
 
-V2.4 Page 6 of 275
+V2.5 Page 6 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 1 Introduction
 
@@ -311,9 +311,9 @@ industry bodies, etc.
 
 
 
-V2.4 Page 7 of 275
+V2.5 Page 7 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  A Device that relies on the capabilities of a Primary Device for
  Companion Device
@@ -375,9 +375,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  Operator, to be processed by a specific eUICC.
 
 
-V2.4 Page 8 of 275
+V2.5 Page 8 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Unique identifier of an Event for a specific EID generated by the
  EventID
@@ -437,9 +437,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 9 of 275
+V2.5 Page 9 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Reference data for an RSP Server which could be an Activation
  MatchingID
@@ -503,9 +503,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 10 of 275
+V2.5 Page 10 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  A combination of local and remote management operations
  Profile Management (e.g.: enable Profile, disable Profile, delete Profile, and query
@@ -563,9 +563,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 11 of 275
+V2.5 Page 11 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  The organization through which the End User obtains PLMN
  Service Provider telecommunication services. This is usually the network operator
@@ -620,9 +620,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 12 of 275
+V2.5 Page 12 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 1.6 Abbreviations
  Abbreviation Description
@@ -668,9 +668,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  GP GlobalPlatform
  GSMA GSM Association
 
-V2.4 Page 13 of 275
+V2.5 Page 13 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  HLR Home Location Register
  ICCID Integrated Circuit Card ID
@@ -713,9 +713,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  PKI Public Key Infrastructure
 
 
-V2.4 Page 14 of 275
+V2.5 Page 14 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  PK.CI.ECDSA Public Key of the CI, part of the CERT.CI.ECDSA
  PK.DPauth.ECDSA Public Key of the SM-DP+ part of the CERT.DPauth.ECDSA
@@ -764,9 +764,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 15 of 275
+V2.5 Page 15 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  SGP.22 Specification Version Number (referred to as 'eSVN' in
  SVN
@@ -794,7 +794,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  [2] SGP.02
  specification V4.2
  [3] void Void
- [4] SGP.21 RSP Architecture V2.4
+ [4] SGP.21 RSP Architecture V2.5
  Trusted Connectivity Alliance (formerly SIMalliance) eUICC
  eUICC Profile
  [5] Profile Package: Interoperable Format Technical Specification
@@ -825,9 +825,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 16 of 275
+V2.5 Page 16 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  ISO/IEC 7816- Identification cards – Integrated circuit cards - Part 4:
  [14]
@@ -889,9 +889,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 17 of 275
+V2.5 Page 17 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Digital cellular telecommunications system (Phase 2+);
  [35] 3GPP TS 23.003 Universal Mobile Telecommunications System (UMTS);
@@ -952,9 +952,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 18 of 275
+V2.5 Page 18 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Key words for use in RFCs to Indicate Requirement Levels, S.
  [61] RFC 2119 Bradner
@@ -963,7 +963,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  [62] 3GPP TS 34.108
  Conformance testing
  [63] 3GPP TS 29.002 Mobile Application Part (MAP) specification
- [64] SGP.24 RSP Compliance Process V1.1
+ [64] SGP.24 RSP Compliance Process
  Elliptic Curve Cryptography (ECC) Cipher Suites
  [65] RFC 4492
  for Transport Layer Security (TLS)
@@ -1003,9 +1003,9 @@ Provisioning and Management of the eUICC for consumer Devices.
 
 
 
-V2.4 Page 19 of 275
+V2.5 Page 19 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
  ES2+ Operator
@@ -1072,9 +1072,9 @@ eUICC (LPAe). This architecture is shown in the following figure.
 
 
 
-V2.4 Page 20 of 275
+V2.5 Page 20 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
  ES2+ Operator
@@ -1140,9 +1140,9 @@ The following table provides information about the interfaces within the archite
 
 
 
-V2.4 Page 21 of 275
+V2.5 Page 21 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Interface Between Description
  ES2+ Operator SM-DP+ Used by the Operator to order Profiles for specific eUICCs
@@ -1191,9 +1191,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 22 of 275
+V2.5 Page 22 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 2.4 eUICC Architecture
 
@@ -1303,9 +1303,9 @@ The ECASD SHALL contain:
 
  • The eUICC’s Private Key(s) (SK.EUICC.ECDSA) for creating ECDSA signatures
 
-V2.4 Page 23 of 275
+V2.5 Page 23 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • The eUICC’s Certificate(s) for eUICC authentication (CERT.EUICC.ECDSA)
  containing the eUICC’s public key (PK.EUICC.ECDSA)
@@ -1360,9 +1360,9 @@ according to Annex A.
 The ISD-R cannot be deleted or disabled.
 
 
-V2.4 Page 24 of 275
+V2.5 Page 24 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 2.4.4 ISD-P
 The ISD-P is the on-card representative of the SM-DP+ and is a secure container (Security
@@ -1384,7 +1384,7 @@ Profile.
 2.4.5 Profile
 A Profile consists of Profile Components:
 
- • One MNO-SD
+ • One MNO-SD (mandatory)
  • Supplementary Security Domains (SSD) and a CASD
  • Applets
  • Applications, e.g. NFC applications
@@ -1414,9 +1414,9 @@ When a Profile is Disabled, the eUICC SHALL ensure that:
 
 
 
-V2.4 Page 25 of 275
+V2.5 Page 25 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 2.4.5.1 Operational Profile
 An Operational Profile SHALL have its Profile Class set to 'operational' in its Profile
@@ -1458,21 +1458,26 @@ key(s) for network authentication SHALL comply with one of the following:
  3. Any arbitrary value, if the network authentication algorithm is the Test Algorithm as
  defined in Section 8.1.2 of 3GPP TS 34.108 [62] or the IMSI value complies with the
  Test USIM IMSI defined in Section 8.3.2.2 of 3GPP TS 34.108 [62].
+ NOTE: EFIMSI may be absent in, e.g., a Test Profile for 5G networks using
+ Network Access Identifier (NAI) instead of IMSI.
+
 
 When a Test Profile is downloaded, the eUICC SHALL accept keys compliant with (1) and
 SHOULD accept keys compliant with (2) or (3).
 
 Preloaded Test Profiles SHALL comply with one of these conditions.
 
+
+
+
+V2.5 Page 26 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 In every other respect, a Test Profile SHALL have the same format structure as any other
 Profile.
 
  NOTE: A live commercial network would never use a key with so little entropy.
-
-
-V2.4 Page 26 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 Test Profiles and their associated Profile Metadata SHALL be visible in the LUI when the
 Device is in Device Test Mode.
@@ -1519,15 +1524,15 @@ functions. These services include:
  • Provide list of installed Profiles and their Profile Metadata
  • Retrieve EID
  • Provide Local Profile Management Operations
+
+V2.5 Page 27 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • Provide pending Notifications
 
 LPA Services are mandatory even if the LPAe is provided in the eUICC because the eUICC
 SHALL support LPAd even if it contains LPAe.
-
-
-V2.4 Page 27 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 2.4.10 Hardware Characteristics of the eUICC
 The following requirements apply:
@@ -1570,20 +1575,20 @@ version and Specification version.
  available functionality for implementing
  a security and cryptography framework
  on the Java Card platform
+
+
+
+
+V2.5 Page 28 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  javacardx.* javacardx.crypto Extension package 1.5 Java CardTM
  (javacardx.crypto) that contains functionality, which may 3.0.4
  be subject to export controls, for Classic
  implementing a security and
  cryptography framework on the Java
  Card platform.
-
-
-
-
-V2.4 Page 28 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  uicc.* uicc.access This package provides the 1.2 TS 102 241
  (uicc.access, means to the applets for accessing the [53] Rel-9
  uicc.system, UICC file system defined in the TS 102
@@ -1638,19 +1643,18 @@ NFC:
  javacardx.framework.tlv Extension 1.0
  package that contains functionality, for
  managing storage for BER TLV
+
+
+V2.5 Page 29 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  formatted data, based on the ASN.1
  BER encoding rules of ISO/IEC 8825-
  1:2002, as well as parsing and editing
  BER TLV formatted data in I/O buffers.
  javacardx.framework.util.intx 1.0
  Extension package that contains
-
-
-
-V2.4 Page 29 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  common utility functions for using int
  components.
  uicc.hci.* uicc.hci.framework This package 1.1 TS 102 705
@@ -1699,9 +1703,9 @@ specification uses the following terms:
 
 
 
-V2.4 Page 30 of 275
+V2.5 Page 30 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  SM-DP+:
  Profile Package Generation (Unprotected) Profile Package PE TLV1 PE TLV2 … PE TLVn
@@ -1767,9 +1771,9 @@ support receiving data segments of at least up to this size.
  NOTE: From the 1020 bytes of each data segment, only 1008 bytes are usable for
  payload (deducted the 1 byte tag, 3 bytes length field and 8 bytes MAC).
 
-V2.4 Page 31 of 275
+V2.5 Page 31 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Considering the necessary padding during encryption (16 bytes length block
  encryption and necessary '80' byte padding), then each data segment can
@@ -1823,9 +1827,9 @@ The BPP comprises a sequence of TLV commands (in this order):
  Protection Keys'
  • Followed by the SCP03t payload TLVs (tag '86') of the PPP
 
-V2.4 Page 32 of 275
+V2.5 Page 32 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 The encryption counter for ICV calculation is incremented each time a TLV with tag '86', '87'
 or '88' is received.
@@ -1885,9 +1889,9 @@ The following table describes the various sequences of '86', '87' and '88' TLV
 
 
 
-V2.4 Page 33 of 275
+V2.5 Page 33 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 2.5.4.1 Description of 'InitialiseSecureChannel' Block
 This block comprises the TLVs for opening a remote personalisation session with eUICC,
@@ -1940,9 +1944,9 @@ The segmentation SHALL be done according to the structure of the Bound Profile P
  • Each of the '86' TLVs
 
 
-V2.4 Page 34 of 275
+V2.5 Page 34 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Each segment of this list that is up to 255 bytes is transported in one APDU. Larger TLVs
 are sent in blocks of 255 bytes for the first blocks and a last block that MAY be shorter.
@@ -1997,9 +2001,9 @@ ProfileInstallationResultData (tag 'BF 27').
 -- Definition of Profile Installation Result
 
 
-V2.4 Page 35 of 275
+V2.5 Page 35 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 ProfileInstallationResult ::= [55] SEQUENCE { -- Tag 'BF37'
  profileInstallationResultData [39] ProfileInstallationResultData,
@@ -2066,9 +2070,9 @@ details authorised combinations:
  incorrectInputValues(1)     
  invalidSignature(2) 
 
-V2.4 Page 36 of 275
+V2.5 Page 36 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  invalidTransactionId(3) 
  unsupportedCrtValues(4) 
@@ -2120,9 +2124,9 @@ requirement in this specification, any status code in PEStatus MAY be set:
 
 
 
-V2.4 Page 37 of 275
+V2.5 Page 37 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 The following ErrorReason values MAY be treated by the SM-DP+ as temporary errors,
 where the SM-DP+ SHALL allow retries of the Profile download as long as the download
@@ -2176,9 +2180,9 @@ Communication protection:
 
 
 
-V2.4 Page 38 of 275
+V2.5 Page 38 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Once authenticated, the remote entities SHALL negotiate a common cryptographic
  suite for further communication.
@@ -2232,9 +2236,9 @@ GlobalPlatform Card Specification Amendment F [13].
 
 
 
-V2.4 Page 39 of 275
+V2.5 Page 39 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • The first TLV(s) following the data for key establishment are protected with the
  session keys generated in the key agreement. MACing and encryption is done as
@@ -2287,9 +2291,9 @@ Clients SHALL support at least one of the cipher suites defined above. For the p
 RSP, one of these cipher suites SHALL be used.
 
 
-V2.4 Page 40 of 275
+V2.5 Page 40 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Clients SHALL support at least one set of elliptic curve parameters defined in 2.6.7.1.
 
@@ -2343,9 +2347,9 @@ Specification Amendment E [12] with one of the domain parameters defined above i
 
 
 
-V2.4 Page 41 of 275
+V2.5 Page 41 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 When applied to an ASN.1 data object, the signature SHALL be computed for the data
 object after encoding (i.e. in its DER representation).
@@ -2399,12 +2403,12 @@ module called RSPDefinitions, with an ISO Object Identifier in the GSMA namespac
 
 
 
-V2.4 Page 42 of 275
+V2.5 Page 42 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 RSPDefinitions {joint-iso-itu-t(2) international-organizations(23) gsma(146) rsp(1)
-spec-version(1) version-two(2)}
+asn1modules(1) sgp22v2(2)}
 DEFINITIONS
 AUTOMATIC TAGS
 EXTENSIBILITY IMPLIED ::=
@@ -2459,15 +2463,15 @@ the MNC will be coded as bytes 1 to 3: '42' 'F6' '18'.
 
 
 
-V2.4 Page 43 of 275
+V2.5 Page 43 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Coding of gid1 and gid2: both are optional. Content SHALL be coded as defined in 3GPP
 TS 31.102 [54].
 
-In case the Profile contains multiple USIM applications, the OperatorId SHALL reflect the
-values of one of the USIM applications.
+In case the Profile contains multiple USIM applications that contain EFIMSI, the OperatorId
+SHALL reflect the values of one of those USIM applications.
 
  NOTE: Additional mechanism for identifying MVNO/Service Providers is for further
  study.
@@ -2502,6 +2506,8 @@ A Profile MAY have zero or more Profile Policy Rules.
 
 A Test Profile SHOULD NOT contain any Profile Policy Rules.
 
+Profile Policy Rules MAY only be provided for a Profile that contains an EFIMSI.
+
 When installed on the eUICC, Profile Policy Rules SHALL be contained in the associated
 Profile.
 
@@ -2514,10 +2520,9 @@ The coding of PPRs is given in section 2.8.1.1.
 
 
 
-
-V2.4 Page 44 of 275
+V2.5 Page 44 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 2.9.2 Rules Authorisation Table (RAT)
 The Rules Authorisation Table (RAT) contains the description of the acceptable set of PPRs
@@ -2574,9 +2579,9 @@ where the corresponding gid1 or gid2 value is absent.
 
 
 
-V2.4 Page 45 of 275
+V2.5 Page 45 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  NOTE: a PPR MAY be allowed for all Profile Owners by setting the 'Allowed
  Operators' field with a unique OperatorId having the mccMnc field value set
@@ -2631,9 +2636,9 @@ With this configuration, any other Profile Owner:
 2.9.2.2 Notable RAT configurations
 'All PPRs allowed for all Profile Owners, End User Consent required'
 
-V2.4 Page 46 of 275
+V2.5 Page 46 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  PPRid Allowed Operators End User Consent
  Required
@@ -2695,9 +2700,9 @@ the Profile Owner, and if an End User consent is required, according to RAT conf
 
 
 
-V2.4 Page 47 of 275
+V2.5 Page 47 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 The figure below describes the process to determine if a particular PPR can be set by the
 Profile Owner, and if an End User consent is required, according to its related PPAR(s)
@@ -2756,9 +2761,9 @@ containing PPRs can be installed on the eUICC, according to the RAT configuratio
 
 
 
-V2.4 Page 48 of 275
+V2.5 Page 48 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -2827,9 +2832,9 @@ Function by the Profile Owner). The setting of a PPR in the eUICC is for further
 
 
 
-V2.4 Page 49 of 275
+V2.5 Page 49 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 2.9.3.3 PPR Enforcement
 The Profile Policy Enabler SHALL enforce the PPRs of a Profile when a Local Profile
@@ -2894,9 +2899,9 @@ Start Conditions:
 
 
 
-V2.4 Page 50 of 275
+V2.5 Page 50 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 The End User has selected the Operator with whom to sign a contract.
 
@@ -2956,9 +2961,9 @@ The download initiation procedure consists of the following sub-processes:
 
 
 
-V2.4 Page 51 of 275
+V2.5 Page 51 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 3.1.1.1 Contract Subscription Process (Informative)
 The contract selection process, while being out of scope of this specification, is given as it
@@ -3011,9 +3016,9 @@ process fails and stops at this point.
 
 
 
-V2.4 Page 52 of 275
+V2.5 Page 52 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  4. Optionally, the Operator MAY generate a MatchingID (section 4.1.1). If the Default SM-
  DP+ is to be used for the Profile download, then the Operator SHALL send an empty
@@ -3065,9 +3070,9 @@ download.
 If the Activation Code is to be used for the Profile download, the MatchingID and SM-DP+
 address are provided via the Activation Code as described in section 4.1. If the optional
 
-V2.4 Page 53 of 275
+V2.5 Page 53 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Confirmation Code is to be used, it is provided to the End User separately from the
 Activation Code.
@@ -3123,9 +3128,9 @@ participant "<b>SM-XX" as DP
 participant "<b>LPAd" as LPA
 
 
-V2.4 Page 54 of 275
+V2.5 Page 54 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 participant "<b>eUICC" as E
 LPA -> E : [1a] [ES10b.GetEUICCInfo]
@@ -3195,9 +3200,9 @@ rnote over DP, E #FFFFFF : [17] Continue...
 
 
 
-V2.4 Page 55 of 275
+V2.5 Page 55 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -3209,9 +3214,9 @@ Start conditions:
 
 
 
-V2.4 Page 56 of 275
+V2.5 Page 56 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 The SM-XX is provisioned with its certificate (CERT.XXauth.ECDSA), its private key
 (SK.XXauth.ECDSA), the CI Certificates (CERT.CI.ECDSA), its TLS Certificate
@@ -3264,9 +3269,9 @@ Procedure:
  common call flow is used.
 
 
-V2.4 Page 57 of 275
+V2.5 Page 57 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  7. Depending on the server (i.e. SM-DS or SM-DP+), the SM-XX MAY check if the SM-
  XX Address sent by the LPAd is valid. If the SM-XX Address is not valid, the SM-XX
@@ -3319,9 +3324,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  • Verify the serverSignature1 performed over serverSigned1.
 
 
-V2.4 Page 58 of 275
+V2.5 Page 58 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Verify that euiccChallenge contained in serverSigned1 matches the one
  generated by the eUICC during step (3).
@@ -3377,9 +3382,9 @@ skinparam lifelinestrategy solid
 participant "<b>Operator" as OP
 
 
-V2.4 Page 59 of 275
+V2.5 Page 59 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 participant "<b>SM-DP+" as DP
 participant "<b>LPAd" as LPA
@@ -3450,9 +3455,9 @@ end
 
 
 
-V2.4 Page 60 of 275
+V2.5 Page 60 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -3476,9 +3481,9 @@ options in step 1:
  • If this procedure uses an SM-DS (option b):
 
 
-V2.4 Page 61 of 275
+V2.5 Page 61 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  o The LPAd has retrieved an SM-DP+ Address and EventID from the SM-
  DS.
@@ -3532,9 +3537,9 @@ Procedure:
  SM-DP+ SHALL:
 
 
-V2.4 Page 62 of 275
+V2.5 Page 62 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Verify that there is a related pending Profile download order for provided the
  MatchingID.
@@ -3588,9 +3593,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 63 of 275
+V2.5 Page 63 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  7. On reception of the SM-DP+ response, the LPAd SHALL check if the ProfileMetadata
  contains PPR(s).
@@ -3642,9 +3647,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  therefore requiring a single confirmation by the End User. Whether combined or
 
 
-V2.4 Page 64 of 275
+V2.5 Page 64 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  separated, these can be performed either at this step or after the BPP has been
  downloaded by the LPAd, since the same Profile Metadata will also be available then.
@@ -3704,9 +3709,9 @@ rnote over E #FFFFFF
 endrnote
 
 
-V2.4 Page 65 of 275
+V2.5 Page 65 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 E --> LPA : [3] euiccCancelSessionSigned, \neuiccCancelSessionSignature
 LPA -> DP : [4] ES9+.CancelSession(TransactionID, \neuiccCancelSessionSigned,
@@ -3750,9 +3755,9 @@ of its RAT) is not supported by the LPAd, the ProfileMetadata in the response to
 
 
 
-V2.4 Page 66 of 275
+V2.5 Page 66 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 "ES9+.Authenticate Client" does not match the ProfileMetadata in the Bound Profile
 Package, or the LPAd has encountered an error while installing the Bound Profile Package.
@@ -3805,9 +3810,9 @@ Procedure:
  3.6.3.
 
 
-V2.4 Page 67 of 275
+V2.5 Page 67 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  7. The SM-DP+ SHALL call the "ES2+.HandleDownloadProgressInfo" function with the
  relevant notificationPointId set and an operation status indicating 'Failed' with status
@@ -3875,9 +3880,9 @@ end
 
 
 
-V2.4 Page 68 of 275
+V2.5 Page 68 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 rnote over DP #FFFFFF
 [9]
@@ -3910,9 +3915,9 @@ end
 
 
 
-V2.4 Page 69 of 275
+V2.5 Page 69 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -3936,9 +3941,9 @@ Procedure:
  entity (i.e. same OID in, same subjectAltName).
 
 
-V2.4 Page 70 of 275
+V2.5 Page 70 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Verify smdpSignature2 performed over smdpSigned2 and euiccSignature1 using
  the PK.DPpb.ECDSA contained in CERT.DPpb.ECDSA.
@@ -3991,9 +3996,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  8. (Conditional) The SM-DP+ SHALL notify the Operator by calling
  "ES2+.HandleDownloadProgressInfo" with the corresponding identification point
 
-V2.4 Page 71 of 275
+V2.5 Page 71 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  reached (in that case it SHALL be 'Confirmation Code check') and the operation status
  (Execution status = 'Failed' with the relevant status code value).
@@ -4046,9 +4051,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  • The LPAd SHOULD verify that all other Profile Metadata elements it used in
  that earlier step (such as the Profile Name, Icon, etc.) have not changed. If the
 
-V2.4 Page 72 of 275
+V2.5 Page 72 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  verification fails, the LPAd MAY inform the End User and offer the End User to
  postpone or reject the Profile installation. Alternatively, the LPAd MAY stop the
@@ -4111,9 +4116,9 @@ LPA -> E : [6] ES10b.LoadBoundProfilePackage x N\n(ES8+.LoadProfileElements)
 E --> LPA : Response APDU x N \n(ProfileInstallationResult)
 
 
-V2.4 Page 73 of 275
+V2.5 Page 73 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -4144,12 +4149,9 @@ E --> LPA : OK
 
 
 
-V2.4 Page 74 of 275
+V2.5 Page 74 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
-
-
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Figure 14: Sub-procedure Profile Installation
 
@@ -4169,11 +4171,6 @@ rejection" with reason code 'Load BPP execution error'.
  2. The eUICC SHALL verify the received "ES8+.InitialiseSecureChannel" according to the
  description in section 5.5.1. If the verification succeeds, the eUICC SHALL generate
  Session Keys using the input data received in previous step according to Annex G.
-
-V2.4 Page 75 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  3. The LPAd SHALL transfer the "ES8+.ConfigureISDP" function call included in the
  Bound Profile Package to the eUICC by repeatedly calling the
  "ES10b.LoadBoundProfilePackage" function.
@@ -4206,6 +4203,10 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  SHALL stop the procedure and SHALL report to the LPAd with a response of the
  "ES10b.LoadBoundProfilePackage" function including the Profile Installation Result.
 
+V2.5 Page 75 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  The eUICC SHALL store the Profile Installation Result in its non-volatile memory
  before delivering it to the LPAd.
  The eUICC SHALL erase the otSK.EUICC.ECKA attached to this RSP session no
@@ -4221,13 +4222,6 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  • (Conditional) Terminate the pending download order and set the corresponding
  Profile in state 'Installed' or 'Error' (section 3.1.6) as indicated by the Profile
  Installation Result.
-
-
-
-
-V2.4 Page 76 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  9. (Conditional) The SM-DP+ SHALL call the "ES2+.HandleDownloadProgressInfo" with
  input data including eid, iccid, ProfileType, timestamp, resultData, identification of the
@@ -4263,6 +4257,11 @@ and installation procedure.
 If an eUICC Memory Reset or eUICC Test Memory Reset is successfully processed during a
 Profile download and installation procedure, the eUICC SHALL discard its session state.
 
+
+V2.5 Page 76 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 If the eUICC receives a BPP segment with an unrecognized leading tag (see section 2.5.5)
 during Profile download it SHALL return status words of '6A 88' (Reference data not found)
 and SHALL not discard the download session state.
@@ -4279,11 +4278,6 @@ session).
 
 The Profile download and installation procedure could fail while the LPA is sending SBPP
 TLVs to the eUICC using "ES10b.LoadBoundProfilePackage" for reasons other than an error
-
-V2.4 Page 77 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 status reported by the eUICC. Examples of such failures during the download process
 include:
 
@@ -4316,6 +4310,13 @@ Operator and the SM-DP+.
  Configuration by the Operator (e.g.: HLR Registration).
  Downloaded The Bound Profile was delivered to the LPA.
  Installed The Profile was successfully installed on the eUICC.
+
+
+V2.5 Page 77 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+ State Name Description
  Error The Profile has not been installed because of one of the following error
  cases:
  - Confirmation Code Retry Limit exceeded
@@ -4332,12 +4333,6 @@ provide the details of the actions previously performed on a Profile together wi
 next action.
 @startuml
 skinparam monochrome true
-
-
-V2.4 Page 78 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 
 State Available {
 }
@@ -4383,6 +4378,12 @@ Released -down--> Downloaded : ES9+.GetBoundProfilePackage
 
 Downloaded --> Installed : ES9+.HandleNotification (Success)
 
+
+
+V2.5 Page 78 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 Downloaded --> Downloaded : ES9+.GetBoundProfilePackage (retry)
 \nES9+.HandleNotification (temporary error)
 Downloaded -down--> Error : ES9+.HandleNotification (permanent error)
@@ -4399,9 +4400,72 @@ Rejection
 
 
 
-V2.4 Page 79 of 275
+V2.5 Page 79 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+ Available
+
+
+
+
+ ES2 .DownloadOrder (ICCID) or ES2 .DownloadOrder (EID, ICCID) or
+ ES2 .DownloadOrder (Profile Type) ES2 .DownloadOrder (EID, Profile Type)
+
+
+ Allocated Linked
+
+
+
+
+ ES2 .ConfirmOrder (ICCID, EID ,
+ ES2 .ConfirmOrder (ICCID, EID , MatchingID , CCode , releaseFlag false)
+ MatchingID , CCode , SM DS address , releaseFlag false)
+
+
+
+ ES2 .ConfirmOrder (ICCID, EID , Confirmed ES2 .ConfirmOrder (ICCID, EID , MatchingID ,
+ MatchingID , CCode , releaseFlag true) CCode , SM DS address , releaseFlag true)
+
+
+
+ ES2 .ReleaseProfile (ICCID)
+
+
+ Released
+
+
+
+
+ ES .GetBoundProfilePackage
+
+
+
+
+ ES .GetBoundProfilePackage (Fail)
+ Downloaded Eligibility check failed
+ ES .GetBoundProfilePackage (retry)
+ Exceed CCode Try Limit
+ ES . andle otification (temporary error)
+ Exceed Download Try Limit
+ End User Rejection
+
+
+ ES . andle otification (Success)
+
+
+ ES .GetBoundProfilePackage (Fail)
+ Eligibility check failed
+ Exceed CCode Try Limit Installed
+ ES . andle otification (permanent error)
+ Exceed Download Try Limit
+ End User Rejection
+ BPP not available for rebinding
+
+
+
+
+ Error
 
 
 
@@ -4411,9 +4475,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 80 of 275
+V2.5 Page 80 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 @startuml
 skinparam monochrome true
@@ -4467,9 +4531,9 @@ Confirmation Requests MAY be combined for consecutive operations to simplify the
 experience and avoid repeated input steps for the End User. For instance, when performing
 
 
-V2.4 Page 81 of 275
+V2.5 Page 81 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 a Profile download with an Activation Code, the Strong Confirmation for download and
 Simple Confirmation for Enabling the Profile MAY be combined. In the case of combined
@@ -4537,9 +4601,9 @@ network attach procedure with
 the newly Enabled Profile
 
 
-V2.4 Page 82 of 275
+V2.5 Page 82 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 end note
 
@@ -4567,9 +4631,9 @@ When the Profile to be enabled is a Provisioning Profile:
 
 
 
-V2.4 Page 83 of 275
+V2.5 Page 83 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Procedure:
 
@@ -4621,9 +4685,9 @@ Procedure:
  new Profile was enabled. The Device SHALL proceed with the UICC activation
 
 
-V2.4 Page 84 of 275
+V2.5 Page 84 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  procedure including TERMINAL PROFILE, as defined in ETSI TS 102 221 [6] clause
  14.5.1.
@@ -4689,9 +4753,9 @@ rnote over LPAServices #FFFFFF
 end rnote
 rnote over DevBB, LPAServices #FFFFFF
 
-V2.4 Page 85 of 275
+V2.5 Page 85 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Baseband executing a
 network attach procedure with
@@ -4745,9 +4809,9 @@ end
 
 
 
-V2.4 Page 86 of 275
+V2.5 Page 86 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -4763,9 +4827,9 @@ When the Profile to be disabled is an Operational Profile:
 When the Profile to be disabled is a Test Profile:
 
 
-V2.4 Page 87 of 275
+V2.5 Page 87 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • The Device is in Device Test Mode.
 
@@ -4818,9 +4882,9 @@ Procedure:
 
 
 
-V2.4 Page 88 of 275
+V2.5 Page 88 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Check if a previous Operational Profile needs to be Enabled: If the target Profile is a
  Test Profile, an Operational Profile was in Enabled state before the Test Profile was
@@ -4881,9 +4945,9 @@ end note
 LPAServices -> LPA : [4] OK
 
 
-V2.4 Page 89 of 275
+V2.5 Page 89 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 end
 
@@ -4925,9 +4989,9 @@ Procedure:
  allow deletion, the ISD-R SHALL return a response indicating a failure, and the
  procedure SHALL be stopped.
 
-V2.4 Page 90 of 275
+V2.5 Page 90 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  4. The eUICC SHALL delete the Profile.
  5. The ISD-R SHALL return a response indicating result OK back to the LPAd.
@@ -4978,9 +5042,9 @@ Procedure:
  in section 5.7.15.
 
 
-V2.4 Page 91 of 275
+V2.5 Page 91 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  The LUId SHALL display a subset of the set of installed Profiles along with their current
  states (Enabled or Disabled) to the End User in human readable format. This subset
@@ -5044,9 +5108,9 @@ end rnote
 
 
 
-V2.4 Page 92 of 275
+V2.5 Page 92 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -5092,9 +5156,9 @@ skinparam monochrome true
 
 
 
-V2.4 Page 93 of 275
+V2.5 Page 93 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 participant "End User" as User
 participant "LUId" as LUI
@@ -5145,15 +5209,15 @@ As appropriate for the type of Device, the LPA SHOULD present the EID to the End
 a text string and/or a QR code. The text representation SHALL comprise 32 digits, where
 
 
-V2.4 Page 94 of 275
+V2.5 Page 94 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 each digit is represented by one character in the set [0123456789]. The QR code
 representation SHALL also be prefixed with "EID:" and SHALL be encoded in alphanumeric
 mode according to ISO/IEC 18004 [15].
 
-When included in an Octect16 ASN.1 object, the first, third, fifth… digits SHALL be put into
+When included in an Octect16 AS .1 object, the first, third, fifth… digits S ALL be put into
 the highest four bits of the first, second, third… bytes.
 
  NOTE: Presentation of the EID on the package of a Device should use the same
@@ -5197,9 +5261,9 @@ LPAServices --> Baseband : [4] [REFRESH (mode)]
 
 
 
-V2.4 Page 95 of 275
+V2.5 Page 95 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -5227,7 +5291,7 @@ Procedure:
  d) If required by the command: reset the Default SM-DP+ address to its initial
  value.
  3. The ISD-R SHALL return a response indicating result OK back to the LUId.
- 4. If there was an Enabled Profile, the ISD-R SHALL send a REFRESH proactive
+ 4. If an Enabled Profile was deleted, the ISD-R SHALL send a REFRESH proactive
  command to the Device.
 
 End Conditions:
@@ -5240,9 +5304,9 @@ associated Profile Metadata stored on the eUICC regardless of their status. The 
 initiated by the End User using the LUI while the Device is in Test Mode.
 
 
-V2.4 Page 96 of 275
+V2.5 Page 96 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 This procedure is only required if the Device supports Test Mode.
 
@@ -5292,9 +5356,9 @@ Procedure:
  are to be erased.
 
 
-V2.4 Page 97 of 275
+V2.5 Page 97 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  2. If the eUICC does not support Test Profiles then the ISD-R SHALL return an OK result
  to the LPA and the procedure SHALL be stopped. Otherwise:
@@ -5308,7 +5372,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  b) Otherwise, the ISD-R SHALL delete all the selected ISD-Ps with their Profiles
  and their associated data and Profile Metadata.
  3. The ISD-R SHALL return a response indicating result OK back to the LUId.
- 4. If there was an Enabled Profile, the ISD-R SHALL send a REFRESH proactive
+ 4. If an Enabled Profile was deleted, the ISD-R SHALL send a REFRESH proactive
  command to the Device.
 
 End conditions:
@@ -5342,9 +5406,9 @@ LUI -> LPAsvc : [4] ES10a.SetDefaultDpAddress(defaultDpAddress)
 
 
 
-V2.4 Page 98 of 275
+V2.5 Page 98 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -5387,9 +5451,9 @@ in section 3.4.3, the Device SHALL be able to initialise the eUICC and to perfor
 
 
 
-V2.4 Page 99 of 275
+V2.5 Page 99 of 277
  GSM Association Non-confidential
- Official Document SGP.22 - RSP Technical Specification v2.4
+ Official Document SGP.22 - RSP Technical Specification v2.5
 
  profile command indicating at least that REFRESH (UICC Reset Mode) proactive command
  is supported.
@@ -5441,9 +5505,9 @@ x x x x - - - - RFU
 
 
 
- V2.4 Page 100 of 275
+ V2.5 Page 100 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 3.4.3 eUICC File Structure
 If there is no Enabled Profile on the eUICC, the eUICC SHALL ensure a default file system is
@@ -5497,9 +5561,9 @@ specification. It SHALL be performed if all of the following conditions are sati
 
 
 
-V2.4 Page 101 of 275
+V2.5 Page 101 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 When all of these conditions are satisfied the LPA SHALL perform the following steps:
 
@@ -5553,9 +5617,9 @@ Notifications, made up of the following:
 
 
 
-V2.4 Page 102 of 275
+V2.5 Page 102 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 When the Profile Management Operation indicated in the Notification Configuration
 Information is performed, the eUICC SHALL generate and store a Notification.
@@ -5616,9 +5680,9 @@ end rnote
 loop
 
 
-V2.4 Page 103 of 275
+V2.5 Page 103 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 LPA -> SMDP1 : [4a] ES9+.HandleNotification(notification)
 SMDP1 -> LPA : \n[5a] Ok
@@ -5652,9 +5716,9 @@ end
 
 
 
-V2.4 Page 104 of 275
+V2.5 Page 104 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -5678,9 +5742,9 @@ Procedure:
  5. The SM-DP+ acknowledges Notification reception.
 
 
-V2.4 Page 105 of 275
+V2.5 Page 105 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  6. The LPAd calls the "ES10b.RemoveNotificationFromList" function.
  7. The eUICC removes the Notification from the Pending Notifications List.
@@ -5729,9 +5793,9 @@ DP -> O : OK
  Figure 25: Event Registration Procedure without Cascade
 
 
-V2.4 Page 106 of 275
+V2.5 Page 106 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Start Conditions:
 
@@ -5794,9 +5858,9 @@ rnote over RDS #FFFFFF
 Endrnote
 
 
-V2.4 Page 107 of 275
+V2.5 Page 107 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 RDS --> ADS : [6] OK
@@ -5841,9 +5905,10 @@ Procedure:
 hide footbox
 skinparam sequenceMessageAlign center
 
-V2.4 Page 108 of 275
+
+V2.5 Page 108 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 skinparam sequenceArrowFontSize 11
 skinparam noteFontSize 11
@@ -5894,9 +5959,9 @@ The event retrieval procedure is used in the following cases:
  b) To retrieve an Event from an SM-DS with a specific EventID. This corresponds to the
  retrieval of a cascaded Event from the alternative SM-DS.
 
-V2.4 Page 109 of 275
+V2.5 Page 109 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Procedure:
 
@@ -5955,9 +6020,9 @@ the SM-DP+ OID of the targeted Event Record
 endrnote
 
 
-V2.4 Page 110 of 275
+V2.5 Page 110 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 DS --> DP : [3] Deletion Status
 
@@ -6009,9 +6074,9 @@ endrnote
 
 
 
-V2.4 Page 111 of 275
+V2.5 Page 111 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 ADS -> RDS : [3] ES12.DeleteEvent\n(EID, EventID2)
 
@@ -6052,9 +6117,9 @@ Procedure:
  relevant error status.
 
 
-V2.4 Page 112 of 275
+V2.5 Page 112 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  3. As EventID2 is not empty, i.e. the Alternative SM-DS previously forwarded the
  registration according to 3.6.1.2, the Alternative SM-DS calls "ES12.DeleteEvent"
@@ -6110,9 +6175,9 @@ The Device SHALL treat an AC_Format other than "1" as invalid.
 
 
 
-V2.4 Page 113 of 275
+V2.5 Page 113 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Examples of the Activation Code are as follows:
 
@@ -6165,9 +6230,9 @@ In turn, a MatchingID being present refers to the data object having a non-zero-
 
 
 
-V2.4 Page 114 of 275
+V2.5 Page 114 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 4.2 Device Information
 During the Profile download and installation procedure, any Device Information provided by
@@ -6210,8 +6275,29 @@ definition
  rspCrlSupportedVersion VersionType OPTIONAL,
  nrEpcSupportedRelease VersionType OPTIONAL,
  nr5gcSupportedRelease VersionType OPTIONAL,
- eutran5gcSupportedRelease VersionType OPTIONAL
+ eutran5gcSupportedRelease VersionType OPTIONAL,
+ lpaSvn VersionType OPTIONAL, -- Not defined in this version of SGP.22
+ catSupportedClasses CatSupportedClasses OPTIONAL, -- Not defined in this version
+of SGP.22
+ euiccFormFactorType EuiccFormFactorType OPTIONAL, -- Not defined in this version
+of SGP.22
+ deviceAdditionalFeatureSupport DeviceAdditionalFeatureSupport OPTIONAL
 }
+
+-- Definition of DeviceAdditionalFeatureSupport
+DeviceAdditionalFeatureSupport ::= SEQUENCE {
+ naiSupport VersionType OPTIONAL -- Device supports Network Access Identifier
+}
+
+CatSupportedClasses ::= BIT STRING
+EuiccFormFactorType ::= INTEGER
+
+
+
+
+V2.5 Page 115 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 The TAC and IMEI are defined in 3GPP TS 23.003 [35].
 
@@ -6224,11 +6310,6 @@ except that the last octet contains the check digit (in high nibble) and an 'F' 
 nibble). It SHOULD be present if the Device contains a non-removable eUICC.
 
 The capabilities SHALL be represented as follows:
-
-
-V2.4 Page 115 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  • gsmSupportedRelease – if GSM/GERAN is supported, this SHALL be the highest
  3GPP release N fully supported by the device, encoded as the octet string {N, 0, 0}. If
@@ -6265,6 +6346,12 @@ LPA SHOULD NOT send the following fields to the eUICC unless the eUICC indicates
 deviceInfoExtensibilitySupport.
 
 
+
+
+V2.5 Page 116 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 NOTE: If LPA sends the following fields to an eUICC that does not indicate
  deviceInfoExtensibilitySupport, the eUICC may reject them (see also
  section 2.8).
@@ -6277,17 +6364,21 @@ NOTE: If LPA sends the following fields to an eUICC that does not indicate
  be the highest 3GPP release N fully supported by the device, encoded as the octet
  string {N, 0, 0}. If NR using a 5G core network is not supported this SHALL NOT be
  present.
-
-
-
-V2.4 Page 116 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  • eutran5gcSupportedRelease – if LTE/E-UTRAN using a 5G core network is
  supported, this SHALL be the highest 3GPP release N fully supported by the device,
  encoded as the octet string {N, 0, 0}. If LTE/E-UTRAN using a 5G core network is not
  supported this SHALL NOT be present.
+ • lpaSvn, catSupportedClasses, euiccFormFactorType – these fields are not
+ defined in this version of the specification.
+ • deviceAdditionalFeatureSupport – indicates the list of additional features
+ supported by the Device.
+ o naiSupport – if Network Access Identifier defined in 3GPP TS 23.003
+ [35] is supported, this SHALL be the highest 3GPP release N fully
+ supported by the device, encoded as the octet string {N, 0, 0}. If Network
+ Access Identifier is not supported this SHALL NOT be present. The
+ SM-DP+ MAY provide a Profile with SUPI Type as non-IMSI SUPI Type
+ (as defined in [5]) only if this field is present.
+
 
 
 4.3 eUICC Information
@@ -6308,6 +6399,13 @@ Device. eUICC information SHALL be generated by the eUICC and is intended to be 
  of value: '2.0.0'.
  • Firmware version: indicates the version information of the eUICC’s platform and the
  OS, defined as for the EID in SGP.02 [2]. This value is issuer specific.
+
+
+
+V2.5 Page 117 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • Available amount of non-volatile memory: Indicates the current total available
  memory for Profile download and installation. The value is expressed in bytes.
  • UICC capabilities: Contains the UICC capabilities supported by the eUICC.
@@ -6328,13 +6426,6 @@ Device. eUICC information SHALL be generated by the eUICC and is intended to be 
  64kB
  • ISO interface PPS 96
  • BIP over HTTPS features
-
-
-
-
-V2.4 Page 117 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  Medium eUICCs SHALL be compliant with at least the following features:
  • Memory size available when no Profiles are installed (EEPROM) :
@@ -6363,6 +6454,11 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
+
+V2.5 Page 118 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 The eUICC information comprises EUICCInfo1 and EUICCInfo2 as defined in Annex H.
 
 4.3.1 eUICC identifier (EID)
@@ -6382,13 +6478,6 @@ The following rules will maximise the interoperability between the different ver
  • An EUM generating EIDs according to SGP.29 [89] SHOULD get an EUM certificate
  where the first 8 digits of the EIDs are fixed and listed as IIN in NameConstraints
  extension of the certificate.
-
-
-
-
-V2.4 Page 118 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  • An EUM with an EIN longer than 8 digits SHOULD only generate EIDs if it is
  acceptable that the EIN is not uniquely identifiable in the NameConstraints extension
@@ -6418,8 +6507,14 @@ Profile Metadata includes:
  information: content free information defined by the Operator/Service Provider
  • Operator/Service Provider name, as a plain text information: content free information
  defined by the Service Provider (e.g. 'Orange', 'AT&T'…)
- • End User’s Profile Nickname
+ • End User’s Profile ickname
  • Icon
+
+
+V2.5 Page 119 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • Profile Class: indicates the sort of profile among the defined values: 'Test',
  'Operational' and 'Provisioning' (section 4.4.1)
  • Notification Configuration Information, defined in section 3.5 "Notifications"
@@ -6439,10 +6534,6 @@ which rules to apply.
 The PPRs are provided within the ES8+.StoreMetadata function of the Bound Profile
 Package. The pol field of the ProfileHeader PE of the eUICCProfile Package [5] (UPP in
 section 2.5.2) SHALL not be used.
-
-V2.4 Page 119 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The PPRs defined in this document are coded using the ASN.1 data type PprIds, see
 section 2.8.1.1. pprUpdateControl has no meaning when provided in
@@ -6469,6 +6560,14 @@ This section describes keys and certificates used in this specification.
  CERT.DPpb.ECDSA.
  SK.DPpb.ECDSA Private key of the SM-DP+ used to generate signatures for ECC
  Profile binding.
+
+
+
+
+V2.5 Page 120 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  PK.DSauth.ECDSA Public key of the SM-DS used to verify an SM-DS signature. ECC
  This key is included inside the SM-DS Certificate
  CERT.DSauth.ECDSA.
@@ -6488,12 +6587,6 @@ This section describes keys and certificates used in this specification.
  otSK.DP.ECKA One-time private key of the SM-DP+ used for key agreement. ECC
  SK.DP.TLS Private key of the SM-DP+ used to generate signatures for ECC
  authentication to the LPA.
-
-
-V2.4 Page 120 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  PK.DP.TLS Public key of the SM-DP+ used to verify an SM-DP+ signature. ECC
  SK.DS.TLS Private key of the SM-DS used to generate signatures for ECC
  authentication to the LPA.
@@ -6521,16 +6614,16 @@ The following certificate SHALL be signed and issued by the EUM:
 
  • eUICC Certificate (CERT.EUICC.ECDSA)
 
+
+
+
+V2.5 Page 121 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 Even though each eUICC SHALL support at least two sets of elliptic curve parameters
 (section 2.6.7.1), which can be chosen from by an RSP server for its signatures and ECKA,
 an eUICC SHALL have at least one CERT.EUICC.ECDSA.
-
-
-
-
-V2.4 Page 121 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  GSMA CI
  CERT.CI.ECDSA
@@ -6602,14 +6695,13 @@ In particular:
 
 Entities SHALL perform Certificate verification according to section 4.5.2.2.
 
+
+V2.5 Page 122 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  NOTE: Certificates are described using table representation for easiness, but
  conform to the ASN.1 format given in RFC 5280 [17].
-
-
-
-V2.4 Page 122 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  Certificates description
 
@@ -6657,11 +6749,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  cRLSign(6) --[Optional] }
 
 
-
-
-V2.4 Page 123 of 275
+V2.5 Page 123 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Extension for Certificate Policies (RFC 5280 [17]
  section 4.2.1.4):
@@ -6711,9 +6801,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 124 of 275
+V2.5 Page 124 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  issuer Distinguished Name of the EUM that has signed the
  EUICC Certificate. It SHALL match the ‘subject’ field
@@ -6765,9 +6855,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 125 of 275
+V2.5 Page 125 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  signatureAlgorithm Section 4.5.2.1.1
  signatureValue Signature computed accordingly to one of the possible algorithm listed in
@@ -6778,6 +6868,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 4.5.2.1.0.3 EUM
  Field Value Description
  tbsCertificate Data to be signed
+
  Field Value Description
  version Version SHALL be 3 (value is 2) as extensions are
  used in this specification.
@@ -6816,9 +6907,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 126 of 275
+V2.5 Page 126 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  extensions Extension for Authority Key Identifier (RFC 5280
  [17]): section 4.2.1.1):
@@ -6866,9 +6957,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 127 of 275
+V2.5 Page 127 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Extension for CRL Distribution Points (RFC 5280 [17]
  section 4.2.1.13).
@@ -6918,14 +7009,14 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 128 of 275
+V2.5 Page 128 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Note: As per RFC 5280 [17], the name constraints applies to all subject names in subsequent
  certificates in a certification path (i.e. including in the eUICC Certificate). This conflicts with the
  requirement that attribute ‘serial number’ of the Subject of the eUICC Certificate SHALL be the
- EID. The SM-DP+ and SM-DS SHALL not enforce the ‘serialNumber’ part of such
+ EID. The SM-DP+ and SM-DS S ALL not enforce the ‘serial umber’ part of such
  NameConstraint, but SHOULD check the IIN part of the EID against the permitted IINs of this
  certificate.
 
@@ -6934,6 +7025,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 4.5.2.1.0.4 SM-DP+ ECDSA
  Field Value Description
  tbsCertificate Data to be signed
+
  Field Value Description
  version Version SHALL be 3 (value is 2) as extensions are
  used in this specification.
@@ -6972,9 +7064,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 129 of 275
+V2.5 Page 129 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Extension for Subject Key Identifier (RFC 5280 [17]
  section 4.2.1.2):
@@ -7025,9 +7117,9 @@ identical except for the following fields:
  • subjectPublicKeyInfo
 
 
-V2.4 Page 130 of 275
+V2.5 Page 130 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • signatureValue
  • extension (extnID = id-ce-subjectKeyIdentifier)
@@ -7049,7 +7141,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  subject Refer to table defining CERT.DPauth.ECDSA /
  CERT.DPpb.ECDSA. Both CERT.DPauth.ECDSA,
  CERT.DPpb.ECDSA and CERT.DP.TLS SHALL
- have identical attributes except ‘cn’ that SHALL
+ have identical attributes except ‘cn’ that S ALL
  match one of the SM-DP+ hostname (FQDN) entries
  contained in the subjectAltName extension.
  subjectPublicKeyInfo Refer to table defining CERT.DPauth.ECDSA /
@@ -7076,9 +7168,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 131 of 275
+V2.5 Page 131 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Extension for Extended Key usage (RFC 5280 [17]
  section 4.2.1.12):
@@ -7128,9 +7220,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 132 of 275
+V2.5 Page 132 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  serialNumber Serial number that SHALL be unique for each
  certificate issued with a given CERT.CI.ECDSA.
@@ -7178,9 +7270,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 133 of 275
+V2.5 Page 133 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Extension for Certificate Policies (RFC 5280 [17]
  section 4.2.1.4):
@@ -7210,6 +7302,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 4.5.2.1.0.7 SM-DS TLS
  Field Value Description
  tbsCertificate Data to be signed
+
  Field Value Description
  version Refer to table defining CERT.DSauth.ECDSA.
  serialNumber Refer to table defining CERT.DSauth.ECDSA.
@@ -7229,9 +7322,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 134 of 275
+V2.5 Page 134 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Extension for Subject Key Identifier (RFC 5280 [17]
  section 4.2.1.2):
@@ -7281,9 +7374,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 135 of 275
+V2.5 Page 135 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  signatureAlgorithm Refer to table defining CERT.DSauth.ECDSA.
  signatureValue Refer to table defining CERT.DSauth.ECDSA.
@@ -7337,9 +7430,9 @@ specification). But 'distributionPoint' SHALL contain at least a general name of
 an HTTP scheme, indicating that the CRL can be retrieved as an HTTP resource. In that
 
 
-V2.4 Page 136 of 275
+V2.5 Page 136 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 scheme, the CRL SHALL be returned in the HTTP response body as a CertificateList
 data object DER encoded which in turn is Base64 encoded.
@@ -7395,9 +7488,9 @@ Every certificate SHALL:
 
 
 
-V2.4 Page 137 of 275
+V2.5 Page 137 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Be signed by a GSMA CI, or a trusted chain up to a GSMA CI, except TLS certificates
  that MAY instead chain to a Public CA (see NOTE). Certificate path validation SHALL
@@ -7450,9 +7543,9 @@ CERT.DPauth.ECDSA / CERT.DPpb.ECDSA:
  • The extension 'Key usage' SHALL be set with the value 'digitalSignature'.
  • The extension 'Certificate Policies' SHALL be set with one of the following OID:
 
-V2.4 Page 138 of 275
+V2.5 Page 138 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  o 'id-rspRole-dp-auth' to indicate an SM-DP+ Certificate for authentication
  with the eUICC.
@@ -7507,9 +7600,9 @@ and eUICC in the context of this specification.
 
 
 
-V2.4 Page 139 of 275
+V2.5 Page 139 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Field Value Description
  tbsCertList Data to be signed
@@ -7559,9 +7652,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 140 of 275
+V2.5 Page 140 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Extension for Total Partial CRL Number (section
  4.6.2)
@@ -7611,9 +7704,9 @@ Delta CRL MAY be used by a GSMA CI. In that case the CRL SHALL include the exten
 
 
 
-V2.4 Page 141 of 275
+V2.5 Page 141 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 4.6.1 CRL publication rules
 Each GSMA CI SHALL issue a new CRL 1) periodically (even if no new revocation has
@@ -7668,9 +7761,9 @@ The eUICC faces two general issues regarding time management and CRL.
  But the list of revoked certificate is expected to be growing continually. This may be a
 
 
-V2.4 Page 142 of 275
+V2.5 Page 142 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  challenge to store such information on the eUICC (it is even worse considering that
  the eUICC will have to manage a CRL per GSMA CI).
@@ -7724,9 +7817,9 @@ eUICC Interfaces
 
 
 
-V2.4 Page 143 of 275
+V2.5 Page 143 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • ES8+: Provides a secure end-to-end channel between the SM-DP+ and the eUICC
  for the administration of the ISD-P and the associated Profile during download and
@@ -7778,9 +7871,9 @@ ES6 UpdateMetadata ISD-P
 
 
 
-V2.4 Page 144 of 275
+V2.5 Page 144 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  InitialiseSecureChannel
  ReplaceSessionKeys
@@ -7838,9 +7931,9 @@ that can be called by other Roles (function requester).
 
 
 
-V2.4 Page 145 of 275
+V2.5 Page 145 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 5.2.1 Common Data Types
 The functions provided in this section deal with management of the eUICC and Profile, so
@@ -7898,9 +7991,9 @@ that the common data defined in this section needs to be used in most of the fun
 
 
 
-V2.4 Page 146 of 275
+V2.5 Page 146 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  String representation of an OID,
  OID An Object Identifier. i.e. of integers separated with dots
@@ -7954,9 +8047,9 @@ Hereunder are listed the subject codes used in this specification:
 8. eUICC Remote Provisioning (as defined in SGP.02 [2])
 
 
-V2.4 Page 147 of 275
+V2.5 Page 147 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  8.1. eUICC (as defined in SGP.02 [2])
 
@@ -8016,9 +8109,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 148 of 275
+V2.5 Page 148 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 5.2.6.2 Reason Code
 Hereunder are listed the reason codes used in this specification:
@@ -8077,9 +8170,9 @@ Hereunder are listed the reason codes used in this specification:
 
 
 
-V2.4 Page 149 of 275
+V2.5 Page 149 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 5.2.6.3 Common Function Status Code
 As defined in SGP.02 [2].
@@ -8134,9 +8227,9 @@ Upon reception of this function call, the SM-DP+ SHALL:
  ICCID.
 
 
-V2.4 Page 150 of 275
+V2.5 Page 150 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • If the EID is known, the ICCID is linked to this EID and the Profile state SHALL be set
  to "Linked". Otherwise, the Profile state SHALL be set to "Allocated".
@@ -8196,9 +8289,9 @@ Code code
  ICCID (Authorisation) perform this function on the target Profile.
 
 
-V2.4 Page 151 of 275
+V2.5 Page 151 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Profile Indicates that the Profile identified by the
 8.2.1 3.3 Already in Use
@@ -8258,9 +8351,9 @@ On reception of this function call, the SM-DP+ SHALL:
 
 
 
-V2.4 Page 152 of 275
+V2.5 Page 152 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • If the Confirmation Code is provided by the Operator, calculate the hash of the
  Confirmation Code and store the hash value together with the MatchingID, where the
@@ -8319,9 +8412,9 @@ eid 1 C
 matchingId The MatchingID as defined in section (4.1.1). String 1 M
 
 
-V2.4 Page 153 of 275
+V2.5 Page 153 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  The SM-DP+ address to be used for this specific FQDN
 smdpAddress 1 O
@@ -8384,9 +8477,9 @@ This function is used to cancel a pending download order request.
 
 On reception of this function call, the SM-DP+ SHALL:
 
-V2.4 Page 154 of 275
+V2.5 Page 154 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Confirm that the Profile identified by the provided ICCID is allocated and not yet
  downloaded.
@@ -8441,9 +8534,9 @@ for the download order to cancel.
 
 
 
-V2.4 Page 155 of 275
+V2.5 Page 155 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Final Profile Status
  Description
@@ -8503,9 +8596,9 @@ On reception of this function call, the SM-DP+ SHALL:
  • Set the Profile state as 'Released' to allow the download.
 
 
-V2.4 Page 156 of 275
+V2.5 Page 156 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • If SM-DS address was stored with the Profile and if the Event Registration was not
  already done, perform Event Registration to the SM-DS as defined in section 3.6.1,
@@ -8565,9 +8658,9 @@ Description:
 
 
 
-V2.4 Page 157 of 275
+V2.5 Page 157 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 This function SHALL be used by the SM-DP+ to notify the Operator of the progress of a
 pending Profile download order request. This function MAY be used at several points of the
@@ -8622,9 +8715,9 @@ based on agreed behaviour, MAY define additional custom notification points. In 
 
 
 
-V2.4 Page 158 of 275
+V2.5 Page 158 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Table 32a: HandleDownloadProgressInfo Additional Input Data
 
@@ -8678,9 +8771,9 @@ The initial OTA Key sets are part of the Profile and are loaded by the SM-DP+ du
 issuance.
 
 
-V2.4 Page 159 of 275
+V2.5 Page 159 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Operator eUICC
  Profile
@@ -8735,9 +8828,9 @@ Specification [8] with the specific coding defined in this section.
  P2 Xx Block number
 
 
-V2.4 Page 160 of 275
+V2.5 Page 160 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Code Value Meaning
  Lc xx Length of data field
@@ -8794,9 +8887,9 @@ SHALL be logically ANDed with the corresponding bit of the UpdateMetadataRequest
 
 
 
-V2.4 Page 161 of 275
+V2.5 Page 161 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 'iconType' and 'icon' SHALL be both present and contain non-empty values, be both
 present and contain empty values (i.e. TLV objects with length zero), or both be absent.
@@ -8853,9 +8946,9 @@ The ES8+ functions are addressed to the eUICC through a secure channel establish
 between the Profile Package Binding function of the SM-DP+ and the eUICC.
 
 
-V2.4 Page 162 of 275
+V2.5 Page 162 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 The secure channel is established by:
 
@@ -8909,9 +9002,9 @@ communication between the SM-DP+ and the eUICC:
  • Description of the keys to generate
  • One-time public key for key agreement generated by SM-DP+ (otPK.DP.ECKA)
 
-V2.4 Page 163 of 275
+V2.5 Page 163 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Signature upon material (including the previously generated otPK.EUICC.ECKA, also
  acting as an eUICC challenge) to ensure its integrity and authenticity.
@@ -8971,9 +9064,9 @@ length SHALL by 0x10 bytes, Tag '81'
 }
 
 
-V2.4 Page 164 of 275
+V2.5 Page 164 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -9028,9 +9121,9 @@ On reception of this command the eUICC SHALL:
  with error 'incorrectInputValues'.
 
 
-V2.4 Page 165 of 275
+V2.5 Page 165 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Store the SM-DP+ proprietary data in the ISD-P.
 
@@ -9092,9 +9185,9 @@ NotificationConfigurationInformation OPTIONAL,
 
 
 
-V2.4 Page 166 of 275
+V2.5 Page 166 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  serviceSpecificDataNotStoredInEuicc [35] VendorSpecificExtension OPTIONAL -- Tag
 'BF23'
@@ -9132,16 +9225,17 @@ several recipient addresses for the same notification event.
 
 The data object profileOwner is optional. It SHALL be present if the
 profilePolicyRules data object is present. In this instance the mccMnc field SHALL not
-specify any wildcard ('E') digits.
+specify any wildcard ('E') digits. The data object SHALL NOT be present if the Profile does
+not contain an EFIMSI.
 
 The data object profilePolicyRules is optional. It SHALL not be present for a Profile
 that has no PPR set. Otherwise the profilePolicyRules SHALL identify all the PPRs set
 in the Profile. If the profilePolicyRules data object is not present, all PPR bits of the
-Profile SHALL be considered zero. The PrdIds type is defined in section 2.8.1.1.
+Profile SHALL be considered zero. The PrdIds type is defined in section 2.8.1.1. The data
+object SHALL NOT be present if the Profile does not contain an EFIMSI.
 
 The eUICC SHALL store the data object serviceSpecificDataStoredInEuicc if
 present.
-
 The eUICC SHALL not store the data object serviceSpecificDataNotStoredInEuicc
 if present.
 The SM-DP+ SHALL not include any of these two data objects unless the eUICC indicated
@@ -9153,12 +9247,9 @@ and Profile Management Operations defined in this specification that are not ven
 nor the interoperability of the solution defined in this specification (incl. Devices, Profiles, and
 SM-DP+s).
 
-
-
-
-V2.4 Page 167 of 275
+V2.5 Page 167 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 5.5.4 Function: ReplaceSessionKeys
 Related Procedures: Profile Download and Installation
@@ -9215,13 +9306,18 @@ The eUICC SHALL verify that the following values provided in the Profile Metadat
 "ES8+.StoreMetadata" are reflected in the content of EFs of the Profile:
 
 
-V2.4 Page 168 of 275
+V2.5 Page 168 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • The ICCID provided in the Profile Metadata is identical to the value of EFICCID.
 
  If profileOwner is provided in the Profile Metadata:
+
+ • EFIMSI SHALL be present in the Profile.
+
+ NOTE: EFIMSI may be absent in, e.g., a Profile for 5G networks using Network
+ Access Identifier (NAI) instead of IMSI.
 
  • The mccMnc value provided in the Profile Metadata SHALL match the MCC and
  MNC values in EFIMSI.
@@ -9269,15 +9365,13 @@ ES9+ is the interface between:
 
  Figure 34: ES9+
 
+
+V2.5 Page 169 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 The LPA SHALL communicates with the SM-DP+ secured by HTTPS in server
 authentication mode as described in section 2.6.6.
-
-
-
-
-V2.4 Page 169 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The format of the TLS Certificates (CERT.DP.TLS) used for TLS connections is described in
 section 4.5.2.1.
@@ -9328,13 +9422,12 @@ specification.
 
 This function SHALL return one of the following:
 
+V2.5 Page 170 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • A 'Function execution status' with 'Executed-Success' indicating that the RSP session
  has been successfully initiated.
-
-V2.4 Page 170 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  • A 'Function execution status' indicating 'Failed' with a status code as defined in
  section 5.2.6 or a specific status code as defined in the following table.
 
@@ -9387,15 +9480,15 @@ Code code
  SM-DP+
 8.8.1 3.8 Refused Invalid SM-DP+ Address.
  Address
+
+
+V2.5 Page 171 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  Security None of the proposed Public Key Identifiers is
 8.8.2 3.1 Unsupported
  configuration supported by the SM-DP+.
-
-
-V2.4 Page 171 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  Specification The Specification Version Number indicated
 8.8.3 Version 3.1 Unsupported by the eUICC is not supported by the
  Number SM-DP+.
@@ -9446,14 +9539,14 @@ InitialiseSecureChannel needs to be recalculated.
 
 If the Bound Profile Package has been previously generated for this eUICC, but the
 otPK.EUICC.ECKA provided by the eUICC is different than the one previously used to
+
+
+V2.5 Page 172 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 generate this BPP, the SM-DP+ SHALL either terminate the procedure with an error or re-
 bind the PPP as described below.
-
-
-
-V2.4 Page 172 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 To bind the PPP, the SM-DP+ SHALL:
 
@@ -9506,14 +9599,13 @@ object
 
  Table 39: GetBoundProfilePackage Additional Output Data
 
-Specific Status Codes
 
 
-
-
-V2.4 Page 173 of 275
+V2.5 Page 173 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+Specific Status Codes
 
 Subject Reason
  Subject Reason Description
@@ -9569,12 +9661,13 @@ indicating 'Failed' with the relevant status code. If the SM-DP+ determines that
 Profile download order has expired, the relevant status code is "8.8.5 Download order - 4.10.
 Time to Live Expired".
 
+
+V2.5 Page 174 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 If the maximum number of retries for Profile download has been exceeded, the
 corresponding Profile download order SHALL be terminated.
-
-V2.4 Page 174 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 Otherwise the SM-DP+ SHALL perform additional verification depending on the use case
 where this function is involved and the received ctxParams1.
@@ -9625,12 +9718,12 @@ Otherwise the SM-DP+ SHALL:
  • Generate an smdpSigned2 data object and compute the signature smdpSignature2
  as defined in "ES10b.PrepareDownloadRequest".
 
+V2.5 Page 175 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 The SM-DP+ MAY perform additional operations, which are out of scope of this
 specification.
-
-V2.4 Page 175 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 This function SHALL return one of the following:
 
@@ -9682,17 +9775,16 @@ Code code
  EUM
 8.1.2 6.1 Verification Failed Certificate is invalid.
  Certificate
+
+
+
+V2.5 Page 176 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  EUM
 8.1.2 6.3 Expired Certificate has expired.
  Certificate
-
-
-
-
-V2.4 Page 176 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  eUICC
 8.1.3 6.1 Verification Failed Certificate is invalid.
  Certificate
@@ -9747,18 +9839,17 @@ The SM-DP+ MAY perform additional operations which are out of scope of this spec
 
 Additional Input Data:
 
+
+
+
+V2.5 Page 177 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 Input data name Description Type No. MOC
  PendingNotification data object as defined in
 pendingNotification Binary(1) 1 M
  section 5.7.10
-
-
-
-
-V2.4 Page 177 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 NOTE 1: pendingNotification SHALL be provided as an encoded PendingNotification data
 object
 
@@ -9807,15 +9898,16 @@ reason contained in euiccCancelSessionSigned indicates a terminal code (see sect
  with the identification of the step reached in the on-going procedure and an operation
  status indicating 'Failed' with status code according to mapping given in section 5.3.5.
  2. Terminate the corresponding pending download process.
+
+
+V2.5 Page 178 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  3. If required, execute the SM-DS Event Deletion procedure described in section 3.6.3.
 
  NOTE: The operations 1), 2) and 3) are described as performed in the context of
  this function execution. Alternatively they MAY be done asynchronously by
-
-V2.4 Page 178 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  the SM-DP+. Operation 2) and 3) MAY not be performed depending on the
  agreed SM-DP+ behaviour with the Operator. If the operations are not
  performed, the Operator has the responsibility to take care of the
@@ -9866,15 +9958,12 @@ Code code
 5.7 ES10x (LPA -- eUICC)
 ES10 contains 3 different interfaces described below.
 
-The ES10a is an interface defined between the LDSd and ISD-R (LPA Services).
 
-
-
-
-V2.4 Page 179 of 275
+V2.5 Page 179 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
+The ES10a is an interface defined between the LDSd and ISD-R (LPA Services).
  Device
 
  LPAd eUICC
@@ -9891,7 +9980,6 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  Figure 35: ES10a
 
 The ES10b is an interface defined between the LPDd and ISD-R (LPA Services).
-
  Device
 
  LPAd eUICC
@@ -9930,14 +10018,15 @@ select the ISD-R.
 The opening of the logical channel and the selection of the ISD-R SHALL be done explicitly
 using, respectively, the MANAGE CHANNEL command and the SELECT command defined
 in GlobalPlatform Card Specification [8]. This MANAGE CHANNEL and SELECT commands
+
+
+
+V2.5 Page 180 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 can be intrinsically used via a dedicated Device OS API (e.g. OMAPI defined by
 GlobalPlatform[69] if provided).
-
-
-
-V2.4 Page 180 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The Device SHALL ensure that only the LPA, but no other application on the Device, is
 permitted to select the ISD-R.
@@ -9992,13 +10081,13 @@ command request and command response data.
 
 Command Message
 
+
+V2.5 Page 181 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 All functions use the command message STORE DATA as defined in GlobalPlatform Card
 Specification [8] with the specific coding defined below.
-
-
-V2.4 Page 181 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  Code Value Meaning
  CLA '80'-'83' See GlobalPlatform Card Specification [8] section 11.1.4
@@ -10049,13 +10138,12 @@ Data Field
 
 The response data field contains the command response data for each function.
 
-Processing State Returned in the Response Message
 
-
-
-V2.4 Page 182 of 275
+V2.5 Page 182 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+Processing State Returned in the Response Message
 
 eUICC SHALL indicate an APDU header coding error as defined in GlobalPlatform Card
 Specification [8] section 11.11.3.2.
@@ -10108,13 +10196,13 @@ EuiccConfiguredAddressesResponse ::= [60] SEQUENCE { -- Tag 'BF3C'
 5.7.4 Function (ES10a): SetDefaultDpAddress
 Related Procedures: Set/Edit Default SM-DP+ Address
 
-Function Provider Entity: ISD-R (LPA Services)
 
 
-
-V2.4 Page 183 of 275
+V2.5 Page 183 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+Function Provider Entity: ISD-R (LPA Services)
 
 Description:
 
@@ -10167,12 +10255,12 @@ On reception of this command, the eUICC SHALL:
  • Verify that CERT.DPauth.ECDSA and CERT.DPpb.ECDSA trust chain lead to the
  same GSMA CI certificate.
 
-If any of these verifications fail, the eUICC SHALL return an error.
 
-
-V2.4 Page 184 of 275
+V2.5 Page 184 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+If any of these verifications fail, the eUICC SHALL return an error.
 
 If these verifications are successful, the eUICC SHALL:
 
@@ -10229,15 +10317,15 @@ EUICCSigned2 ::= SEQUENCE {
 }
 
 PrepareDownloadResponseError ::= SEQUENCE {
+
+
+V2.5 Page 185 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  transactionId [0] TransactionId,
  downloadErrorCode DownloadErrorCode
 }
-
-
-V2.4 Page 185 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 
 DownloadErrorCode ::= INTEGER {invalidCertificate(1), invalidSignature(2),
 unsupportedCurve(3), noSessionContext(4), invalidTransactionId(5),
@@ -10288,13 +10376,15 @@ Function Provider Entity: ISD-R (LPA Services)
 
 Description:
 
+
+
+V2.5 Page 186 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 This function initiates a RSP session between an RSP Server and the ISD-R. The initiation
 of the RSP session is materialized on the eUICC by the creation of a context containing an
 eUICC challenge.
-
-V2.4 Page 186 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 Only one RSP session can be managed by the ISD-R at a time. So an on-going RSP
 session SHALL be completed before requesting the opening of a new one.
@@ -10348,14 +10438,13 @@ GetEuiccInfo2Request ::= [34] SEQUENCE { -- Tag 'BF22'
 }
 
 
+V2.5 Page 187 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+
 
 Response Data
-
-
-
-V2.4 Page 187 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The response data SHALL be coded as follows:
 EUICCInfo1 ::= [32] SEQUENCE { -- Tag 'BF20'
@@ -10418,15 +10507,17 @@ Profile Metadata
 CertificationDataObject ::= SEQUENCE {
  platformLabel UTF8String, -- Platform_Label as defined in GlobalPlatform
 DLOA specification [57]
+
+
+
+V2.5 Page 188 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  discoveryBaseURL UTF8String -- Discovery Base URL of the SE default DLOA
 Registrar as defined in GlobalPlatform DLOA specification [57]
 }
 The profileVersion field SHALL indicate:
-
-
-V2.4 Page 188 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  • the major version number and
  • the associated highest minor version number
@@ -10436,9 +10527,24 @@ version SHALL be 2.1 or higher.
 
 The additionalEuiccProfilePackageVersions field MAY list higher major versions
 including the associated highest minor version number of additional eUICC Profile Package
-specification(s) [5] supported by the eUICC.
+specification(s) [5] supported by the eUICC. This field SHALL be present only when the
+eUICC supports additional versions of [5] with the major version higher than the one
+indicated in profileVersion field. This sequence, if present, SHALL contain version 3.1
+or higher and SHOULD contain version 3.2 or higher.
 
 The "number of installed application" value field of extCardResource SHALL be set to '00'.
+
+The uiccCapability field contains the UICC capabilities supported by the eUICC. The
+related type definition SHALL be imported from the following version of the TCA eUICC
+Profile Package: Interoperable Format Technical Specification [5]:
+
+ • for the eUICC, if higher than 3.2: the highest version declared in
+ additionalProfilePackageVersions, otherwise version 3.2;
+ • for the SM-DP+, if higher than 3.2: the highest version supported by this server,
+ otherwise version 3.2; and
+ • for other entities, version 3.2 or higher.
+
+
 
 The ts102241Version field indicates the latest version of ETSI TS 102 241 [53] supported
 by the eUICC. This field SHALL not be present if the eUICC doesn't support Java cardTM.
@@ -10460,6 +10566,11 @@ The information contained in forbiddenProfilePolicyRules data object SHALL be
 used during the eligibility check performed by the SM-DP+: the SM-DP+ SHALL not deliver a
 Profile containing a PPR 'forbidden' by the eUICC.
 
+
+V2.5 Page 189 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 The ppVersion data object indicates the version of the GSMA eUICC Protection Profile for
 RSP against which the eUICC has been certified. ppVersion V255.255.255 indicates a
 Field-Test eUICC.
@@ -10477,13 +10588,6 @@ for production of UICC (called SAS-UP).
 
 The additionalProfile bit SHALL be set to '1' to indicate that at least one more Profile
 can be installed. Otherwise it SHALL be set to '0'.
-
-
-
-
-V2.4 Page 189 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The crlSupport bit SHALL be set to '1' to indicate that the eUICC supports the optional
 CRL management feature (section 4.6). Otherwise it SHALL be set to '0'.
@@ -10517,6 +10621,12 @@ unique reference of the Integrated TRE product that the eUICC is based upon. Thi
 SHALL NOT be modifiable.
 
 
+
+
+V2.5 Page 190 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 5.7.9 Function: (ES10b): ListNotification
 Related Procedures: Profile Download and Installation
 
@@ -10535,11 +10645,6 @@ ListNotificationRequest ::= [40] SEQUENCE { -- Tag 'BF28'
 }
 
 
-
-
-V2.4 Page 190 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The profileManagementOperation data object can be used to filter the list of
 notifications that the eUICC SHALL return. A bit set to 1 in the
@@ -10577,6 +10682,11 @@ Related Procedures: Notifications
 
 Function Provider Entity: ISD-R (LPA Services)
 
+
+V2.5 Page 191 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 Description:
 
 This function retrieves the list of Pending notifications for installed Profiles including their
@@ -10596,11 +10706,6 @@ RetrieveNotificationsListRequest ::= [43] SEQUENCE { -- Tag 'BF2B'
 
 The searchCriteria data object can be used to filter the list of notifications that the
 eUICC SHALL return, filtering can be done on sequence number or notification type. A bit
-
-V2.4 Page 191 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 set to 1 in the profileManagementOperation indicates that the eUICC SHALL return all
 the notifications corresponding to this type. The type notificationInstall SHALL
 include ProfileInstallationResult.
@@ -10638,6 +10743,11 @@ requested CI
 
 
 
+
+V2.5 Page 192 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 euiccNotificationSignature SHALL be created using the SK.EUICC.ECDSA and verified
 using the PK.EUICC.ECDSA as described in section 2.6.7.2. euiccNotificationSignature
 SHALL apply on the tbsOtherNotification data object.
@@ -10656,13 +10766,6 @@ Description:
 This function informs the eUICC that:
 
  1. A specific Notification has been sent to the recipient address; and
-
-
-
-V2.4 Page 192 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  2. The eUICC SHALL remove such Notification from the Pending Notifications
  List.
 
@@ -10698,6 +10801,12 @@ On reception of this command the eUICC SHALL:
 
  • Verify the CRL signature using the PK.CI.ECDSA identified by the extension field
  'Authority Key Identifier'; if the key is unknown or if signature is invalid, the command
+
+
+V2.5 Page 193 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  execution SHALL be stopped with error code verificationKeyNotFound or
  invalidSignature.
  • Verify CRL format is valid as defined in section 4.5. If not, the command execution
@@ -10713,14 +10822,6 @@ On reception of this command the eUICC SHALL:
  and the Extension for Partial CRL Number are missing): stop the command
  execution and return a response loadCRLResponseOk, with an empty
  missing part indication.
-
-
-
-
-V2.4 Page 193 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  • If the CRL is a segmented CRL and this segment has already been loaded,
  stop the command execution and return a response loadCRLResponseOk
  with missing parts indication.
@@ -10755,6 +10856,13 @@ Command Data
 The command data SHALL be coded as follows.
 
 The 'crl' field SHALL contain a complete CRL, or a partial CRL as described in section 4.6.1.
+
+
+
+V2.5 Page 194 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 -- Definition of data structure command for loading a CRL
 LoadCRLRequest ::= [53] SEQUENCE { -- Tag 'BF35'
  -- A CRL
@@ -10775,12 +10883,6 @@ loadCRLResponseError LoadCRLResponseError
 LoadCRLResponseOk ::= SEQUENCE {
  missingParts SEQUENCE OF INTEGER OPTIONAL
 }
-
-
-V2.4 Page 194 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 LoadCRLResponseError ::= INTEGER {invalidSignature(1), invalidCRLFormat(2),
 notEnoughMemorySpace(3), verificationKeyNotFound(4), fresherCrlAlreadyLoaded(5),
 baseCrlMissing(6), undefinedError(127)}
@@ -10816,6 +10918,14 @@ On reception of this command, the eUICC SHALL:
 
  • Verify that a RSP session context exists (i.e. "ES10b.GetUICCChallenge" function
  has been previously called).
+
+
+
+
+V2.5 Page 195 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • Verify the validity of the RSP Server Certificate for authentication (using the ECASD
  service), as described in section 4.5.2.2 using the PK.CI.ECDSA identified by the
  Authority Key Identifier contained in the RSP Server Certificate.
@@ -10832,12 +10942,6 @@ If any of these verifications fail, the eUICC SHALL return an
 authenticateResponseError with the relevant error code.
 
 Otherwise the eUICC SHALL:
-
-
-
-V2.4 Page 195 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  • Attach the received transactionId in the RSP session context.
  • Attach the received RSP Server Certificate in the RSP session context.
@@ -10878,6 +10982,12 @@ token or EventID or empty
 
 serverSignature1 SHALL be created using the private key associated to the RSP Server
 Certificate for authentication, and verified by the eUICC using the contained public key as
+
+
+V2.5 Page 196 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 described in section 2.6.7.2. serverSignature1 SHALL apply on serverSigned1 data
 object.
 
@@ -10899,12 +11009,6 @@ requested CI
 }
 
 EuiccSigned1 ::= SEQUENCE {
-
-
-V2.4 Page 196 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  transactionId [0] TransactionId,
  serverAddress [3] UTF8String, -- The RSP Server address as an FQDN
  serverChallenge [4] Octet16, -- The RSP Server Challenge
@@ -10942,6 +11046,11 @@ On reception of this command the eUICC SHALL:
  retained in the context of the ongoing RSP session. If not the eUICC SHALL return an
  error code invalidTransactionId.
 
+
+V2.5 Page 197 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 If these verifications are successful, the eUICC SHALL:
 
  • Generate an euiccCancelSessionSigned data object as defined hereunder.
@@ -10959,12 +11068,6 @@ Command Data
 
 The command data SHALL be coded as follows.
 CancelSessionRequest ::= [65] SEQUENCE { -- Tag 'BF41'
-
-
-V2.4 Page 197 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  transactionId TransactionId, -- The TransactionID generated by the RSP Server
  reason CancelSessionReason
 }
@@ -11006,6 +11109,11 @@ verified using the PK.EUICC.ECDSA as described in section 2.6.7.2.
 euiccCancelSessionSignature SHALL apply on the data object
 euiccCancelSessionSigned.
 
+
+V2.5 Page 198 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 5.7.15 Function (ES10c): GetProfilesInfo
 Related Procedures: Local Profile Management – List Profiles
 
@@ -11023,11 +11131,6 @@ the eUICC SHALL terminate the command with the status word '69 85' (Conditions o
 not satisfied).
 
 Command Data
-
-
-V2.4 Page 198 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The command data consists of the search criteria and the tag list. It SHALL be coded as
 follows:
@@ -11064,6 +11167,11 @@ The eUICC SHALL support the following tags in the tag list:
  • Profile Class, tag '95' (*)
  • Notification Configuration Info, tag 'B6'
  • Profile Owner, tag 'B7'
+
+V2.5 Page 199 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • SM-DP+ proprietary data, tag 'B8'
  • Profile Policy Rules, tag '99'
  • Service Specific Data stored in eUICC, tag 'BF22'
@@ -11080,13 +11188,6 @@ Example of use:
  coded as 'BF2D 00'.
  • Retrieve all information of a particular Profile/ISD-P having the following AID: A0 00
  00 05 59 10 10 FF FF FF FF 89 00 00 10 00. The command data field SHALL be
-
-
-
-V2.4 Page 199 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  coded as 'BF2D 24 A0 12 4F 10 A0 00 00 05 59 10 10 FF FF FF FF 89 00 00 10 00
  5C 0E 5A 4F 9F70 90 91 92 93 94 95 B6 B7 B8 99'.
  • Retrieve ICCID and Profile state for all installed Profiles. The command data field
@@ -11130,8 +11231,14 @@ ProfileInfoListError ::= INTEGER {incorrectInputValues(1), undefinedError(127)}
 
 
 
+
+V2.5 Page 200 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 The profileOwner data object can only be returned if Profile Owner has been provided in
-Profile Metadata or if files EFIMSI, EFGID1 or EFGID2 are not PIN protected.
+Profile Metadata or if EFIMSI is present and files EFIMSI, EFGID1 or EFGID2 are not PIN
+protected.
 
 The profilePolicyRules data object SHALL contain the identifiers of all Profile Policy
 Rules of the Profile.
@@ -11146,11 +11253,6 @@ Description:
 This function is used to enable a Profile on the eUICC. The function makes the target Profile
 enabled, and disables implicitly the currently Enabled Profile, if any. This SHALL be
 performed in an atomic way, meaning that in case of any error during the command
-
-V2.4 Page 200 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 execution, the command SHALL stop and SHALL leave the involved Profiles in their original
 states prior to command execution.
 
@@ -11187,6 +11289,12 @@ Regardless of the value of refreshFlag, the eUICC SHALL:
 
 
 
+V2.5 Page 201 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+
+
 If the refreshFlag is not set:
 
  • the eUICC SHALL reset the PIN status
@@ -11203,12 +11311,6 @@ If the refreshFlag is set:
  • If there is a proactive session ongoing;
 
  • the eUICC MAY terminate the EnableProfile command with error 'catBusy'.
-
-
-V2.4 Page 201 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  • If the eUICC does not terminate the EnableProfile command with error 'catBusy',
  the eUICC SHALL internally terminate the proactive session and send the
  REFRESH command as the next proactive command. If a TERMINAL
@@ -11240,6 +11342,13 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  eUICC, the Device SHOULD take the appropriate actions regarding this
  interface when Profile state is changed.
 
+
+
+
+V2.5 Page 202 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 The eUICC MAY start a new proactive UICC session only after a new TERMINAL PROFILE
 command is executed.
 
@@ -11258,12 +11367,6 @@ Command Data
 The command data SHALL be coded as follows:
 EnableProfileRequest ::= [49] SEQUENCE { -- Tag 'BF31'
  profileIdentifier CHOICE {
-
-
-V2.4 Page 202 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  isdpAid [APPLICATION 15] OctetTo16, -- AID, tag '4F'
  iccid Iccid -- ICCID, tag '5A'
  },
@@ -11302,6 +11405,10 @@ The command data is sent to the eUICC in a Case 3 STORE DATA command:
  '93 00': CAT is busy. Command cannot be executed at present, further normal
  commands are allowed
 
+V2.5 Page 203 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 5.7.17 Function (ES10c): DisableProfile
 Related Procedures: Local Profile Management – Disable Profile
 
@@ -11320,10 +11427,6 @@ SHALL:
 
  • Check whether there is a proactive session ongoing (which the Device did not
  terminate). If so,
-
-V2.4 Page 203 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
  • the eUICC MAY terminate the DisableProfile function with error 'catBusy'.
  • If the eUICC does not terminate the DisableProfile command with error 'catBusy',
@@ -11356,6 +11459,12 @@ Regardless of the value of refreshFlag, the eUICC SHALL:
  DisableProfile function with error 'catBusy'
  • If the eUICC does not terminate the DisableProfile command with error
  'catBusy', the eUICC SHALL internally terminate the proactive session and send
+
+
+V2.5 Page 204 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  the REFRESH command as the next proactive command. If a TERMINAL
  RESPONSE is still outstanding, the REFRESH command SHALL only be sent
  after reception of the TERMINAL RESPONSE.
@@ -11375,11 +11484,6 @@ Regardless of the value of refreshFlag, the eUICC SHALL:
  • Upon reception of the Terminal Response with result "command performed
  successfully" or upon reset of the eUICC, the eUICC SHALL disable the
  currently Enabled Profile. If the target Profile is a Test Profile and an Operational
-
-V2.4 Page 204 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  Profile was in Enabled state before the (first) Test Profile was enabled: the
  eUICC SHALL enable this Operational Profile. If this Operational Profile was
  deleted while the Test Profile was enabled, no error SHALL be generated and
@@ -11415,6 +11519,12 @@ DisableProfileRequest ::= [50] SEQUENCE { -- Tag 'BF32'
 Response Data
 
 The response data SHALL be coded as follows:
+
+
+V2.5 Page 205 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 DisableProfileResponse ::= [50] SEQUENCE { -- Tag 'BF32'
  disableResult INTEGER {ok(0), iccidOrAidNotFound (1),
 profileNotInEnabledState(2), disallowedByPolicy(3), catBusy(5),
@@ -11434,13 +11544,6 @@ The command data is sent to the eUICC in a Case 3 STORE DATA command:
  exception of P1 which SHALL be set to '90'.
  • The command data SHALL be coded as defined above, the response data SHALL
  not be present.
-
-
-
-V2.4 Page 205 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  • The following additional status bytes are defined:
  '6A 82': Profile not found.
  '69 85': Profile not in enabled state or command not allowed by Profile Policy Rules.
@@ -11478,6 +11581,10 @@ DeleteProfileRequest ::= [51] CHOICE { -- Tag 'BF33'
 
 Response Data
 
+V2.5 Page 206 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 The response data SHALL be coded as follows:
 DeleteProfileResponse ::= [51] SEQUENCE { -- Tag 'BF33'
  deleteResult INTEGER {ok(0), iccidOrAidNotFound (1),
@@ -11495,12 +11602,6 @@ The command data is sent to the eUICC in a Case 3 STORE DATA command:
 
  • The STORE DATA APDU SHALL be coded as defined in section 5.7.2, with the
  exception of P1 which SHALL be set to '90'.
-
-
-V2.4 Page 206 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  • The command data SHALL be coded as defined above, the response data SHALL
  not be present.
  • The following additional status bytes are defined:
@@ -11525,7 +11626,11 @@ enabled status or any Profile Policy Rules. Two subsets are defined:
 
 The eUICC returns a status indicating whether any Profiles were deleted.
 
-This function can also be used to reset the Default SM-DP+ address to its initial value.
+ • The eUICC returns ok if at least one Profile is deleted.
+ • The eUICC returns nothingToDelete if no Profile is deleted.
+
+This function can also be used to reset the Default SM-DP+ address to its initial value. In this
+context both ok and nothingToDelete response indicates a successful execution.
 
 Any combination MAY be specified.
 
@@ -11533,6 +11638,12 @@ If the eUICC does not support Test Profiles, then a request to delete them is ig
 
 The eUICC Memory Reset SHALL be performed in an atomic and non-reversible way in
 case of external interruptions (e.g. power loss): the eUICC SHALL continue the processing
+
+
+V2.5 Page 207 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 of that command upon the next eUICC power on. In case of any other error during the
 command execution, the command SHALL stop and SHALL leave the eUICC and the
 involved Profiles in their original states prior to command execution.
@@ -11540,37 +11651,33 @@ involved Profiles in their original states prior to command execution.
 Upon reception of the eUICCMemoryReset function and dependent on the parameters set,
 the eUICC SHALL do the following:
 
-Check whether
+ • In case there is an Enabled Profile with a proactive session ongoing, the eUICC
+ SHALL do one of the following:
 
- there is an Enabled Profile with a proactive session is ongoing, if so:
- o eUICC MAY terminate the command and return error code 'catBusy'.
- o If the eUICC does not terminate the eUICCMemoryReset command with error
- 'catBusy', the eUICC SHALL internally terminate the proactive session and
- send the REFRESH command as the next proactive command. If a
- TERMINAL RESPONSE is still outstanding, the REFRESH command SHALL
- only be sent after reception of the TERMINAL RESPONSE.
-
+ o terminate the command and return error code 'catBusy'.
+ o internally terminate the proactive session and send the REFRESH command
+ as the next proactive command. If a TERMINAL RESPONSE is still
+ outstanding, the REFRESH command SHALL only be sent after reception of
+ the TERMINAL RESPONSE.
 
 
-
-V2.4 Page 207 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
- NOTE: the Device MAY take implementation-dependent action to terminate the
- proactive command session, and MAY send the eUICC Memory Reset
- command again without any further End User interaction.
+ NOTE: In the case of the catBusy error, the Device MAY take implementation-
+ dependent action to terminate the proactive command session, and MAY
+ send the eUICC Memory Reset command again without any further End
+ User interaction.
 
  • If the eUICC does not terminate the eUICCMemoryReset command, the function
  SHALL:
  • Delete all the selected ISD-Ps with their Profiles regardless of their enabled status
- or Profile Policy Rules and all related Profiles Metadata stored in the ISD-R. If
- there was an Enabled Profile, the ISD-R SHALL send a REFRESH proactive
- command to the Device.
+ or Profile Policy Rules and all related Profiles Metadata stored in the ISD-R.
  • Reset the Default SM-DP+ address to its initial value.
  • For each deleted Profile, the eUICC SHALL generate as many Notifications as
  configured in its Profile Metadata (notificationConfigurationInfo) in the
  format of OtherSignedNotification.
+ • The ISD-R SHALL return a response indicating either ok or nothingToDelete.
+ • If an Enabled Profile was deleted, the ISD-R SHALL send a REFRESH proactive
+ command to the Device.
+
 
 Command Data
 
@@ -11588,6 +11695,12 @@ Response Data
 
 The response data SHALL be coded as follows:
 EuiccMemoryResetResponse ::= [52] SEQUENCE { -- Tag 'BF34'
+
+
+V2.5 Page 208 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  resetResult INTEGER {ok(0), nothingToDelete(1), catBusy(5), undefinedError(127)}
 }
 
@@ -11611,11 +11724,6 @@ Command Data
 The data field SHALL indicate EID data object '5C 01 5A' (tag '5A' identifies the EID).
 
 The command data SHALL be coded as follows:
-
-V2.4 Page 208 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 GetEuiccDataRequest ::= [62] SEQUENCE { -- Tag 'BF3E'
  tagList [APPLICATION 28] Octet1 -- tag '5C', the value SHALL be set to '5A'
 }
@@ -11649,6 +11757,11 @@ Upon reception of the SetNickname function, the eUICC SHALL:
  • Verify that the target Profile is present on the eUICC
  • Update the target Profile nickname with the provided data
 
+
+V2.5 Page 209 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 In case a Profile Nickname already exists for the indicated Profile, the Profile Nickname
 SHALL be updated with the new value. In case the new value is an empty string, the Profile
 Nickname SHALL be removed. Removing a non-existing Profile Nickname SHALL not be
@@ -11671,13 +11784,6 @@ The response data SHALL be coded as follows:
 SetNicknameResponse ::= [41] SEQUENCE { -- Tag 'BF29'
  setNicknameResult INTEGER {ok(0), iccidNotFound (1), undefinedError(127)}
 }
-
-
-
-
-V2.4 Page 209 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 5.7.22 Function (ES10b): GetRAT
 Related Procedures: Profile Download and Installation
@@ -11713,6 +11819,12 @@ ProfilePolicyAuthorisationRule ::= SEQUENCE {
  pprIds PprIds,
  allowedOperators SEQUENCE OF OperatorId,
  pprFlags BIT STRING {consentRequired(0)}
+
+
+V2.5 Page 210 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 }
 
 The list of ProfilePolicyAuthorisationRule data objects SHALL be returned in the
@@ -11730,13 +11842,6 @@ ES11 is the interface between:
 
  • The LPA entity (more specifically the LDS endpoint).
  • The SM-DS.
-
-
-
-
-V2.4 Page 210 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
@@ -11775,6 +11880,11 @@ This function is identical to "ES9+.InitiateAuthentication" where the SM-DS play
 SM-DP+ and where:
 
  • The SM-DP+ SHALL be replaced by the SM-DS.
+
+V2.5 Page 211 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • CERT.DPauth.ECDSA SHALL be replaced by CERT.DSauth.ECDSA.
 
  NOTE: The input data object 'smdpAddress' contains an SM-DS address in this
@@ -11796,13 +11906,6 @@ Code code
 8.9.3 Version 3.1 Unsupported
  by the eUICC is not supported by the SM-DS.
  Number
-
-
-
-V2.4 Page 211 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  The SM-DS has no CERT.DS.ECDSA signed
  SM-DS
 8.9.4 3.7 Unavailable by one of the GSMA CI Public Key supported
@@ -11840,6 +11943,11 @@ indicating 'Failed' with the relevant status code.
 Otherwise the SM-DS SHALL retrieve and return the Event ID and RSP Server address
 pair(s) for the requesting eUICC depending on the content of the received ctxParams1:
 
+
+V2.5 Page 212 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • If ctxParamsForCommonAuthentication contains no matchingId data object or
  an empty value for matchingId, the SM-DS SHALL retrieve and return a list of Event
  ID and RSP Server address pairs corresponding to the EID. This list MAY be empty.
@@ -11856,12 +11964,6 @@ This function SHALL return one of the following:
 
  • A 'Function execution status' with 'Executed-Success' indicating that Event Retrieval
  has been successfully executed.
-
-
-V2.4 Page 212 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  • A 'Function execution status' indicating 'Failed' with a status code as defined in
  section 5.2.6 or a specific status code as defined in the following table.
 
@@ -11901,6 +12003,13 @@ rspServerAddress FQDN 1 M
 
 Specific Status Codes
 
+
+
+
+V2.5 Page 213 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 Subject Reason
  Subject Reason Description
 Code code
@@ -11925,13 +12034,6 @@ Code code
  Unknown CI Public Key. The CI used by the
 8.11.1 CI Public Key 3.9 Unknown EUM Certificate is not a trusted root for the
  SM-DS.
-
-
-
-V2.4 Page 213 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  No Event identified by the Event ID for the
 8.9.5 Event Record 3.9 Unknown
  EID exists.
@@ -11966,6 +12068,13 @@ Function Provider Entity: SM-DS (Alternative SM-DS or Root SM-DS)
 
 Description:
 
+
+
+
+V2.5 Page 214 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 This function registers an Event Record in the SM-DS (an Alternative SM-DS or a Root SM-
 DS).
 
@@ -11985,12 +12094,6 @@ Otherwise the SM-DS SHALL:
  • Store the received Event Record, consisting of the EID, the RSP Server address and
  the EventID, all provided as function input data, together with the function caller
  identity (either an SM-DP+ or an SM-DS OID) received in the TLS Certificate.
-
-
-V2.4 Page 214 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  • If required (forwardingIndicator input data set to 'true'), and if the function
  provider is an Alternative SM-DS, cascade the Event registration to the Root-SM-DS
  by calling the "ES15.RegisterEvent" with the relevant input data:
@@ -12023,6 +12126,12 @@ rspServerAddress corresponding to the registered Event can be FQDN 1 M
  executed.
 eventId Identification of the Event. The EventID SHALL be String 1 M
  unique in the context of the function caller.
+
+
+V2.5 Page 215 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 forwardingIndicator Indicates if the registration has to be made to the Boolean 1 M
  Root SM-DS. The Root SM-SD SHALL ignore this
  input data.
@@ -12044,13 +12153,6 @@ Code code
  The cascade SM-DS registration has failed.
 8.9 SM-DS 5.1 Inaccessible
  Root SM-DS was unavailable.
-
-
-
-V2.4 Page 215 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  The cascade SM-DS registration has failed.
 8.9 SM-DS 4.2 Execution error
  Root SM-DS has raised an error.
@@ -12087,6 +12189,11 @@ Otherwise the SM-DS SHALL:
  DS during Event Record registration.
  • If deletion cascading fails:
 
+
+V2.5 Page 216 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  o because the Event record was not found, the SM-DS SHALL ignore this
  error case and continue.
  o for any reason, the SM-DS SHALL return a function execution status
@@ -12104,10 +12211,6 @@ This function SHALL return one of the following:
  been deleted (and cascaded if required).
  • A 'Function execution status' indicating 'Failed' with a status code as defined in
  section 5.2.6 or a specific status code as defined in the following table.
-
-V2.4 Page 216 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 Additional Input Data:
 
@@ -12142,6 +12245,14 @@ Code code
 5.10 ES15 (SM-DS -- SM-DS)
 This interface is a particular case of the ES12 interface where an Alternative SM-DS is
 communicating to the Root SM-DS to manage the cascading of Events. This interface is
+
+
+
+
+V2.5 Page 217 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 functionally identical to ES12.
 
  (Alternative) (Root)
@@ -12163,11 +12274,6 @@ are defined in section 2.6 and GSMA SAS SM specification [23].
 
 5.10.1 Function: RegisterEvent
 Related Procedures: Event Registration
-
-
-V2.4 Page 217 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 Function Provider Entity: (Root) SM-DS
 
@@ -12197,6 +12303,13 @@ section.
 In order to support this option, the Device SHALL support at least the CAT mechanisms
 defined in Annex C.4.
 
+
+
+
+V2.5 Page 218 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 5.11.2 LUIe using SCWS
 In order to support this option, the Device SHALL support at least the CAT mechanisms
 defined in Annex C.4.
@@ -12220,10 +12333,6 @@ JSON binding defined in section 6.5 SHALL be used.
 
 In case of communication failure, the HTTP client is responsible for retry and reconnection
 management.
-
-V2.4 Page 218 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 6.1 TLS Security
 Transport Layer Security (TLS) secures the messages exchanged between a function
@@ -12251,6 +12360,10 @@ The corresponding function execution response SHALL be returned as defined in SG
 
 This specification uses the following MEPs:
 
+V2.5 Page 219 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  • Synchronous Request-Response: the request payload SHALL be sent in the HTTP
  POST request, and the function execution response SHALL be returned in the HTTP
  POST response.
@@ -12272,17 +12385,10 @@ defined hereunder:
 where <User Agent> is either gsma-rsp-lpad or gsma-rsp-lpae. The "User-Agent" field
 MAY contain additional information after a semicolon.
 
-
-
-
-V2.4 Page 219 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 HTTP POST request and response SHALL contain an "X-Admin-Protocol" header field as
 defined hereunder:
 
- Admin-Protocol: gsma/rsp/v<x.y.z>
+ X-Admin-Protocol: gsma/rsp/v<x.y.z>
 Where:
 <x.y.z> indicates the highest version of SGP.22 [This document] supported by the sender.
 When the sender is the Device, this indicates the highest version supported by the LPA.
@@ -12306,6 +12412,13 @@ server error) MAY be used by the RSP Server (i.e. the HTTP server).
 The retry policy for HTTP request answered with status codes '4xx' and '5xx' is out of scope
 of this specification.
 
+
+
+
+V2.5 Page 220 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 A normal request-response function execution status (MEP Synchronous request-response)
 SHALL be indicated by the HTTP status code '200' (OK) in the HTTP response, regardless
 whether the function response is an error or a success, as defined in SGP.02 [02].
@@ -12327,13 +12440,6 @@ includes the exchange of the following information:
  each party.
  • Function requester and Function provider parties’ trust SHALL have been established
  on an X-509 certificate chain basis.
-
-
-
-
-V2.4 Page 220 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 6.5 Function Binding in JSON
 JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is based on a
@@ -12365,6 +12471,10 @@ client. The list of defined <HTTP Path> are described in section 6.5.2.
 
  • HTTP Response SHALL have the following format.
 
+V2.5 Page 221 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 HTTP/1.1 <HTTP Status Code>
 X-Admin-Protocol: gsma/rsp/v<x.y.z>
 Content-Type: application/json
@@ -12386,12 +12496,6 @@ HTTP messages for ES9+ and ES11 SHALL not contain the <JSON requestHeader>.
 
  • <JSON responseHeader>
  • <JSON body> which depends on the function called
-
-
-
-V2.4 Page 221 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The HTTP POST response body SHALL be empty for MEP notification message (see
 section 6.3).
@@ -12425,6 +12529,12 @@ The <JSON responseHeader> maps the function output header.
  "type" : "object",
  "properties" : {
  "functionExecutionStatus" : {
+
+
+V2.5 Page 222 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  "type" : "object",
  "description" : "Whether the function has been processed correctly or
 not"
@@ -12450,12 +12560,6 @@ Expired"
  "description" : "Identifier of the subject "
  },
  "message" : {
-
-
-V2.4 Page 222 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  "type" : "string",
  "description" : "Textual and human readable explanation"
  }
@@ -12485,6 +12589,13 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  HandleNotification /gsma/rsp2/es9plus/handleNotification Notification
  CancelSession /gsma/rsp2/es9plus/cancelSession Synchronous
  ES11 InitiateAuthentication [As ES9+] [As ES9+]
+
+
+V2.5 Page 223 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+ Function Path MEP
  AuthenticateClient [As ES9+] [As ES9+]
  ES12 RegisterEvent /gsma/rsp2/es12/registerEvent Synchronous
  DeleteEvent /gsma/rsp2/es12/deleteEvent Synchronous
@@ -12508,11 +12619,6 @@ requestMessage> corresponding to the "ES2+.DownloadOrder" function:
  "iccid" : {
  "type" : "string",
  "pattern" : "^[0-9]{19}[0-9F]?$",
-
-V2.4 Page 223 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  "description" : "ICCID as described in section 5.2.1"
  },
  "profileType" : {
@@ -12544,6 +12650,11 @@ requestMessage> corresponding to the "ES2+.ConfirmOrder" function:
 
 {
  "type" : "object",
+
+V2.5 Page 224 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  "properties" : {
  "iccid" : {
  "type" : "string",
@@ -12571,11 +12682,6 @@ requestMessage> corresponding to the "ES2+.ConfirmOrder" function:
  "type" : "boolean",
  "description" : "as defined in section {5.3.2}"
  }
-
-V2.4 Page 224 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  },
  "required" : ["iccid", "releaseFlag"]
 }
@@ -12608,6 +12714,10 @@ responseMessage> corresponding to the "ES2+.ConfirmOrder" function:
 Hereunder is the definition of the JSON schema for the <JSON body> part of the <JSON
 requestMessage> corresponding to the "ES2+.CancelOrder" function:
 
+V2.5 Page 225 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 {
  "type" : "object",
  "properties" : {
@@ -12632,13 +12742,6 @@ requestMessage> corresponding to the "ES2+.CancelOrder" function:
  },
  "required" : ["iccid"]
 }
-
-
-
-
-V2.4 Page 225 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 6.5.2.4 "ES2+.ReleaseProfile" Function
 Hereunder is the definition of the JSON schema for the <JSON body> part of the <JSON
@@ -12672,6 +12775,12 @@ requestMessage> corresponding to the "ES2+.HandleDownloadProgressInfo" function:
  "type" : "string",
  "pattern" : "^[0-9]{19}[0-9F]?$",
  "description" : "ICCID as described in section 5.2.1"
+
+
+V2.5 Page 226 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  },
  "profileType" : {
  "type" : "string",
@@ -12697,12 +12806,6 @@ requestMessage> corresponding to the "ES2+.HandleDownloadProgressInfo" function:
  "type" : "string",
  "description" : "Executed-Success, Executed-WithWarning, Failed or
 Expired"
-
-
-V2.4 Page 226 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  },
  "statusCodeData" : {
  "type" : "object",
@@ -12736,6 +12839,13 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 contained in the ProfileInstallationResult"
  }
  },
+
+
+
+V2.5 Page 227 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  "required" : ["iccid", "profileType", "timestamp", "notificationPointId",
 "notificationPointStatus"]
 }
@@ -12761,12 +12871,6 @@ in Section 5.6.1"
  },
  "smdpAddress" : {
  "type" : "string",
-
-
-V2.4 Page 227 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  "description" : "SM-DP+ Address as defined in Section 5.6.1"
  }
  },
@@ -12799,6 +12903,13 @@ in Section 5.6.1"
  "euiccCiPKIdToBeUsed" : {
  "type" : "string",
  "format" : "base64",
+
+
+
+V2.5 Page 228 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  "description" : "The CI Public Key to be used as required by
 ES10b.AuthenticateServer"
  },
@@ -12824,12 +12935,6 @@ requestMessage> corresponding to the "ES9+.GetBoundProfilePackage" function:
  "type" : "object",
  "properties" : {
  "transactionId" : {
-
-
-V2.4 Page 228 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  "type" : "string",
  "pattern" : "^[0-9,A-F]{2,32}$",
  "description" : "Hexadecimal representation of the TransactionID defined
@@ -12861,6 +12966,13 @@ in Section 5.6.2"
  "boundProfilePackage" : {
  "type" : "string",
  "format" : "base64",
+
+
+
+V2.5 Page 229 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  "description" : "base64 encoded binary data containing Bound Profile
 Package defined in Section 5.6.2"
  }
@@ -12888,11 +13000,6 @@ in Section 5.6.3"
 AuthenticateServerResponse defined in Section 5.6.3"
  }
  },
-
-V2.4 Page 229 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  "required" : ["transactionId", "authenticateServerResponse"]
 }
 
@@ -12924,6 +13031,11 @@ StoreMetadataRequest defined in section 5.5.3",
  "type" : "string",
  "format" : "base64",
  "description" : "SM-DP+ signature as defined in ES10b.PrepareDownload"
+
+V2.5 Page 230 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  },
  "smdpCertificate" : {
  "type" : "string",
@@ -12949,13 +13061,6 @@ requestMessage> corresponding to the "ES9+.HandleNotification" function.
  "pendingNotification" : {
  "type" : "string",
  "format" : "base64",
-
-
-
-V2.4 Page 230 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  "description" : "base64 encoded binary data containing the
 PendingNotification defined in section 5.7.10"
  }
@@ -12988,6 +13093,11 @@ CancelSessionResponse data object defined in Section 5.7.14"
 }
 
 
+
+V2.5 Page 231 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 The "ES9+.CancelSession" function has no <JSON body> part of the <JSON
 responseMessage>.
 
@@ -13011,11 +13121,6 @@ The <JSON body> part of the <JSON requestMessage> corresponding to the
  "pattern" : "^[0-9,A-F]{2,32}$",
  "description" : "Hexadecimal representation of the TransactionID, see
 Section 5.8.2"
-
-V2.4 Page 231 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  },
  "eventEntries" : {
  "type" : "array",
@@ -13048,6 +13153,10 @@ function.
 Hereunder is the definition of the JSON schema for the <JSON body> part of the <JSON
 requestMessage> corresponding to the "ES12.RegisterEvent" function:
 
+V2.5 Page 232 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 {
  "type" : "object",
  "properties" : {
@@ -13072,12 +13181,6 @@ requestMessage> corresponding to the "ES12.RegisterEvent" function:
  "required" : ["eid", "rspServerAddress", "eventId", "forwardingIndicator"]
 }
 
-
-
-
-V2.4 Page 232 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 This function has no <JSON body> part of the <JSON responseMessage>.
 
@@ -13108,6 +13211,13 @@ requestMessage> corresponding to the "ES12.DeleteEvent" function:
 
 This function has no <JSON body> part of the <JSON responseMessage>.
 
+
+
+
+V2.5 Page 233 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 6.6 Function Binding in ASN.1
 
 6.6.1 ASN.1 message definition
@@ -13135,12 +13245,6 @@ RemoteProfileProvisioningRequest ::= [2] CHOICE { -- Tag 'A2'
  initiateAuthenticationRequest [57] InitiateAuthenticationRequest, -- Tag 'BF39'
  authenticateClientRequest [59] AuthenticateClientRequest, -- Tag 'BF3B'
  getBoundProfilePackageRequest [58] GetBoundProfilePackageRequest, -- Tag 'BF3A'
-
-
-V2.4 Page 233 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  cancelSessionRequestEs9 [65] CancelSessionRequestEs9, -- Tag 'BF41'
  handleNotification [61] HandleNotification -- tag 'BF3D'
 }
@@ -13172,6 +13276,11 @@ RemoteProfileProvisioningResponse ::= [2] CHOICE { -- Tag 'A2'
 
 6.6.2.1 "ES9+.InitiateAuthentication" Function
 The "ES9+.InitiateAuthentication" request function is defined as follows:
+
+V2.5 Page 234 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 InitiateAuthenticationRequest ::= [57] SEQUENCE { -- Tag 'BF39'
  euiccChallenge [1] Octet16, -- random eUICC challenge
  smdpAddress [3] UTF8String,
@@ -13200,11 +13309,6 @@ required by ES10b.AuthenticateServer
 }
 
 
-
-
-V2.4 Page 234 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 6.6.2.2 "ES9+.AuthenticateClient" Function
 The "ES9+.AuthenticateClient" request function is defined as follows:
@@ -13243,6 +13347,11 @@ AuthenticateClientOk ::= SEQUENCE {
  smdpCertificate Certificate -- CERT.DPpb.ECDSA
 }
 
+V2.5 Page 235 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+
 
 
 6.6.2.3 "ES9+.GetBoundProfilePackage" Function
@@ -13268,12 +13377,6 @@ GetBoundProfilePackageResponse ::= [58] CHOICE { -- Tag 'BF3A'
  undefinedError(127)
  }
 }
-
-
-V2.4 Page 235 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 
 GetBoundProfilePackageOk ::= SEQUENCE {
  transactionId [0] TransactionId,
@@ -13308,6 +13411,11 @@ ES10b.CancelSession function
 
 
 The "ES9+.CancelSession" response function is defined as follows:
+
+V2.5 Page 236 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 CancelSessionResponseEs9 ::= [65] CHOICE { -- Tag 'BF41'
  cancelSessionOk CancelSessionOk,
  cancelSessionError INTEGER {
@@ -13330,12 +13438,6 @@ for the "ES9+.InitiateAuthentication" function.
 6.6.2.7 "ES11.AuthenticateClient" Function
 The AuthenticateClientRequest for the binding of the "ES11.AuthenticateClient"
 function is identical to the one defined for the "ES9+.AuthenticateClient" function.
-
-
-
-V2.4 Page 236 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
 
 The "ES11.AuthenticateClient" response data object is defined as follows:
 AuthenticateClientResponseEs11 ::= [64] CHOICE { -- Tag 'BF40'
@@ -13365,9 +13467,9 @@ EventEntries ::= SEQUENCE {
 
 
 
-V2.4 Page 237 of 275
+V2.5 Page 237 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex A Use of GlobalPlatform Privileges (Normative)
 The eUICC architecture defined in this specification relies on the ISD-R, ISD-P, MNO-SD
@@ -13380,9 +13482,9 @@ Profile.
 
 
 
-V2.4 Page 238 of 275
+V2.5 Page 238 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex B Data Definitions (Normative)
  • Coding of the IMEI
@@ -13392,9 +13494,9 @@ The value of the IMEI SHALL be coded as defined in section 4.2.
 
 
 
-V2.4 Page 239 of 275
+V2.5 Page 239 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex C Device Requirements (Normative)
 
@@ -13447,9 +13549,9 @@ C.1 Functional Device Requirements
  DEV14 The Device SHALL operate with an eUICC comprising a default file system (i.e.
  with no Enabled Profile) as described in section 3.4.1. In particular, the Device
 
-V2.4 Page 240 of 275
+V2.5 Page 240 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  SHALL be able to perform UICC activation procedure as defined in section
  14.5.1 of ETSI TS 102 221 [6] at least up to and including CAT initialisation (i.e.:
@@ -13503,9 +13605,9 @@ OEM(s), or it SHALL be established as follows:
  • Firstly, the software component uses the LPA_access_token in step 2 as the
  PSK to initiate the PSK-TLS connection as defined in RFC 4279 [47] with the
 
-V2.4 Page 241 of 275
+V2.5 Page 241 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  LPAd on the Companion Device. During the TLS handshake, the software
  component in the Primary Device performs mutual authentication with the
@@ -13558,9 +13660,9 @@ Local User Interface (LUI) function:
 The LPA SHOULD support the following Local Profile Management Operations via the LPA’s
 Local User Interface (LUI) function:
 
-V2.4 Page 242 of 275
+V2.5 Page 242 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  • Set/Edit Profile Nicknames associated with installed Profiles as defined in section
  3.2.6. If the LPA does not support Set/Edit Nickname, alternative Device-specific
@@ -13613,9 +13715,9 @@ The Device-specific security implementation SHALL:
 
 
 
-V2.4 Page 243 of 275
+V2.5 Page 243 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Code, End User credentials for StrongConfirmation, Profile Metadata, Profile
  Download and Notification payloads, and Event Records.
@@ -13670,9 +13772,9 @@ Device Test Mode.
 When the Device exits Device Test Mode, the LPAd SHALL disable any enabled Test Profile
 as defined in section 3.2.2.
 
-V2.4 Page 244 of 275
+V2.5 Page 244 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 C.4 Support for CAT Mechanisms
 Dependent on the deployment, the Devices SHALL support at least the CAT mechanisms
@@ -13729,16 +13831,16 @@ Dependent on the deployment, the Devices SHALL support at least the CAT mechanis
 
  NOTE: The table also includes requirements for ES6.
 
-V2.4 Page 245 of 275
+V2.5 Page 245 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
 
-V2.4 Page 246 of 275
+V2.5 Page 246 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex D Coding of the AIDs for 'Remote SIM Provisioning'
 (Normative)
@@ -13747,9 +13849,9 @@ The Coding of the AID for ISD-R, ISD-P and ECASD SHALL be as defined in SGP.02 [
 
 
 
-V2.4 Page 247 of 275
+V2.5 Page 247 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex E List of Identifiers (Informative)
 OIDs
@@ -13805,9 +13907,9 @@ SM-DP+ Identifier
 
 
 
-V2.4 Page 248 of 275
+V2.5 Page 248 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 SM-DS Identifier
 
@@ -13831,9 +13933,9 @@ MNO Identifiers
 
 
 
-V2.4 Page 249 of 275
+V2.5 Page 249 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex F Profile Eligibility Check (Informative)
 Prior to any Profile download, the Operator or the SM-DP+ verifies if the selected Profile
@@ -13892,9 +13994,9 @@ domain Request SEC
 
 
 
-V2.4 Page 250 of 275
+V2.5 Page 250 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 The following recommendations apply to the SM-DP+ for the eligibility check of 5G supporting
 Device. See also section 4.2, section 5.7.8, and annex H.
@@ -13902,12 +14004,19 @@ Device. See also section 4.2, section 5.7.8, and annex H.
  getIdentity bit is set in uiccCapability. If it is not supported, the SM-DP+
  SHOULD NOT configure service n°125 in EFUST, and SHOULD NOT provide DFSAIP in
  the Profile Package.
+
+ NOTE: To set both service n°130 (Support for SUPI of type NSI or GLI or GCI)
+ and service n°125 (SUCI calculation by the USIM) in EFUST, the SM
+ DP+ may use additional mechanisms to ensure that eUICC supports
+ SUCI with non IMSI SUPI Type.
+
  • The SM-DP+ SHOULD check if the eUICC supports SAIP v2.3.1 (or higher). If it is not
  supported and the Profile is intended to contain DF5GS, the SM-DP+ SHOULD provide
  the DF5GS by using Generic File Management PE.
- • The SM-DP+ MAY provide a Profile with additional 5G features even if the Device does
- not support 5G core access (neither eutran5gcSupportedRelease nor
- nr5gcSupportedRelease is present in deviceCapability).
+ • The SM-DP+ MAY provide a Profile with additional 5G features (except non-IMSI SUPI
+ Type; see section 4.2) even if the Device does not support 5G core access (neither
+ eutran5gcSupportedRelease nor nr5gcSupportedRelease is present in
+ deviceCapability).
 
 
 
@@ -13940,6 +14049,11 @@ entity (SM-DP+) and the eUICC in a symmetric way.
  L+1 to 2L S-ENC
  2L+1 to 3L S-MAC
 
+
+V2.5 Page 251 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  Table 65: Mac Chaining
 
 The initial MAC chaining value is used for the computation of the MAC of the first SCP03t
@@ -13948,13 +14062,13 @@ block following the "ES8+.InitialiseSecureChannel" command.
 
 
 
-V2.4 Page 251 of 275
+V2.5 Page 252 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex H ASN.1 Definitions (Normative)
 RSPDefinitions {joint-iso-itu-t(2) international-organizations(23) gsma(146) rsp(1)
-spec-version(1) version-two(2)}
+asn1modules(1) sgp22v2(2)}
 DEFINITIONS
 AUTOMATIC TAGS
 EXTENSIBILITY IMPLIED ::=
@@ -13964,7 +14078,10 @@ IMPORTS Certificate, CertificateList, Time FROM PKIX1Explicit88 {iso(1) identifi
 organization(3) dod(6) internet(1) security(5) mechanisms(5) pkix(7) id-mod(0) id-
 pkix1-explicit(18)}
 SubjectKeyIdentifier FROM PKIX1Implicit88 {iso(1) identified-organization(3) dod(6)
-internet(1) security(5) mechanisms(5) pkix(7) id-mod(0) id-pkix1-implicit(19)};
+internet(1) security(5) mechanisms(5) pkix(7) id-mod(0) id-pkix1-implicit(19)}
+UICCCapability FROM PEDefinitions {joint-iso-itu-t(2) international-
+organizations(23) tca(143) euicc-profile(1) spec-version(1) version-three(3)};
+-- The UICCCapability import module version is defined in section 5.7.8
 
 id-rsp OBJECT IDENTIFIER ::= {joint-iso-itu-t(2) international-organizations(23)
 gsma(146) rsp(1)}
@@ -14016,15 +14133,15 @@ according to ETSI TS 102 226
 CI Public Key Identifiers supported on the eUICC for signature verification
  euiccCiPKIdListForSigning [10] SEQUENCE OF SubjectKeyIdentifier, -- List of CI
 Public Key Identifier supported on the eUICC for signature creation
+
+
+V2.5 Page 253 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  euiccCategory [11] INTEGER {
  other(0),
  basicEuicc(1),
-
-
-V2.4 Page 252 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  mediumEuicc(2),
  contactlessEuicc(3)
  } OPTIONAL,
@@ -14076,55 +14193,6 @@ this bit is deprecated.
  certVerificationX509(5)-- Handling of Certificate in X.509 format
 }
 
--- Definition of UICCCapability
-UICCCapability ::= BIT STRING {
-/* Sequence is derived from ServicesList[] defined in eUICC Profile Package
-PEDefinitions*/
- contactlessSupport(0), -- Contactless (SWP, HCI and associated APIs)
- usimSupport(1), -- USIM as defined by 3GPP
- isimSupport(2), -- ISIM as defined by 3GPP
- csimSupport(3), -- CSIM as defined by 3GPP2
-
- akaMilenage(4), -- Milenage as AKA algorithm
- akaCave(5), -- CAVE as authentication algorithm
- akaTuak128(6), -- TUAK as AKA algorithm with 128 bit key length
- akaTuak256(7), -- TUAK as AKA algorithm with 256 bit key length
- rfu1(8), -- reserved for further algorithms
- rfu2(9), -- reserved for further algorithms
-
- gbaAuthenUsim(10), -- GBA authentication in the context of USIM
-
-
-V2.4 Page 253 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
- gbaAuthenISim(11), -- GBA authentication in the context of ISIM
- mbmsAuthenUsim(12), -- MBMS authentication in the context of USIM
- eapClient(13), -- EAP client
-
- javacard(14), -- Javacard support
- multos(15), -- Multos support
-
- multipleUsimSupport(16), -- Multiple USIM applications are supported within the
-same Profile
- multipleIsimSupport(17), -- Multiple ISIM applications are supported within the
-same Profile
- multipleCsimSupport(18), -- Multiple CSIM applications are supported within
-the same Profile
- berTlvFileSupport(19), -- BER TLV files
- dfLinkSupport(20), -- Linked Directory Files
- catTp(21), -- Support of CAT TP
- getIdentity(22), -- Support of the GET IDENTITY command as defined in
-ETSI TS 102 221 [6]
- profile-a-x25519(23), -- Support of ECIES Profile A as defined in 3GPP TS
-33.501 [87]
- profile-b-p256(24), -- Support of ECIES Profile B as defined in 3GPP TS
-33.501 [87]
- suciCalculatorApi(25) -- Support of the associated API for SUCI derivation as
-defined in 3GPP 31.130 [88]
-
-}
 
 -- Definition of DeviceInfo
 DeviceInfo ::= SEQUENCE {
@@ -14139,6 +14207,12 @@ definition
  gsmSupportedRelease VersionType OPTIONAL,
  utranSupportedRelease VersionType OPTIONAL,
  cdma2000onexSupportedRelease VersionType OPTIONAL,
+
+
+V2.5 Page 254 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  cdma2000hrpdSupportedRelease VersionType OPTIONAL,
  cdma2000ehrpdSupportedRelease VersionType OPTIONAL,
  eutranEpcSupportedRelease VersionType OPTIONAL,
@@ -14146,9 +14220,23 @@ definition
  rspCrlSupportedVersion VersionType OPTIONAL,
  nrEpcSupportedRelease VersionType OPTIONAL,
  nr5gcSupportedRelease VersionType OPTIONAL,
- eutran5gcSupportedRelease VersionType OPTIONAL
-
+ eutran5gcSupportedRelease VersionType OPTIONAL,
+ lpaSvn VersionType OPTIONAL, -- Not defined in this version of SGP.22
+ catSupportedClasses CatSupportedClasses OPTIONAL, -- Not defined in this version
+of SGP.22
+ euiccFormFactorType EuiccFormFactorType OPTIONAL, -- Not defined in this version
+of SGP.22
+ deviceAdditionalFeatureSupport DeviceAdditionalFeatureSupport OPTIONAL
 }
+
+-- Definition of DeviceAdditionalFeatureSupport
+DeviceAdditionalFeatureSupport ::= SEQUENCE {
+ naiSupport VersionType OPTIONAL -- Device supports Network Access Identifier
+}
+
+CatSupportedClasses ::= BIT STRING
+EuiccFormFactorType ::= INTEGER
+
 
 ProfileInfoListRequest ::= [45] SEQUENCE { -- Tag 'BF2D'
  searchCriteria [0] CHOICE {
@@ -14167,12 +14255,6 @@ ProfileInfoListResponse ::= [45] CHOICE { -- Tag 'BF2D'
 
 ProfileInfo ::= [PRIVATE 3] SEQUENCE { -- Tag 'E3'
  iccid Iccid OPTIONAL,
-
-
-V2.4 Page 254 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  isdpAid [APPLICATION 15] OctetTo16 OPTIONAL, -- AID of the ISD-P containing the
 Profile, tag '4F'
  profileState [112] ProfileState OPTIONAL, -- Tag '9F70'
@@ -14199,6 +14281,12 @@ PprIds ::= BIT STRING {-- Definition of Profile Policy Rules identifiers
 }
 
 OperatorId ::= SEQUENCE {
+
+
+V2.5 Page 255 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  mccMnc OCTET STRING (SIZE(3)), -- MCC and MNC coded as defined in 3GPP TS 24.008
 [32]
  gid1 OCTET STRING OPTIONAL, -- referring to content of EF GID1 (file identifier
@@ -14241,12 +14329,6 @@ NotificationEvent ::= BIT STRING {
 NotificationConfigurationInformation ::= SEQUENCE {
  profileManagementOperation NotificationEvent,
  notificationAddress UTF8String -- FQDN to forward the notification
-
-
-V2.4 Page 255 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 }
 
 OPENTYPE ::= CLASS {
@@ -14273,6 +14355,12 @@ UpdateMetadataRequest ::= [42] SEQUENCE { -- Tag 'BF2A'
  profilePolicyRules [25] PprIds OPTIONAL, -- Tag '99'
  serviceSpecificDataStoredInEuicc [34] VendorSpecificExtension OPTIONAL -- Tag
 'BF22'
+
+
+V2.5 Page 256 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 
 }
 
@@ -14313,13 +14401,6 @@ PrepareDownloadResponseError ::= SEQUENCE {
  downloadErrorCode DownloadErrorCode
 }
 
-
-
-
-V2.4 Page 256 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 DownloadErrorCode ::= INTEGER {invalidCertificate(1), invalidSignature(2),
 unsupportedCurve(3), noSessionContext(4), invalidTransactionId(5),
 undefinedError(127)}
@@ -14348,6 +14429,12 @@ contextual data objects MAY be defined for extensibility
 }
 
 CtxParamsForCommonAuthentication ::= SEQUENCE {
+
+
+V2.5 Page 257 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  matchingId UTF8String OPTIONAL,-- The MatchingId could be the Activation code
 token or EventID or empty
  deviceInfo DeviceInfo -- The Device information
@@ -14388,12 +14475,6 @@ ciPKUnknown(7), undefinedError(127)}
 CancelSessionRequest ::= [65] SEQUENCE { -- Tag 'BF41'
  transactionId TransactionId, -- The TransactionID generated by the RSP Server
  reason CancelSessionReason
-
-
-V2.4 Page 257 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 }
 
 CancelSessionReason ::= INTEGER {endUserRejection(0), postponed(1), timeout(2),
@@ -14422,6 +14503,12 @@ BoundProfilePackage ::= [54] SEQUENCE { -- Tag 'BF36'
  initialiseSecureChannelRequest [35] InitialiseSecureChannelRequest, -- Tag
 'BF23'
  firstSequenceOf87 [0] SEQUENCE OF [7] OCTET STRING, -- sequence of '87' TLVs
+
+
+V2.5 Page 258 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  sequenceOf88 [1] SEQUENCE OF [8] OCTET STRING, -- sequence of '88' TLVs
  secondSequenceOf87 [2] SEQUENCE OF [7] OCTET STRING OPTIONAL, -- sequence of
 '87' TLVs
@@ -14462,12 +14549,6 @@ SuccessResult ::= SEQUENCE {
 
 ErrorResult ::= SEQUENCE {
  bppCommandId BppCommandId,
-
-
-V2.4 Page 258 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  errorReason ErrorReason,
  simaResponse OCTET STRING OPTIONAL -- contains (multiple) 'EUICCResponse' as
 defined in [5]
@@ -14496,6 +14577,12 @@ ErrorReason ::= INTEGER {
 }
 
 ListNotificationRequest ::= [40] SEQUENCE { -- Tag 'BF28'
+
+
+V2.5 Page 259 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  profileManagementOperation [1] NotificationEvent OPTIONAL
 }
 
@@ -14536,12 +14623,6 @@ id-rspRole-dp-tls OBJECT IDENTIFIER ::= {id-rspRole 3}
 id-rspRole-dp-auth OBJECT IDENTIFIER ::= {id-rspRole 4}
 id-rspRole-dp-pb OBJECT IDENTIFIER ::= {id-rspRole 5}
 id-rspRole-ds-tls OBJECT IDENTIFIER ::= {id-rspRole 6}
-
-
-V2.4 Page 259 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
 id-rspRole-ds-auth OBJECT IDENTIFIER ::= {id-rspRole 7}
 
 --Definition of data objects for InitialiseSecureChannel Request
@@ -14570,6 +14651,12 @@ length SHALL by 0x10 bytes, Tag '81'
 ConfigureISDPRequest ::= [36] SEQUENCE { -- Tag 'BF24'
  dpProprietaryData [24] DpProprietaryData OPTIONAL -- Tag 'B8'
 }
+
+
+V2.5 Page 260 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 
 DpProprietaryData ::= SEQUENCE { -- maximum size including tag and length field:
 128 bytes
@@ -14609,13 +14696,6 @@ PendingNotification ::= CHOICE {
 
 OtherSignedNotification ::= SEQUENCE {
  tbsOtherNotification NotificationMetadata,
-
-
-
-V2.4 Page 260 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  euiccNotificationSignature [APPLICATION 55] OCTET STRING, -- eUICC signature of
 tbsOtherNotification, Tag '5F37'
  euiccCertificate Certificate, -- eUICC Certificate (CERT.EUICC.ECDSA) signed by
@@ -14644,6 +14724,13 @@ EnableProfileRequest ::= [49] SEQUENCE { -- Tag 'BF31'
 }
 
 EnableProfileResponse ::= [49] SEQUENCE { -- Tag 'BF31'
+
+
+
+V2.5 Page 261 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  enableResult INTEGER {ok(0), iccidOrAidNotFound (1),
 profileNotInDisabledState(2), disallowedByPolicy(3), wrongProfileReenabling(4),
 catBusy(5), undefinedError(127)}
@@ -14684,12 +14771,6 @@ EuiccMemoryResetRequest ::= [52] SEQUENCE { -- Tag 'BF34'
 }
 
 EuiccMemoryResetResponse ::= [52] SEQUENCE { -- Tag 'BF34'
-
-
-V2.4 Page 261 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  resetResult INTEGER {ok(0), nothingToDelete(1), catBusy(5), undefinedError(127)}
 }
 
@@ -14718,6 +14799,12 @@ ProfilePolicyAuthorisationRule ::= SEQUENCE {
  pprIds PprIds,
  allowedOperators SEQUENCE OF OperatorId,
  pprFlags BIT STRING {consentRequired(0)}
+
+
+V2.5 Page 262 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
 }
 
 -- Definition of data structure containing the list of CRL segments
@@ -14758,12 +14845,6 @@ PartialCrlNumber ::= INTEGER
 -- Definition for ES9+ ASN.1 Binding --------------------------
 RemoteProfileProvisioningRequest ::= [2] CHOICE { -- Tag 'A2'
  initiateAuthenticationRequest [57] InitiateAuthenticationRequest, -- Tag 'BF39'
-
-
-V2.4 Page 262 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  authenticateClientRequest [59] AuthenticateClientRequest, -- Tag 'BF3B'
  getBoundProfilePackageRequest [58] GetBoundProfilePackageRequest, -- Tag 'BF3A'
  cancelSessionRequestEs9 [65] CancelSessionRequestEs9, -- Tag 'BF41'
@@ -14792,6 +14873,12 @@ InitiateAuthenticationResponse ::= [57] CHOICE { -- Tag 'BF39'
  invalidDpAddress(1),
  euiccVersionNotSupportedByDp(2),
  ciPKNotSupported(3)
+
+
+V2.5 Page 263 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  }
 }
 
@@ -14832,12 +14919,6 @@ AuthenticateClientOk ::= SEQUENCE {
  transactionId [0] TransactionId,
  profileMetaData [37] StoreMetadataRequest,
  smdpSigned2 SmdpSigned2, -- Signed information
-
-
-V2.4 Page 263 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  smdpSignature2 [APPLICATION 55] OCTET STRING, -- tag '5F37'
  smdpCertificate Certificate -- CERT.DPpb.ECDSA
 }
@@ -14865,6 +14946,12 @@ GetBoundProfilePackageOk ::= SEQUENCE {
  transactionId [0] TransactionId,
  boundProfilePackage [54] BoundProfilePackage
 }
+
+
+
+V2.5 Page 264 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 HandleNotification ::= [61] SEQUENCE { -- Tag 'BF3D'
  pendingNotification PendingNotification
@@ -14906,12 +14993,6 @@ ISDRProprietaryApplicationTemplate ::= [PRIVATE 0] SEQUENCE { -- Tag 'E0'
 
 LpaeActivationRequest ::= [66] SEQUENCE { -- Tag 'BF42'
  lpaeOption BIT STRING {
-
-
-V2.4 Page 264 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
  activateCatBasedLpae(0), -- LPAe with LUIe based on CAT
  activateScwsBasedLpae(1) -- LPAe with LUIe based on SCWS
  }
@@ -14940,6 +15021,12 @@ AuthenticateClientResponseEs11 ::= [64] CHOICE { -- Tag 'BF40'
  eventIdUnknown(6),
  invalidTransactionId(7),
  undefinedError(127)
+
+
+V2.5 Page 265 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  }
 }
 
@@ -14958,9 +15045,9 @@ END
 
 
 
-V2.4 Page 265 of 275
+V2.5 Page 266 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex I JSON Request Response Examples (Informative)
 An example for the "ES9+.InitiateAuthentication" function is shown below:
@@ -14970,7 +15057,7 @@ An example for the "ES9+.InitiateAuthentication" function is shown below:
 HTTP POST /gsma/rsp2/es9plus/initiateAuthentication HTTP/1.1
 Host: smdp.gsma.com
 User-Agent: gsma-rsp-lpad
-X-Admin-Protocol: gsma/rsp/v2.3
+X-Admin-Protocol: gsma/rsp/v2.5.0
 
 Content-Type: application/json
 Content-Length: XXX
@@ -14985,7 +15072,7 @@ Content-Length: XXX
  • HTTP Response (from LPA to SM-DP+ to)
 
 HTTP/1.1 200 OK
-X-Admin-Protocol: gsma/rsp/v2.3
+X-Admin-Protocol: gsma/rsp/v2.5.0
 Content-Type: application/json
 Content-Length: XXX
 
@@ -15008,7 +15095,7 @@ An example for the "ES2+.DownloadOrder" function is shown as follows.
 
 HTTP POST /gsma/rsp2/es2plus/downloadOrder HTTP/1.1
 Host: smdp.gsma.com
-X-Admin-Protocol: gsma/rsp/v2.3
+X-Admin-Protocol: gsma/rsp/v2.5.0
 Content-Type: application/json
 Content-Length: XXX
 
@@ -15021,9 +15108,9 @@ Content-Length: XXX
  "iccid" : "01234567890123456789",
 
 
-V2.4 Page 266 of 275
+V2.5 Page 267 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  "profileType" : "myProfileType"
 }
@@ -15032,7 +15119,7 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  • HTTP Response for a successful execution:
 
 HTTP/1.1 200 OK
-X-Admin-Protocol: gsma/rsp/v2.3
+X-Admin-Protocol: gsma/rsp/v2.5.0
 Content-Type: application/json
 Content-Length: XXX
 
@@ -15049,7 +15136,7 @@ Content-Length: XXX
  • HTTP Response for a failed execution:
 
 HTTP/1.1 200 OK
-X-Admin-Protocol: gsma/rsp/v2.3
+X-Admin-Protocol: gsma/rsp/v2.5.0
 Content-Type: application/json
 Content-Length: XXX
 
@@ -15073,7 +15160,7 @@ An example for the "ES2+.HandleDownloadProgressInfo" function is shown as follow
 
 HTTP POST /gsma/rsp2/es2plus/handleDownloadProgressInfo HTTP/1.1
 Host: smdp.gsma.com
-X-Admin-Protocol: gsma/rsp/v2.3
+X-Admin-Protocol: gsma/rsp/v2.5.0
 Content-Type: application/json
 Content-Length: XXX
 
@@ -15085,9 +15172,9 @@ Content-Length: XXX
  "eid" : "01020300405060708090A0B0C0D0EOF",
 
 
-V2.4 Page 267 of 275
+V2.5 Page 268 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  "iccid" : "01234567890123456789",
  "profileType" : "myProfileType",
@@ -15102,14 +15189,14 @@ Official Document SGP.22 - RSP Technical Specification v2.4
  • HTTP Response for a successful execution:
 
 HTTP/1.1 204 No Content
-X-Admin-Protocol: gsma/rsp/v2.3
+X-Admin-Protocol: gsma/rsp/v2.5.0
 
 
 
 
-V2.4 Page 268 of 275
+V2.5 Page 269 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex J Tag allocation (Normative)
 This annex lists the tags allocated to data objects that SHALL be used for the definition of
@@ -15153,9 +15240,9 @@ the eUICC functions.
  'BF42' LpaeActivationRequest or LpaeActivationResponse
 
 
-V2.4 Page 269 of 275
+V2.5 Page 270 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  Tag Data name
  'BF43' GetRatRequest or GetRatResponse
@@ -15167,9 +15254,9 @@ Official Document SGP.22 - RSP Technical Specification v2.4
 
 
 
-V2.4 Page 270 of 275
+V2.5 Page 271 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex K OID allocation (Informative)
 This annex provides some background on the schema of the OID allocation used in this
@@ -15200,11 +15287,12 @@ Within the rsp node, the following schema is used:
 
 rsp(1) – root for the RSP project
 
- spec-version(1) – root for identifying the ASN.1 module of the different versions
+ asn1modules(1) – root for identifying the ASN.1 module of the different RSP
+specifications and versions
 
- version-one(1) – ASN.1 module of version 1.X
+ SGP22v1(1) – ASN.1 module of version 1.X
 
- version-two(2) – ASN.1 module of version 2.X
+ SGP22v2(2) – ASN.1 module of version 2.X
 
  … - future ASN.1 modules SHOULD use additional sub-nodes here
 
@@ -15220,9 +15308,9 @@ rsp(1) – root for the RSP project
 
 
 
-V2.4 Page 271 of 275
+V2.5 Page 272 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 Annex L DLOA document (Normative)
 The DLOA is an XML document as defined in GlobalPlatform DLOA [57].
@@ -15245,7 +15333,7 @@ validation granted to an eUICC platform.
  - <version> SHALL identify the version of specification against which the
  eUICC platform has been certified. Value SHALL be coded as a string of
  major/minor/revision values (each on possibly several digits) separated by '. '.
- If revision is not used, it SHALL be omitted. Ex: “RSP SGP.22 v2.0.12”, “RSP
+ If revision is not used, it S ALL be omitted. Ex: “RSP SGP.22 v2.0.12”, “RSP
  SGP.22 v1.0”.
  - <compliance level> value SHALL be "Basic" for this version of specification.
  Platform_Label This field SHALL contain a string as the concatenation of the
@@ -15275,18 +15363,18 @@ validation granted to an eUICC platform.
  Table 67: Platform_DLOA description
 
 
-V2.4 Page 272 of 275
+V2.5 Page 273 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
  NOTE: The Application_DLOA is not used in this specification.
 
 
 
 
-V2.4 Page 273 of 275
+V2.5 Page 274 of 277
 GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
+Official Document SGP.22 - RSP Technical Specification v2.5
 
 
 
@@ -15306,14 +15394,14 @@ M.1 Document History
  V.1.1 PSMC
  2016 Phase one
  GSMA
- V2.0 July 2016 Major Change to include new PSMC Yolanda
- features Sanz
+ V2.0 July 2016 Major Change to include PSMC Yolanda
+ new features Sanz
  GSMA
- V2.1 Jan 2017 Minor Change to fix bugs and PSMC Yolanda
- maintenance changes Sanz
+ V2.1 Jan 2017 Minor Change to fix bugs PSMC Yolanda
+ and maintenance changes Sanz
  GSMA
- Minor Change to fix bugs and Yolanda
- 31 Aug maintenance changes Sanz
+ Minor Change to fix bugs Yolanda
+ 31 Aug and maintenance changes Sanz
  V2.2 RSPLEN
  2017
  GSMA
@@ -15322,72 +15410,99 @@ M.1 Document History
  V2.2.1 RSPPLEN
  2018
  GSMA
- Minor minor change to fix Yolanda
- 05th June minor changes Sanz
- V2.2.2 ISAG
- 2020
- GSMA
+ 05th Minor minor change to fix Yolanda
+ V2.2.2 June minor changes ISAG Sanz
+ 2020 GSMA
  CR2701R01 Simplified End User
  confirmation
- CR2702R00 Removal of mandatory RAT
- configuration
+ CR2702R00 Removal of mandatory
+ RAT configuration
  CR2705R00 Clarifications on v2.2.2
  Application Notes
  CR2703R01 Optional Edit Default SM-
  DP+ Address funtions
- CR2706R01 SGP.22 Mirror CR for Yolanda
- 30 June integrated eUICC
- V2.3 ISAG Sanz,
- 2021
- CR2704R00 Allowing LPA to accept TLS GSMA
- Certificate chain to Public CA
- CR2710R00 Update for changes in LPA45
- CR2709R00 Alignment of Discrete eUICC
- definition with SGP.21 v2.3
- CR2711R01 treProperties mandatory for
- integrated
+
+ 30 June CR2706R01 SGP.22 Mirror CR for Yolanda
+ V2.3 integrated eUICC ISAG
+ 2021 Sanz, GSMA
+ CR2704R00 Allowing LPA to accept
+ TLS Certificate chain to
+ Public CA
+ CR2710R00 Update for changes in
+ LPA45
+ CR2709R00 Alignment of Discrete
+ eUICC definition with
+ SGP.21 v2.3
+ CR2711R01 treProperties mandatory
+ for integrated
+
+
+V2.5 Page 275 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
  CR2708R03 More changes related to
  SGP.29
  CR2712R03 References updated
-
-
-V2.4 Page 274 of 275
-GSM Association Non-confidential
-Official Document SGP.22 - RSP Technical Specification v2.4
-
- CR2714R01 Profile download retry upon
- temporary errors
+ CR2714R01 Profile download retry
+ upon temporary errors
  (mirror to CR3486)
  CR2715R02 Optional LPAd support for
- Profile Download with PPRs
- on Removable eUICCs
+ Profile Download with
+ PPRs on Removable
+ eUICCs
  CR2717R05 Editorial Clarification on
  disabling a Test Profile
  CR2718R00 Update version numbers in
  HTTP headers
  CR2719R02 References cleanup
  CR2722R00 More SIMAlliance clean up
- CR2721R00 Optional support of Brainpool
- and FRP for TLS
+ CR2721R00 Optional support of
+ Brainpool and FRP for TLS
  CR2724R00 ASN.1 corrections
- CR2725R00 Allow multiple eUICC Profile
- Package versions
+ CR2725R00 Allow multiple eUICC
+ Profile Package versions
  CR2801R02 Field-test eUICC
  CR2802R02 Clarification on outdate
- 28 Yolanda
- ppVersion during oudate
- V2.4 October ISAG Sanz,
- interm period
- 2021 GSMA
+ 28
+ ppVersion during oudate Yolanda
+ V2.4 October ISAG
+ interm period Sanz, GSMA
+ 2021
  CR2803R02 Add Profile Metadata
  Extensibility
+ CR24101R01 Importing ASN.1 type
+ definition of UICC
+ Capability from TCA
+ CR24102R01 Version correction in X-
+ Admin-Protocol http
+ header field
+ CR24104R00 Renaming ASN.1 Module
+ OID
+ Yolanda
+ V2.5 26 May CR24105R00 MNO-SD mandatory ISAG Sanz, GSMA
+ 2023
+ CR24106R00 Editorial and clarification in
+ eUICC Memory Reset
+ CR24107R03 Device capability on 5G
+ support
+ CR24108R03 Clarify ProfileOwner for
+ non-IMSI Profiles
+ NA To fix SGP.21 version to
+ v2.5
 
 
 Other Information
 
  Type Description
  Document Owner Yolanda Sanz / GSMA
- Editor / Company Denis Praca / Gemalto
+
+
+V2.5 Page 276 of 277
+GSM Association Non-confidential
+Official Document SGP.22 - RSP Technical Specification v2.5
+
+ Editor / Company Denis Praca / Thales
 
 
 It is our intention to provide a quality product for your use. If you find any errors or omissions,
@@ -15398,5 +15513,5 @@ Your comments or suggestions & questions are always welcome.
 
 
 
-V2.4 Page 275 of 275
+V2.5 Page 277 of 277
 
